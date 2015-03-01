@@ -126,9 +126,9 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		DO = 'P9_23'
 		self.sensor_up = MAX31855.MAX31855(CLK, CS, DO)
 
-		CLK = 'P9_24'
-		CS = 'P9_25'
-		DO = 'P9_26'
+		CLK = 'P8_7'
+		CS = 'P8_8'
+		DO = 'P8_9'
 		self.sensor_low = MAX31855.MAX31855(CLK, CS, DO)
 
 		# nn is a placeholder for list operations

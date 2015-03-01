@@ -180,7 +180,7 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 	# Publish tank temperature
 	def publish_temp(self):
 		try:
-			self.publish_json(('measure/temp', {}, (self.temp_up, 
+			self.publish_json('measure/temp', {}, (self.temp_up, 
 					self.temp_low))
 		except:
 			return
