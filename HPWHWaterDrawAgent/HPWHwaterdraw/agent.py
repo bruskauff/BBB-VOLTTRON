@@ -114,14 +114,14 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pin
-		self.draw = GPIO0_27	# (P8_17)
+		self.draw = 'GPIO0_27'	# (P8_17)
 		# Initialize GPIO pin mode
 		pinMode(self.draw, OUTPUT)
 		# Initialize output pins to LOW (off)
 		digitalWrite(self.draw, LOW)
 
 		# Initialize state to off
-		self.state = 0
+		self.state = 'False'
 		# Initialize water draw step
 		self.nn = 0
 
@@ -145,7 +145,7 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 		# Publish water draw state
 		self.publish_json('waterdraw/state', {}, self.state)
 
-	# Periodically perform water draws
+	'''# Periodically perform water draws
 	@periodic(settings.draw_int)
 	def DRAW(self):
 		volume = self.config[str(self.nn)]	
@@ -159,12 +159,12 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 			# Find elapsed time
 			dt = time.time() - time_start
 			# Open the valve
-			self.state = 1
+			self.state = True
 			self.ON()
-		self.state = 0
+		self.state = False
 		self.OFF()
 		# Move on to the next water draw value
-		self.nn += 1
+		self.nn += 1'''
 
 	# Check for User Input - Water Draw
 	@matching.match_start('user/waterdraw')
@@ -173,15 +173,16 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 		# User Agent published message = [state]
 		state_info = jsonapi.loads(message[0])
 		self.state = state_info[0]
+		
 		# Turn flow off
-		if self.state == 0:
+		if self.state == 'False':
 			self.OFF()
 		# Turn flow on
-		elif self.state == 1:
+		elif self.state == 'True':
 			self.ON()
 		# If invalid input, turn flow off
 		else:
-			self.state = 0
+			self.state = 'False'
 			self.OFF()
 #_____________________________________________________________________________#
 
