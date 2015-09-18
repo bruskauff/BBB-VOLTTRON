@@ -21,26 +21,16 @@ OUTPUT
 #___________________________________Setup___________________________________#
 
 # Import Statements
-import logging
-import sys
-import time
+import logging, sys, time
 
 from zmq.utils import jsonapi
-from volttron.platform.agent import BaseAgent, PublishMixin, periodic
-from volttron.platform.agent import utils, matching
+from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils, matching
 
 from bbio import *	# for BBB, uses PyBBIO module
 
 # Enable information and debug logging
 utils.setup_logging()
 _log = logging.getLogger(__name__)
-
-'''#Set up periodic decorator to access self
-def periodic(f):
-	def deco(self):
-		print 'In deco'
-		f(self)
-	return deco'''
 #___________________________________________________________________________#
 
 
@@ -49,9 +39,6 @@ def periodic(f):
 
 # Create a class with the convention <Name>Agent & always include PublishMixin # and BaseAgent as its arguments
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
-
-	#make class element interval initially set to .02 second
-	#interval = 0.02
 
 	def __init__(self, config_path, **kwargs):
 		super(BlinkingLEDAgent, self).__init__(**kwargs)
@@ -101,7 +88,6 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 		_log.info("Interval is %r" %self.interval)
 
-		#_log.info("interval is &d second(s)" %BlinkingLEDAgent.interval)
 		# Turn LED on
 		self.LED1_ON()
 		# Keep it on for 1/16 second
@@ -110,18 +96,6 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		self.LED1_OFF()
 		#Keep it off for current interval
 		time.sleep(self.interval)
-
-	'''# Periodically flash the LED on and turn it off
-	@periodic(interval)
-	def control_LED(self):
-		_log.info("Interval is %s."%BlinkinLEDAgent.interval)
-		#_log.info("interval is &d second(s)" %BlinkingLEDAgent.interval)
-		# Turn LED on
-		self.LED1_ON()
-		# Keep it on for 1/16 second
-		time.sleep(.0625)
-		# Turn LED off
-		self.LED1_OFF()'''
 #____________________________________________________________________________#
 
 
