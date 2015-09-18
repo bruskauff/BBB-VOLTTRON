@@ -40,6 +40,10 @@ _log = logging.getLogger(__name__)
 # Create a class with the convention <Name>Agent & always include PublishMixin # and BaseAgent as its arguments
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
+	#Initialize class time variables for on and off
+	t = time.time()
+
+
 	def __init__(self, config_path, **kwargs):
 		super(BlinkingLEDAgent, self).__init__(**kwargs)
 		self.config = utils.load_config(config_path)
@@ -52,6 +56,12 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 		# Initialize output pins to LOW (off)
 		digitalWrite(self.LED1, LOW)
+
+		# Initialize LED status to off
+		self.LED_status = False
+
+		# Initialize reset varible to True
+		self.reset = True
 
 	def setup(self):
 		# Demonstrate accessing a value from the config file
@@ -67,7 +77,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Turn off LED1
 		digitalWrite(self.LED1, LOW)
 
-	'''Use matching package to look for signal from demand agent. Note that 	the demand agent developed will need to publish the same starting text. 	Here, utilitiesagent will be a separate agent developed to simulate the 	cost of power fluctuating w/ demand.'''
+	#Every time match is made redefine interval
 	@matching.match_start('powercost/demandagent')
 	def define_interval(self, topic, headers, message, match):
 		# Utilities Agent publishes message = [costlevel, cost]
@@ -88,14 +98,34 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 		_log.info("Interval is %r" %self.interval)
 
-		# Turn LED on
-		self.LED1_ON()
-		# Keep it on for 1/16 second
-		time.sleep(.0625)
-		# Turn LED off
-		self.LED1_OFF()
-		#Keep it off for current interval
-		time.sleep(self.interval)
+		# Deal with LED being on
+		if self.LED_status == True and self.reset == True:
+			# Reset global t variable to now
+			BlinkingLEDAgent.t = time.time()
+			self.reset = False
+
+		# Calculate how long LED has been on
+		t_diff_on = time.time() - BlinkingLEDAgent.t
+		# Will only keep LED on for .0625, HARD #
+		if t_diff_on >= .0625 and self.LED_status == True:
+			# Turn LED off
+			self.LED1_OFF()
+			self.LED_status = False
+			self.reset = True
+
+		#Deal with LED being off
+		if self.LED_status == False and self.reset == True:
+			# Reset global t variable to now
+			BlinkingLEDAgent.t = time.time()
+			self.reset = False
+			
+		t_diff_off = time.time() - BlinkingLEDAgent.t
+		# Keep LED off for interval time
+		if t_diff_off >= self.interval and self.LED_status == False:
+			# Turn LED on
+			self.LED1_ON()
+			self.LED_status = True
+			self.reset = True
 #____________________________________________________________________________#
 
 
