@@ -54,17 +54,12 @@
 #}}}
 
 #____________________________________Setup____________________________________#
-from datetime import datetime
-import logging
-import sys
+import logging, sys, random, datetime
 
-from volttron.platform.agent import BaseAgent, PublishMixin, periodic
-from volttron.platform.agent import utils, matching
+from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils, matching
 from volttron.platform.messaging import headers as headers_mod
 
 import settings
-
-import random
 
 utils.setup_logging()
 _log = logging.getLogger(__name__)
@@ -108,22 +103,6 @@ class DemandAgent(PublishMixin, BaseAgent):
             elif self.cost > 0.14 and self.cost <= 0.16:
                 self.cost_level = 'high'
             DemandAgent.total_t = 0
-
-'''# Demonstrate periodic decorator and setting
-    @periodic(settings.CALCULATION_INTERVAL)
-    def random_cost(self):
-        self.cost = (random.randint(10, 16))/100.00
-        if self.cost >= 0.10 and self.cost < 0.12:
-            self.cost_level = 'low'
-        elif self.cost >= 0.12 and self.cost <= 0.14:
-            self.cost_level = 'medium'
-        elif self.cost > 0.14 and self.cost <= 0.16:
-            self.cost_level = 'high'        
-
-    #Note that PUBLISH_INTERVAL must be =< the minimum LED flash speed
-    @periodic(settings.PUBLISH_INTERVAL)
-    def publish_cost(self):
-        self.publish_json('powercost/demandagent', {}, self.cost_level)'''
 #_____________________________________________________________________________#
 
 
