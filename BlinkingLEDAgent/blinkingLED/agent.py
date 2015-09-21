@@ -97,7 +97,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			self.interval = 0.02 # If input isn't valid
 
 		# Log information & action
-		_log.info("Cost level is %s, setting interval to %r" %(cost_level, self.interval))
+		_log.info("Cost level is %s, setting interval to %r" %				(cost_level, self.interval))
 
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
