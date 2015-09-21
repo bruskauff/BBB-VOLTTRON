@@ -83,9 +83,6 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Utilities Agent publishes message = [costlevel, cost]
 		cost_level = jsonapi.loads(message[0])
 
-		# Log the information received
-		_log.info("Cost level is %s."%cost_level)
-
 		# Decide what rate to flash the LED at based on cost level
 		if cost_level == 'high':
 			self.interval = 5 # 5 seconds between flashes
@@ -96,7 +93,8 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		else:
 			self.interval = 0.02 # If input isn't valid
 
-		_log.info("Interval is %r" %self.interval)
+		# Log information & action
+		_log.info("Cost level is %s, setting interval to %r" %(cost_level, self.interval))
 
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
