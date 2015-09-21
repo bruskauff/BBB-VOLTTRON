@@ -1,9 +1,35 @@
+'''
+Brian Ruskauff
+National Renewable Energy Labs (NREL)
+9/19/15
+Referenced from Kathleen Genger's agent.py code for user control
 
+
+This script was made to allow a user to directly control the blinking rate of an LED connected to a BeagleBone Black. It also allows the user to make the flashing stop and start, but it will not explicitly allow the user to keep the LED on or off. This can be simulated by using a low or high interval respectively.
+
+INPUT 
+	- signal from DemandAgent with message = [costlevel, cost]
+		- costlevel is 'high', 'medium', or 'low'
+		- cost is a float in dollars
+	- signal from UserAgent with [state, interval]
+		- state is 'ON' or 'OFF'
+		- interval
+OUTPUT
+	- when changing the state
+		- topic = 'user/state'
+		- message = [old_state new_state]
+	- when changing the interval
+		- topic = 'user/interval'
+		- message = [old_interval new_interval]
+	- when handing control to automatic based on demand
+		- topic = 'user/mode'
+		- message = 'return'
+'''
 
 #____________________________________Setup____________________________________#
 # Import required modules
 import logging, sys, datetime
-from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils, matching
+from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils, 		matching
 from volttron.platform.messaging import headers as headers_mod
 
 # Setup logging
@@ -16,9 +42,9 @@ _log = logging.getLogger(__name__)
 #____________________________________Agent____________________________________#
 class DemandAgent(PublishMixin, BaseAgent):
     '''Allows user to broadcase messages for BBB control directly from a 		computer on a different network'''
-
+	
+	# Initialize attributes
     def __init__(self, config_path, **kwargs):
-		'''Initialize attributes'''
         super(UserAgent, self).__init__(**kwargs)
 		# Config file includes socket location info
         self.config = utils.load_config(config_path)
@@ -27,8 +53,8 @@ class DemandAgent(PublishMixin, BaseAgent):
 		self.state = False
 		self.interval = 0
 
+	# Additional Setup
     def setup(self):
-        '''Additional Setup.'''
         _log.info('Setting up User Input Agent...')
         # Always call the base class setup()
         super(DemandAgent, self).setup()
@@ -40,12 +66,12 @@ class DemandAgent(PublishMixin, BaseAgent):
 		# Register a callback to accept new connections
 		self.reactor.register(self.ask_socket, self.handle_accept)
 
+	# Send current state and ask for a new one
 	def ask_input(self, file)
-		'''Send current state and ask for a new one'''
-		file.write('\nCurrent state: %r.\nCurrent interval: %r.\n Enter new command: ' %(self.state, self.interval))
+		file.write('\nCurrent state: %r.\nCurrent interval: %r.\n Enter new 				command: ' %(self.state, self.interval))
 		
+	# Accept new connections
 	def handle_accept(self, ask_sock)
-		'''Accept new connections'''
 		sock, addr = ask_sock. accept()
 		file = sock.makefile('r+', 0)
 		_log.info('Connection %r accepted from %r: %r' %(file.fileno(), *addr))
@@ -56,26 +82,26 @@ class DemandAgent(PublishMixin, BaseAgent):
 		# Register a callback to receive input from the client.
 		self.reactor.register(file, self.handle_input)
 
+	# Change state and notify other agents
 	def change_state(self, state)
-		'''Change state and notify other agents'''
 		# Assign old & new state
 		old_state, self.state = self.state, state
 		# Publish new state via VOLTTRON
 		self.publish_json('user/state', {}, (old_state, self.state)
 
+	# Change interval and notify other agents
 	def change_interval(self, interval)
-		'''Change interval and notify other agents'''
 		# Assign old & new interval
 		old_interval, self.interval = self.interval, interval
 		# Publish new interval via VOLTTRON
 		self.publish_json('user/interval', {}, (old_interval, self.interval)
 
+	# Returns to demand-response mode
 	def return_to_normal(self)
-		'''Returns to demand-response mode'''
 		self.publish_json('user/mode', {}, 'return')
 
+	# Receive new state from user and ask for another'''
 	def handle_input(self, file)
-		'''Receive new state from user and ask for another'''
 		try:
 			response = file.readline()
 			if not response:
@@ -83,19 +109,24 @@ class DemandAgent(PublishMixin, BaseAgent):
 			response = response.strip() #strip gets rid of end line character
 			# If there is a valid response
 			if response:
+				# Turn LED blinking off
 				if response == 'OFF':
 					self.change_state(response)
+				# Turn LED blinking on
 				elif response == 'ON':
 					self.change_state(response)
+				# Change blinking interval
 				elif isinstance(response, float) == True:
 					self.change_interval(response)
+				# Change blinking interval
 				elif isinstance(response, int) == True:
 					self.change_interval(response)
+				# Allow LED to respond to demand agent
 				elif response == 'return':
 					self.return_to_normal()
+				# Update status information
 				elif response == 'status':
 					self.ask_input()
-		
 #_____________________________________________________________________________#
 
 
