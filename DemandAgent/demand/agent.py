@@ -91,7 +91,8 @@ class DemandAgent(PublishMixin, BaseAgent):
 
     @periodic(settings.PUBLISH_INTERVAL)
     def random_cost(self):    
-        self.publish_json('powercost/demandagent', {}, self.cost_level)
+        self.publish_json(
+                'powercost/demandagent', {}, (self.cost_level, self.cost))
         DemandAgent.total_t = DemandAgent.total_t + self.pub_int
         _log.info('total_t is %r' %DemandAgent.total_t)
         if round(DemandAgent.total_t) == round(self.calc_int):
