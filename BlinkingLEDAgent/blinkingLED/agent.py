@@ -7,6 +7,8 @@ Referenced from Kathleen Genger's agent.py code for dehumidifier control as well
 
 This code was made to modulate the blinking rate of an LED. At low energy costs it will blink the LED every 1/4 of a second. At medium energy rates it will blink the LED every 1 second. At high energy rates it will blink the LED every 5 seconds. The duration of the on cycle is fixed at 1/16 of a second. If it is receiving an invalid signal from the demand agent it will blink the LED every 0.02 seconds to appear to be always on (use for debugging).
 
+This script can also allow direct user control of the LED flash interval. It will also let the user turn the flashing on or off.
+
 INPUT 
 	- signal from DemandAgent with [costlevel, cost]
 		- costlevel is 'high', 'medium', or 'low'
@@ -16,11 +18,6 @@ INPUT
 		- interval
 OUTPUT
 	- logs the inputted cost level, cost, and interval
-	- 
-	
-This script was made to modulate the blinking rate of an LED based on input from a demand agent. At low energy costs it blinks every 1/2 second. If the power prices go up it will blink less often. If the user requires a constant light source it will blink more often. The duration of the ON cycle is always 1/16 second.
-
-This script can also allow direct user control of the LED flash interval. It will also let the user turn the flashing on or off.
 '''
 
 
