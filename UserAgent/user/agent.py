@@ -115,8 +115,6 @@ class UserAgent(PublishMixin, BaseAgent):
 		'''# Config file includes socket location info
 		self.config = utils.load_config(config_path)'''
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
-		# Initialize running variable
-		self.running = False
 		self.state = False
 		self.interval = 0
 
@@ -135,7 +133,8 @@ class UserAgent(PublishMixin, BaseAgent):
 
 	# Send current state and ask for a new one
 	def ask_input(self, file):
-		file.write('\nCurrent state: %r.\nCurrent interval: %r.\n Enter new 				command: ' %(self.state, self.interval))
+		file.write('\nRunning: %s.\nCurrent interval: %r.\nEnter new '
+				'command>> ' %(self.state, self.interval))
 		
 	# Accept new connections
 	def handle_accept(self, ask_sock):
@@ -178,23 +177,35 @@ class UserAgent(PublishMixin, BaseAgent):
 			# If there is a valid response
 			if response:
 				# Turn LED blinking off
-				if response == 'OFF':
-					self.change_state(response)
+				if response == 'off':
+					self.state_change(False)
+					file.write('\nLED is off.\n\n>>>')
 				# Turn LED blinking on
-				elif response == 'ON':
-					self.state_change(response)
+				elif response == 'on':
+					self.state_change(True)
+					file.write('\nLED is blinking.\n\n>>>')
 				# Change blinking interval
 				elif isinstance(response, float) == True:
 					self.interval_change(response)
+					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
+							%response)
 				# Change blinking interval
 				elif isinstance(response, int) == True:
 					self.interval_change(response)
+					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
+							%response)
 				# Allow LED to respond to demand agent
 				elif response == 'return':
 					self.return_to_normal()
+					file.write('\nLED returning to Demand/Response operation.'
+							'\n\n>>>')
 				# Update status information
 				elif response == 'status':
-					self.ask_input()
+					self.ask_input(file)
+				else:
+					file.write('\n** FAILED **\nValid commands are...\n'
+							'| on | off | int | float | return | status |\n\n'
+							'>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
