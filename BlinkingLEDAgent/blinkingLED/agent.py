@@ -34,11 +34,11 @@ from bbio import *	# for BBB, uses PyBBIO module
 # Enable information and debug logging
 utils.setup_logging()
 _log = logging.getLogger(__name__)
-#___________________________________________________________________________#
+#_____________________________________________________________________________#
 
 
 
-#___________________________________Agent___________________________________#  
+#____________________________________Agent____________________________________#  
 
 # Create a class with the convention <Name>Agent & always include PublishMixin # and BaseAgent as its arguments
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
@@ -80,11 +80,13 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Turn off LED1
 		digitalWrite(self.LED1, LOW)
 
-	#Every time match is made redefine interval
+	# Check for Demand Agent Activity
 	@matching.match_start('powercost/demandagent')
 	def define_interval(self, topic, headers, message, match):
-		# Utilities Agent publishes message = [costlevel, cost]
-		cost_level = jsonapi.loads(message[0])
+		# Utilities Agent publishes message = [cost_level, cost]
+		cost_info = jsonapi.loads(message[0])
+		cost_level = cost_info[0]
+		cost = cost_info[1]
 
 		# Decide what rate to flash the LED at based on cost level
 		if cost_level == 'high':
@@ -97,7 +99,8 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			self.interval = 0.02 # If input isn't valid
 
 		# Log information & action
-		_log.info("Cost level is %s, setting interval to %r" %				(cost_level, self.interval))
+		_log.info("Cost level is %s at $%s, setting interval to %r seconds." %
+				(cost_level, cost, self.interval))
 
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
@@ -127,11 +130,11 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			self.LED1_ON()
 			self.LED_status = True
 			self.reset = True
-#____________________________________________________________________________#
+#_____________________________________________________________________________#
 
 
 
-#__________________________________Closure__________________________________#
+#___________________________________Closure___________________________________#
 
 # Enable Agent to parse arguments on the command line by the agent launcher
 def main(argv=sys.argv):
