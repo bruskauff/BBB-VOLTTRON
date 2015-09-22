@@ -86,7 +86,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Utilities Agent publishes message = [cost_level, cost]
 		cost_info = jsonapi.loads(message[0])
 		cost_level = cost_info[0]
-		cost = cost_info[0]
+		cost = cost_info[1]
 
 		# Decide what rate to flash the LED at based on cost level
 		if cost_level == 'high':
