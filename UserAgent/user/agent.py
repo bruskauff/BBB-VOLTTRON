@@ -1,4 +1,4 @@
-#__________________________________Copyright__________________________________#
+ #__________________________________Copyright__________________________________#
 '''
 Copyright (c) 2013, Battelle Memorial Institute
 All rights reserved.
@@ -117,6 +117,7 @@ class UserAgent(PublishMixin, BaseAgent):
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
 		self.state = False
 		self.interval = 0
+		self.mode = 'demand/response'
 
 	# Additional Setup
 	def setup(self):
@@ -133,8 +134,8 @@ class UserAgent(PublishMixin, BaseAgent):
 
 	# Send current state and ask for a new one
 	def ask_input(self, file):
-		file.write('\nRunning: %s.\nCurrent interval: %r.\nEnter new '
-				'command>> ' %(self.state, self.interval))
+		file.write('\nRunning: %s.\nCurrent interval: %r.\n\n>>>'
+				%(self.state, self.interval))
 		
 	# Accept new connections
 	def handle_accept(self, ask_sock):
@@ -167,7 +168,7 @@ class UserAgent(PublishMixin, BaseAgent):
 		# Assign old & new mode
 		old_mode, self.mode = self.mode, mode
 		# Publish new state via VOLTTRON
-		self.publish_json('user/mode', {}, (old_mode, self.mode)
+		self.publish_json('user/mode', {}, (old_mode, self.mode))
 
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
@@ -198,7 +199,7 @@ class UserAgent(PublishMixin, BaseAgent):
 							%response)
 				# Allow LED to respond to demand agent
 				elif response == 'demand/response' or response == 'manual':
-					self.mode_change()
+					self.mode_change(response)
 					file.write('\nLED returning to %s operation mode.'
 							'\n\n>>>' %response)
 				# Update status information

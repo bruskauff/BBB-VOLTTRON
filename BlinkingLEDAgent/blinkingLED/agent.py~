@@ -102,7 +102,8 @@ _log = logging.getLogger(__name__)
 
 #____________________________________Agent____________________________________#  
 
-# Create a class with the convention <Name>Agent & always include PublishMixin # and BaseAgent as its arguments
+# Create a class with the convention <Name>Agent & always include PublishMixin
+# and BaseAgent as its arguments
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	#Initialize class time variables for on and off
@@ -155,6 +156,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		old_mode = jsonapi.loads(message[0])
 		self.mode = jsonapi.loads(message[1])
 		# If manual mode is selected, default interval is 1 second
+		if self.mode == 'manual':
 			self.interval = 1
 			self.blink_LED()
 
@@ -192,7 +194,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			self.blink_LED()
 
 	# Cycle the LED on and off
-	def blink_LED(self)
+	def blink_LED(self):
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
 			# Reset global t variable to now

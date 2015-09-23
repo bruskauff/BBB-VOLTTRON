@@ -102,7 +102,8 @@ _log = logging.getLogger(__name__)
 
 #____________________________________Agent____________________________________#  
 
-# Create a class with the convention <Name>Agent & always include PublishMixin # and BaseAgent as its arguments
+# Create a class with the convention <Name>Agent & always include PublishMixin
+# and BaseAgent as its arguments
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	#Initialize class time variables for on and off
@@ -152,9 +153,11 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 	@matching.match_start('user/mode')
 	def define_mode(self, topic, headers, message, match):
 		# User Agent published message = [old_mode, new_mode]
-		old_mode = jsonapi.loads(message[0])
-		self.mode = jsonapi.loads(message[1])
+		mode_info = jsonapi.loads(message[0])
+		old_mode = mode_info[0]
+		self.mode = mode_info[1]
 		# If manual mode is selected, default interval is 1 second
+		if self.mode == 'manual':
 			self.interval = 1
 			self.blink_LED()
 
@@ -162,8 +165,9 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 	@matching.match_start('user/state')
 	def define_state(self, topic, headers, message, match):
 		# User Agent published message = [old_state, new_state]
-		old_state = jsonapi.loads(message[0])
-		self.state = jsonapi.loads(message[1])
+		state_info = jsonapi.loads(message[0])
+		old_state = state_info[0]
+		self.state = state_info[1]
 
 	# Check for Demand Agent Activity when in Demand/Response Mode
 	@matching.match_start('powercost/demandagent')
@@ -192,7 +196,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			self.blink_LED()
 
 	# Cycle the LED on and off
-	def blink_LED(self)
+	def blink_LED(self):
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
 			# Reset global t variable to now
