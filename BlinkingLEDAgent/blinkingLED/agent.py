@@ -128,6 +128,12 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Initialize reset varible to True
 		self.reset = True
 
+		# Initialize mode to demand/response
+		self.mode = 'demand/response'
+
+		# Initialize state to on
+		self.state = True
+
 	def setup(self):
 		# Demonstrate accessing a value from the config file
 		_log.info(self.config['message'])
@@ -142,28 +148,51 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		# Turn off LED1
 		digitalWrite(self.LED1, LOW)
 
-	# Check for Demand Agent Activity
+	# Check for User Input - Mode
+	@matching.match_start('user/mode')
+	def define_mode(self, topic, headers, message, match):
+		# User Agent published message = [old_mode, new_mode]
+		old_mode = jsonapi.loads(message[0])
+		self.mode = jsonapi.loads(message[1])
+		# If manual mode is selected, default interval is 1 second
+			self.interval = 1
+			self.blink_LED()
+
+	# Check for User Input - State
+	@matching.match_start('user/state')
+	def define_state(self, topic, headers, message, match):
+		# User Agent published message = [old_state, new_state]
+		old_state = jsonapi.loads(message[0])
+		self.state = jsonapi.loads(message[1])
+
+	# Check for Demand Agent Activity when in Demand/Response Mode
 	@matching.match_start('powercost/demandagent')
 	def define_interval(self, topic, headers, message, match):
-		# Utilities Agent publishes message = [cost_level, cost]
+		# Demand Agent publishes message = [cost_level, cost]
 		cost_info = jsonapi.loads(message[0])
 		cost_level = cost_info[0]
 		cost = cost_info[1]
 
-		# Decide what rate to flash the LED at based on cost level
-		if cost_level == 'high':
-			self.interval = 5 # 5 seconds between flashes
-		elif cost_level == 'medium':
-			self.interval = 1 # 1 second between flashes
-		elif cost_level == 'low':
-			self.interval = 0.25 # 1/4 second between flashes
-		else:
-			self.interval = 0.02 # If input isn't valid
+		# Only control LED if in Demand/Response Mode
+		if self.mode == 'demand/response' and self.state == True:
+			# Decide what rate to flash the LED at based on cost level
+			if cost_level == 'high':
+				self.interval = 5 # 5 seconds between flashes
+			elif cost_level == 'medium':
+				self.interval = 1 # 1 second between flashes
+			elif cost_level == 'low':
+				self.interval = 0.25 # 1/4 second between flashes
+			else:
+				self.interval = 0.02 # If input isn't valid
 
-		# Log information & action
-		_log.info("Cost level is %s at $%s, setting interval to %r seconds." %
-				(cost_level, cost, self.interval))
+			# Log information & action
+			_log.info("Cost level is %s at $%s, setting interval to %r seconds."
+					%(cost_level, cost, self.interval))
+	
+			self.blink_LED()
 
+	# Cycle the LED on and off
+	def blink_LED(self)
 		# Deal with LED being on
 		if self.LED_status == True and self.reset == True:
 			# Reset global t variable to now
@@ -172,7 +201,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 		# Calculate how long LED has been on
 		t_diff_on = time.time() - BlinkingLEDAgent.t
-		# Will only keep LED on for .0625, HARD #
+		# Will only keep LED on for .0625, HARD CODED
 		if t_diff_on >= .0625 and self.LED_status == True:
 			# Turn LED off
 			self.LED1_OFF()
@@ -184,7 +213,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 			# Reset global t variable to now
 			BlinkingLEDAgent.t = time.time()
 			self.reset = False
-			
+
 		t_diff_off = time.time() - BlinkingLEDAgent.t
 		# Keep LED off for interval time
 		if t_diff_off >= self.interval and self.LED_status == False:
