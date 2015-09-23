@@ -163,9 +163,11 @@ class UserAgent(PublishMixin, BaseAgent):
 		self.publish_json('user/interval', {}, (old_interval, self.interval))
 
 	# Returns to demand-response mode
-	def return_to_normal(self):
-		msg = 'return'
-		self.publish_json('user/mode', {}, msg)
+	def return_to_normal(self, mode):
+		# Assign old & new mode
+		old_mode, self.mode = self.mode, mode
+		# Publish new state via VOLTTRON
+		self.publish_json('user/mode', {}, (old_mode, self.mode)
 
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
