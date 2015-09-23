@@ -163,7 +163,7 @@ class UserAgent(PublishMixin, BaseAgent):
 		self.publish_json('user/interval', {}, (old_interval, self.interval))
 
 	# Returns to demand-response mode
-	def return_to_normal(self, mode):
+	def mode_change(self, mode):
 		# Assign old & new mode
 		old_mode, self.mode = self.mode, mode
 		# Publish new state via VOLTTRON
@@ -197,17 +197,17 @@ class UserAgent(PublishMixin, BaseAgent):
 					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
 							%response)
 				# Allow LED to respond to demand agent
-				elif response == 'return':
-					self.return_to_normal()
-					file.write('\nLED returning to Demand/Response operation.'
-							'\n\n>>>')
+				elif response == 'demand/response' or response == 'manual':
+					self.mode_change()
+					file.write('\nLED returning to %s operation mode.'
+							'\n\n>>>' %response)
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
-							'| on | off | int | float | return | status |\n\n'
-							'>>>')
+							'| on | off | int | float | return |'
+							' demand/response | manual\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
