@@ -180,7 +180,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		cost_level = cost_info[0]
 		cost = cost_info[1]
 
-		# Only control LED if in Demand/Response Mode
+		# Only control LED if in Demand/Response Mode and state is on
 		if self.mode == 'demand/response' and self.state == True:
 			# Decide what rate to flash the LED at based on cost level
 			if cost_level == 'high':
