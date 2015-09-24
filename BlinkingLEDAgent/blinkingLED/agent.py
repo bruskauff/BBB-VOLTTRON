@@ -168,6 +168,9 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		state_info = jsonapi.loads(message[0])
 		old_state = state_info[0]
 		self.state = state_info[1]
+		# If sate is off, turn off LED
+		if self.state == False:
+			self.LED1_OFF()
 
 	# Check for Demand Agent Activity when in Demand/Response Mode
 	@matching.match_start('powercost/demandagent')
@@ -177,7 +180,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		cost_level = cost_info[0]
 		cost = cost_info[1]
 
-		# Only control LED if in Demand/Response Mode
+		# Only control LED if in Demand/Response Mode and state is on
 		if self.mode == 'demand/response' and self.state == True:
 			# Decide what rate to flash the LED at based on cost level
 			if cost_level == 'high':
