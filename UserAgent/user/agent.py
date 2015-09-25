@@ -188,26 +188,27 @@ class UserAgent(PublishMixin, BaseAgent):
 					self.state_change(True)
 					file.write('\nLED is blinking.\n\n>>>')
 				# Change blinking interval
-				elif isinstance(response, float) == True:
-					self.interval_change(response)
+				elif response == 'interval':
+					file.write('\nRedefine new interval.\n\n>>>')
+					interval = float(file.readline())
+					self.interval_change(interval)
 					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
-							%response)
-				# Change blinking interval
-				elif isinstance(response, int) == True:
-					self.interval_change(response)
-					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
-							%response)
+							%interval)
+					# Automatically switch to manual mode
+					self.mode_change('manual')
+					file.write('\nLED switching to manual operation mode.'
+							'\n\n>>>')
 				# Allow LED to respond to demand agent
 				elif response == 'demand/response' or response == 'manual':
 					self.mode_change(response)
-					file.write('\nLED returning to %s operation mode.'
+					file.write('\nLED switching to %s operation mode.'
 							'\n\n>>>' %response)
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
-							'| on | off | int | float | return |'
+							'| on | off | interval |'
 							' demand/response | manual\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
