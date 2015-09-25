@@ -85,13 +85,17 @@ OUTPUT
 
 #____________________________________Setup____________________________________#
 
-# Import Statements
+# Import Python dependencies
 import logging, sys, time
 
+# Not sure I actually need this
 from zmq.utils import jsonapi
+
+# Import VOLTTRON dependencies
 from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils, matching
 
-from bbio import *	# for BBB, uses PyBBIO module
+# Import PyBBIO library for controlling BBB
+from bbio import *
 
 # Enable information and debug logging
 utils.setup_logging()
@@ -102,8 +106,7 @@ _log = logging.getLogger(__name__)
 
 #____________________________________Agent____________________________________#  
 
-# Create a class with the convention <Name>Agent & always include PublishMixin
-# and BaseAgent as its arguments
+# Blink an LED based off of input from user and demand agents
 class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	#Initialize class time variables for on and off
@@ -112,49 +115,46 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	def __init__(self, config_path, **kwargs):
 		super(BlinkingLEDAgent, self).__init__(**kwargs)
+
+		# load library from config file
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pins
 		self.LED1 = GPIO1_28 #P9_12
-
 		# Initialize GPIO pin mode
 		pinMode(self.LED1, OUTPUT)
-
 		# Initialize output pins to LOW (off)
 		digitalWrite(self.LED1, LOW)
-
 		# Initialize LED status to off
 		self.LED_status = False
-
 		# Initialize reset varible to True
 		self.reset = True
-
 		# Initialize mode to demand/response
 		self.mode = 'demand/response'
-
 		# Initialize state to on
 		self.state = True
 
+	# Additional Setup
 	def setup(self):
-		# Demonstrate accessing a value from the config file
+		# Publish message from config file, usually a setup msg
 		_log.info(self.config['message'])
-		self._agent_id = self.config['agentid']
 		super(BlinkingLEDAgent, self).setup()
 
+	# Turn on LED1
 	def LED1_ON(self):
-		# Turn on LED1
 		digitalWrite(self.LED1, HIGH)
 
+	# Turn off LED1
 	def LED1_OFF(self):
-		# Turn off LED1
 		digitalWrite(self.LED1, LOW)
 
 	# Check for User Input - Mode
 	@matching.match_start('user/mode')
+	# Define the mode of operation, manual or demand/response
 	def define_mode(self, topic, headers, message, match):
 		# User Agent published message = [old_mode, new_mode]
 		mode_info = jsonapi.loads(message[0])
-		old_mode = mode_info[0]
+		old_mode = mode_info[0] # May be utilized in future iteration
 		self.mode = mode_info[1]
 		# If manual mode is selected, default interval is 1 second
 		if self.mode == 'manual':
@@ -163,10 +163,11 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	# Check for User Input - State
 	@matching.match_start('user/state')
+	# Define state of operation, flashing(on) or off
 	def define_state(self, topic, headers, message, match):
 		# User Agent published message = [old_state, new_state]
 		state_info = jsonapi.loads(message[0])
-		old_state = state_info[0]
+		old_state = state_info[0] # May be utilized in future iteration
 		self.state = state_info[1]
 		# If sate is off, turn off LED
 		if self.state == False:
@@ -174,6 +175,7 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 
 	# Check for Demand Agent Activity when in Demand/Response Mode
 	@matching.match_start('powercost/demandagent')
+	# Define the interval while in manual mode
 	def define_interval(self, topic, headers, message, match):
 		# Demand Agent publishes message = [cost_level, cost]
 		cost_info = jsonapi.loads(message[0])

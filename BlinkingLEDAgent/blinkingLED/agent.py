@@ -156,10 +156,19 @@ class BlinkingLEDAgent(PublishMixin, BaseAgent):
 		mode_info = jsonapi.loads(message[0])
 		old_mode = mode_info[0] # May be utilized in future iteration
 		self.mode = mode_info[1]
-		# If manual mode is selected, default interval is 1 second
+		# If manual mode is selected LED will continue blinking at the current
+		# rate until a new interval is defined.
 		if self.mode == 'manual':
-			self.interval = 1
 			self.blink_LED()
+
+	# Check for User Input - Interval
+	@matching.match_start('user/interval')
+	# Define interval of blinking
+	def define_interval(self, topic, headers, message, match):
+		# User Agent publishes message = [old_interval, new_interval]
+		interval_info = jsonapi.loads(message[0])
+		old_interval = interval_info[0] # May be utilized in future iteration
+		self.interval = interval_info[1]
 
 	# Check for User Input - State
 	@matching.match_start('user/state')
