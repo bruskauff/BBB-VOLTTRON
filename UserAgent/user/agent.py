@@ -1,4 +1,4 @@
-#__________________________________Copyright__________________________________#
+ #__________________________________Copyright__________________________________#
 '''
 Copyright (c) 2013, Battelle Memorial Institute
 All rights reserved.
@@ -117,6 +117,7 @@ class UserAgent(PublishMixin, BaseAgent):
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
 		self.state = False
 		self.interval = 0
+		self.mode = 'demand/response'
 
 	# Additional Setup
 	def setup(self):
@@ -133,8 +134,8 @@ class UserAgent(PublishMixin, BaseAgent):
 
 	# Send current state and ask for a new one
 	def ask_input(self, file):
-		file.write('\nRunning: %s.\nCurrent interval: %r.\nEnter new '
-				'command>> ' %(self.state, self.interval))
+		file.write('\nRunning: %s.\nCurrent interval: %r.\n\n>>>'
+				%(self.state, self.interval))
 		
 	# Accept new connections
 	def handle_accept(self, ask_sock):
@@ -163,9 +164,11 @@ class UserAgent(PublishMixin, BaseAgent):
 		self.publish_json('user/interval', {}, (old_interval, self.interval))
 
 	# Returns to demand-response mode
-	def return_to_normal(self):
-		msg = 'return'
-		self.publish_json('user/mode', {}, msg)
+	def mode_change(self, mode):
+		# Assign old & new mode
+		old_mode, self.mode = self.mode, mode
+		# Publish new state via VOLTTRON
+		self.publish_json('user/mode', {}, (old_mode, self.mode))
 
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
@@ -185,27 +188,28 @@ class UserAgent(PublishMixin, BaseAgent):
 					self.state_change(True)
 					file.write('\nLED is blinking.\n\n>>>')
 				# Change blinking interval
-				elif isinstance(response, float) == True:
-					self.interval_change(response)
+				elif response == 'interval':
+					file.write('\nRedefine new interval.\n\n>>>')
+					interval = float(file.readline())
+					self.interval_change(interval)
 					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
-							%response)
-				# Change blinking interval
-				elif isinstance(response, int) == True:
-					self.interval_change(response)
-					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
-							%response)
-				# Allow LED to respond to demand agent
-				elif response == 'return':
-					self.return_to_normal()
-					file.write('\nLED returning to Demand/Response operation.'
+							%interval)
+					# Automatically switch to manual mode
+					self.mode_change('manual')
+					file.write('\nLED switching to manual operation mode.'
 							'\n\n>>>')
+				# Allow LED to respond to demand agent
+				elif response == 'demand/response' or response == 'manual':
+					self.mode_change(response)
+					file.write('\nLED switching to %s operation mode.'
+							'\n\n>>>' %response)
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
-							'| on | off | int | float | return | status |\n\n'
-							'>>>')
+							'| on | off | interval |'
+							' demand/response | manual\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
