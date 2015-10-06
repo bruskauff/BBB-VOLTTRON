@@ -279,8 +279,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			elif low_temp < self.low_deadband:
 				self.LowElement_ON()
 		# Check if either temp readings are below deadband but below low_limit
-		elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
-				(low_temp < self.low_deadband and low_temp >= self.low_limit)):
+		elif (up_temp < self.low_deadband and up_temp >= self.low_limit) or
+				(low_temp < self.low_deadband and low_temp >= self.low_limit):
 			fast = False
 			# Turn HP on
 			self.HP_ON()
