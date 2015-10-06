@@ -1,0 +1,3 @@
+This file is used for sending copied error codes and other messages from the BBB.
+
+Command "/home/debian/volttron/env/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-sog5tk/pandas/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" --quiet install --record /tmp/pip-bq3jCW-record/install-record.txt --single-version-externally-managed --compile --install-headers /home/debian/volttron/env/include/site/python2.7/pandas" failed with error code 1 in /tmp/pip-build-sog5tk/pandas
