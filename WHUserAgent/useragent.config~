@@ -1,0 +1,6 @@
+{
+	"agentid": "HPWH user agent",
+	"message": "I issue orders!",
+	"address": ('127.0.0.1', 7575),
+	"backlog": 5
+}
