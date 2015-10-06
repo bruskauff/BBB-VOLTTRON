@@ -61,19 +61,16 @@ under Contract DE-AC05-76RL01830
 '''
 Brian Ruskauff
 National Renewable Energy Labs (NREL)
-9/8/15
-Referenced from Kathleen Genger's agent.py code for dehumidifier control as well as Lists
+10/5/15
+Referenced from Kathleen Genger's agent.py code for dehumidifier control as well as ListenerAgent.
 
-
-This script was made to output energy costs that fluctuate. It is specifically designed to work with a blinking LED so many things are hard coded and not too realistic. 
-
-It initially runs with a medium energy cost of $0.14. It will output the energy cost every 0.02 seconds(to keep up with the Blinking LED Agent's max speed) and it will change the cost at randome every 10 seconds.
+This script will output energy costs that flucutate. The energy cost schedule is defined using the configuration file that sets the energy cost to the appriate time of day. 
 
 INPUT 
 	- no input is required
 OUTPUT
 	- logs the current cost level and price
-		- topic = 'powercost/demandagent'
+		- topic = 'utility/cost_info'
 		- message = (cost_level, cost)
 '''
 #_____________________________________________________________________________#

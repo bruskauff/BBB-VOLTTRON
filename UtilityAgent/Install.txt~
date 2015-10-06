@@ -1,4 +1,4 @@
-#Instructions for installing the Time of Use Agent into VOLTTRON
+#Instructions for installing the Utility Agent into VOLTTRON
 
 #First copy the entire TOUAgent folder into volttron/Agents
 
@@ -9,9 +9,9 @@ sudo su
 cd volttron
 . env/bin/activate
 volttron -l volttron.log -vv&
-volttron-pkg package Agents/TOUAgent
-volttron-pkg configure /tmp/volttron_wheels/TOUagent-0.1-py2-none-any.whl Agents/TOUAgent/TOUagent.config
-volttron-ctl install /tmp/volttron_wheels/TOUagent-0.1-py2-none-any.whl
+volttron-pkg package Agents/UtilityAgent
+volttron-pkg configure /tmp/volttron_wheels/utilityagent-0.1-py2-none-any.whl Agents/UtilityAgent/utilityagent.config
+volttron-ctl install /tmp/volttron_wheels/utilityagent-0.1-py2-none-any.whl
 
 #Check the status of the install with
 volttron-ctl status

@@ -5,7 +5,6 @@
 #Copy and paste the code below into the lx command line of the BeagleBone Black (BBB).
 #This assumes the BBB was just turned on.
 
-sudo su
 cd volttron
 . env/bin/activate
 volttron -l volttron.log -vv&
