@@ -116,9 +116,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pins
-		self.HP = P8_3	# heat pump relay (RY1)
-		self.up_element = P8_4	# upper element (RY2)
-		self.low_element = P8_5	# lower element (RY3)
+		self.HP = GPIO1_6	# heat pump relay (P8_3, RY1)
+		self.up_element = GPIO1_7	# upper element (P8_4, RY2)
+		self.low_element = GPIO1_2	# lower element (P8_5, RY3)
 		# Initialize GPIO pin mode
 		pinMode(self.HP, OUTPUT)
 		pinMode(self.up_element, OUTPUT)
