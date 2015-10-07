@@ -65,6 +65,11 @@ National Renewable Energy Labs (NREL)
 9/19/15
 Referenced from Kathleen Genger's agent.py code for user control
 
+Connect to the agent using one of the following commands:
+    nc 127.0.0.1 7575
+    netcat 127.0.0.1 7575
+    socat - TCP-CONNECT:127.0.0.1:7575
+    telnet 127.0.0.1 7575
 
 This script was made to allow a user to directly control the blinking rate of an LED connected to a BeagleBone Black. It also allows the user to make the flashing stop and start, but it will not explicitly allow the user to keep the LED on or off. This can be simulated by using a low or high interval respectively.
 
@@ -106,24 +111,24 @@ _log = logging.getLogger(__name__)
 
 #____________________________________Agent____________________________________#
 
-class UserAgent(PublishMixin, BaseAgent):
-	'''Allows user to broadcase messages for BBB control directly from a 		computer on a different network'''
+class HPWHUserAgent(PublishMixin, BaseAgent):
+	'''Allows user to broadcase messages for BBB control directly from a
+			computer on a different network'''
 	
 	# Initialize attributes
 	def __init__(self, config_path, **kwargs):
-		super(UserAgent, self).__init__(**kwargs)
+		super(HPWHUserAgent, self).__init__(**kwargs)
 		'''# Config file includes socket location info
 		self.config = utils.load_config(config_path)'''
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
 		self.state = False
-		self.interval = 0
-		self.mode = 'demand/response'
+		self.temp = 100
 
 	# Additional Setup
 	def setup(self):
 		_log.info('Setting up User Input Agent...')
 		# Always call the base class setup()
-		super(UserAgent, self).setup()
+		super(HPWHUserAgent, self).setup()
 		# Open a socket to listen for incoming connections
 		self.ask_socket = sock = socket.socket()
 		sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -134,8 +139,8 @@ class UserAgent(PublishMixin, BaseAgent):
 
 	# Send current state and ask for a new one
 	def ask_input(self, file):
-		file.write('\nRunning: %s.\nCurrent interval: %r.\n\n>>>'
-				%(self.state, self.interval))
+		file.write('\nRunning: %s.\nCurrent temp: %r.\n\n>>>'
+				%(self.state, self.temp))
 		
 	# Accept new connections
 	def handle_accept(self, ask_sock):
@@ -149,6 +154,13 @@ class UserAgent(PublishMixin, BaseAgent):
 		# Register a callback to receive input from the client.
 		self.reactor.register(file, self.handle_input)
 
+	# Change temp and notify other agents
+	def temp_change(self, temp):
+		# Assign old & new temp
+		old_temp, self.temp = self.temp, temp
+		# Publish new state via VOLTTRON
+		self.publish_json('user/temp', {}, (old_temp, self.temp))
+
 	# Change state and notify other agents
 	def state_change(self, state):
 		# Assign old & new state
@@ -156,19 +168,10 @@ class UserAgent(PublishMixin, BaseAgent):
 		# Publish new state via VOLTTRON
 		self.publish_json('user/state', {}, (old_state, self.state))
 
-	# Change state and notify other agents
-	def interval_change(self, interval):
-		# Assign old & new interval
-		old_interval, self.interval = self.interval, interval
-		# Publish new state via VOLTTRON
-		self.publish_json('user/interval', {}, (old_interval, self.interval))
-
-	# Returns to demand-response mode
-	def mode_change(self, mode):
-		# Assign old & new mode
-		old_mode, self.mode = self.mode, mode
-		# Publish new state via VOLTTRON
-		self.publish_json('user/mode', {}, (old_mode, self.mode))
+	# Input simulated tank temperatures
+	def sim_temp(self, top_temp, bot_temp):
+		# Publish simulated temperatures via VOLTTRON
+		self.publish_json('user/temp_sim', {}, (top_temp, bot_temp))
 
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
@@ -179,37 +182,37 @@ class UserAgent(PublishMixin, BaseAgent):
 			response = response.strip() #strip gets rid of end line character
 			# If there is a valid response
 			if response:
-				# Turn LED blinking off
+				# Turn the water heater off
 				if response == 'off':
 					self.state_change(False)
-					file.write('\nLED is off.\n\n>>>')
-				# Turn LED blinking on
+					file.write('\nTurning HPWH off...\n\n>>>')
+				# Turn the water heater on
 				elif response == 'on':
 					self.state_change(True)
-					file.write('\nLED is blinking.\n\n>>>')
-				# Change blinking interval
-				elif response == 'interval':
-					file.write('\nRedefine new interval.\n\n>>>')
-					interval = float(file.readline())
-					self.interval_change(interval)
-					file.write('\nNew interval set to: %r seconds.\n\n>>>' 
-							%interval)
-					# Automatically switch to manual mode
-					self.mode_change('manual')
-					file.write('\nLED switching to manual operation mode.'
-							'\n\n>>>')
-				# Allow LED to respond to demand agent
-				elif response == 'demand/response' or response == 'manual':
-					self.mode_change(response)
-					file.write('\nLED switching to %s operation mode.'
-							'\n\n>>>' %response)
+					file.write('\nTurning HPWH on...\n\n>>>')
+				# Change desired temperature
+				elif response == 'temperature':
+					file.write('\nRedefine new temperature.\n\n>>>')
+					temp = float(file.readline())
+					self.temp_change(temp)
+					file.write('\nNew temperature set to: %r F.\n\n>>>' 
+							%temp)
+				# Chnage the simulated temperature
+				elif response == 'simulate':
+					file.write('\nDefine upper tank temperature.\n\n>>>')
+					top_temp = float(file.readline())
+					file.write('\nDefine lower tank temperature.\n\n>>>')
+					bot_temp = float(file.readline())
+					self.sim_temp(top_temp, bot_temp)
+					file.write('\nUpper temp: %r F\nLower temp: %r F.\n\n>>>'
+							%(top_temp, bot_temp))
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
-							'| on | off | interval |'
-							' demand/response | manual\n\n>>>')
+							'| on | off | temperature | simulate | status'
+									' |\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
@@ -222,7 +225,7 @@ class UserAgent(PublishMixin, BaseAgent):
 def main(argv=sys.argv):
     '''Main method called by the eggsecutable.'''
     try:
-        utils.default_main(UserAgent, description='Gives Direct Control', argv=argv)
+        utils.default_main(HPWHUserAgent, description='Gives Direct Control', argv=argv)
     except Exception as e:
         _log.exception('unhandled exception')
 
