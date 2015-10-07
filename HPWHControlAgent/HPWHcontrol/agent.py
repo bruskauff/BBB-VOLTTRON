@@ -134,6 +134,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		_log.info(self.config['message'])
 		super(HPWHControlAgent, self).setup()
 
+	# Turn everything off
+	def all_off(self):
+		# Make sure heating elements are off
+		digitalWrite(self.up_element, LOW)
+		digitalWrite(self.low_element, LOW)
+		# Turn the HP off
+		digitalWrite(self.HP, LOW)
+		# Turn the fans off
+		self.fans_OFF()
+	
 	# Turn on Fans
 	def fans_ON(self):
 		print "Fans on"
@@ -152,16 +162,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Turn the HP on
 		digitalWrite(self.HP, HIGH)
 
-	# Turn off HP
-	def HP_OFF(self):
-		# Make sure heating elements are off
-		digitalWrite(self.up_element, LOW)
-		digitalWrite(self.low_element, LOW)
-		# Turn the HP off
-		digitalWrite(self.HP, LOW)
-		# Turn the fans off
-		self.fans_OFF()
-
 	# Turn on Upper Element
 	def UpElement_ON(self):
 		# Make sure lower heating element, hp and fans are off
@@ -170,15 +170,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.fans_OFF()
 		# Turn the upper heating element on
 		digitalWrite(self.up_element, HIGH)
-
-	# Turn off Upper Element
-	def UpElement_OFF(self):
-		# Make sure lower heating element, hp and fans are off
-		digitalWrite(self.low_element, LOW)
-		digitalWrite(self.HP, LOW)
-		self.fans_OFF()
-		# Turn the upper heating element off
-		digitalWrite(self.up_element, LOW)
 
 	# Turn on Lower Element
 	def LowElement_ON(self):
@@ -189,22 +180,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Turn the lower heating element on
 		digitalWrite(self.low_element, HIGH)
 
-	# Turn off Lower Element
-	def LowElement_OFF(self):
-		# Make sure upper heating element, hp and fans are off
-		digitalWrite(self.up_element, LOW)
-		digitalWrite(self.HP, LOW)
-		self.fans_OFF()
-		# Turn the lower heating element off
-		digitalWrite(self.low_element, LOW)
-
 	# Check for User Input - Temperature
 	@matching.match_start('user/temp')
 	# Define the desired temperature
 	def define_temp(self, topic, headers, message, match):
 		# User Agent published message = [temp]
 		temp_info = jsonapi.loads(message[0])
-		self.desired_temp = temp_info[1]
+		self.desired_temp = temp_info[0]
 		# High deadband limit is 5F above desired temp
 		self.hi_deadband = self.desired_temp + 5
 		# Low deadband limit is 5F below desired temp
@@ -212,17 +194,22 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Lowest limit before elements turn on is 20F below desired temp
 		self.low_limit = self.desired_temp - 20
 
-	# Check for User Input - Mode
-	@matching.match_start('user/mode')
-	# Define state of operation: HP, upper element, lower element, off, on(auto)
+	# Check for User Input - state
+	@matching.match_start('user/state')
+	# Define state of operation: On (True) or Off (False)
 	def define_mode(self, topic, headers, message, match):
-		# User Agent published message = [old_mode, new_mode]
-		mode_info = jsonapi.loads(message[0])
-		old_mode = state_info[0] # May be utilized in future iteration
-		self.mode = state_info[1]
-		# If sate is off, turn off LED
-		if self.state == False:
-			self.LED1_OFF()
+		# User Agent published message = [old_state, new_state]
+		state_info = jsonapi.loads(message[0])
+		old_state = state_info[0] # May be utilized in future iteration
+		self.state = state_info[1]
+
+	# Use User Agent to simulate & test temp input
+	@matching.match_start('user/temp_sim')
+	def set_temp(self, topic, headers, message, match):
+		# User agent publishes message = [up_temp, low_temp]
+		temp_info = jsonapi.loads(message[0])
+		self.up_temp = temp_info[0]
+		self.low_temp = temp_info[1]
 
 	# Check for utility Agent Activity
 	@matching.match_start('utility/power_cost')
@@ -248,42 +235,38 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
 				%(cost_level, cost, self.low_deadband, self.hi_deadband))
 
-	# Use User Agent to simulate & test temp input
-	@matching.match_start('user/temp_sim')
-	def set_temp(self, topic, headers, message, match):
-		# User agent publishes message = [up_temp, low_temp]
-		temp_info = jsonapi.loads(message[0])
-		self.up_temp = temp_info[0]
-		self.low_temp = temp_info[1]
-
 	# Check temperature periodically and adjust controls accordingly
 	@periodic(settings.interval)
 	# Adjust controls accroding to temperature
 	def HPWH_Control(self):
-		# Check if both temp readings are in deadband
-		if up_temp >= self.low_deadband and low_temp >= self.low_deadband:
-			# Turn everything off
-			self.HP_OFF()
-			self.UpElement_OFF()
-			self.LowElement_OFF()
-			# Fast is a conditional variable to signal quick heating is needed
-			fast = False
-		# Check if either temp readings are below low_limit
-		elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
-				(low_temp < self.low_deadband and fast == True)):
-			fast = True
-			# If upper temp is too cold turn on the upper heating element
-			if up_temp < self.low_deadband:
-				self.UpElement_ON()
-			# If only lower temp is too cold turn on lower heating element
-			elif low_temp < self.low_deadband:
-				self.LowElement_ON()
-		# Check if either temp readings are below deadband but below low_limit
-		elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
-				(low_temp < self.low_deadband and low_temp >= self.low_limit)):
-			fast = False
-			# Turn HP on
-			self.HP_ON()
+		if self.state == False:
+			self.all_off()
+			_log.info("HPWH is off")
+		elif self.state == True:
+			# Check if both temp readings are in deadband
+			if up_temp >= self.low_deadband and low_temp >= self.low_deadband:
+				# Turn everything off
+				self.all_OFF()
+				# Fast is a variable to signal quick heating is needed
+				fast = False
+			# Check if either temp readings are below low_limit
+			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
+					(low_temp < self.low_deadband and fast == True)):
+				fast = True
+				# If upper temp is too cold turn on the upper heating element
+				if up_temp < self.low_deadband:
+					self.UpElement_ON()
+				# If only lower temp is too cold turn on lower heating element
+				elif low_temp < self.low_deadband:
+					self.LowElement_ON()
+			# Check if either temp readings are below deadband but below
+					# low_limit
+			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
+					(low_temp < self.low_deadband and low_temp >= 
+							self.low_limit)):
+				fast = False
+				# Turn HP on
+				self.HP_ON()
 #_____________________________________________________________________________#
 
 
