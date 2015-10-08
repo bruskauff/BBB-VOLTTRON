@@ -14,6 +14,7 @@ sudo su
 cd volttron
 . env/bin/activate
 volttron -l volttron.log -vv&
+
 volttron-pkg package Agents/HPWHControlAgent
 volttron-pkg configure /tmp/volttron_wheels/HPWHcontrolagent-0.1-py2-none-any.whl Agents/HPWHControlAgent/HPWHcontrolagent.config
 volttron-ctl install /tmp/volttron_wheels/HPWHcontrolagent-0.1-py2-none-any.whl

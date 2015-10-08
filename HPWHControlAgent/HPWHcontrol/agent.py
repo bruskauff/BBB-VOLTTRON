@@ -116,9 +116,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pins
-		self.HP = GPIO1_6	# heat pump relay (P8_3, RY1)
-		self.up_element = GPIO1_7	# upper element (P8_4, RY2)
-		self.low_element = GPIO1_2	# lower element (P8_5, RY3)
+		self.HP = GPIO0_26	# heat pump relay (P8_3, RY1)
+		self.up_element = GPIO1_15	# upper element (P8_4, RY2)
+		self.low_element = GPIO1_14	# lower element (P8_5, RY3)
 		# Initialize GPIO pin mode
 		pinMode(self.HP, OUTPUT)
 		pinMode(self.up_element, OUTPUT)
@@ -128,6 +128,22 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		digitalWrite(self.up_element, LOW)
 		digitalWrite(self.low_element, LOW)
 
+		self.state = False
+		self.fast = False
+
+		# Initialize up & lower temps
+		self.up_temp = 100
+		self.low_temp = 100
+
+		# Initialize default temp
+		self.desired_temp = 100
+		# High deadband limit is 5F above desired temp
+		self.hi_deadband = self.desired_temp + 5
+		# Low deadband limit is 5F below desired temp
+		self.low_deadband = self.desired_temp - 5
+		# Lowest limit before elements turn on is 20F below desired temp
+		self.low_limit = self.desired_temp - 20
+
 	# Additional Setup
 	def setup(self):
 		# Publish message from config file, usually a setup msg
@@ -135,7 +151,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		super(HPWHControlAgent, self).setup()
 
 	# Turn everything off
-	def all_off(self):
+	def all_OFF(self):
 		# Make sure heating elements are off
 		digitalWrite(self.up_element, LOW)
 		digitalWrite(self.low_element, LOW)
@@ -184,9 +200,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	@matching.match_start('user/temp')
 	# Define the desired temperature
 	def define_temp(self, topic, headers, message, match):
-		# User Agent published message = [temp]
+		# User Agent published message = [old_temp, new_temp]
 		temp_info = jsonapi.loads(message[0])
-		self.desired_temp = temp_info[0]
+		self.desired_temp = temp_info[1]
 		# High deadband limit is 5F above desired temp
 		self.hi_deadband = self.desired_temp + 5
 		# Low deadband limit is 5F below desired temp
@@ -204,7 +220,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.state = state_info[1]
 
 	# Use User Agent to simulate & test temp input
-	@matching.match_start('user/temp_sim')
+	@matching.match_start('user/sim_temp')
 	def set_temp(self, topic, headers, message, match):
 		# User agent publishes message = [up_temp, low_temp]
 		temp_info = jsonapi.loads(message[0])
@@ -239,8 +255,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	@periodic(settings.interval)
 	# Adjust controls accroding to temperature
 	def HPWH_Control(self):
+		up_temp = self.up_temp
+		low_temp = self.low_temp
 		if self.state == False:
-			self.all_off()
+			self.all_OFF()
 			_log.info("HPWH is off")
 		elif self.state == True:
 			# Check if both temp readings are in deadband
@@ -248,25 +266,32 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				# Turn everything off
 				self.all_OFF()
 				# Fast is a variable to signal quick heating is needed
-				fast = False
+				self.fast = False
+				_log.info("Temperature acceptable. All off")
+				_log. info("TD: %r, TU: %r, TL: %r" %(self.desired_temp,
+						self.up_temp, self.low_temp))
 			# Check if either temp readings are below low_limit
 			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
-					(low_temp < self.low_deadband and fast == True)):
-				fast = True
+					(low_temp < self.low_deadband and self.fast == True)):
+				self.fast = True
+				_log.info("Temperature is really low, heating w/ elements...")
 				# If upper temp is too cold turn on the upper heating element
 				if up_temp < self.low_deadband:
 					self.UpElement_ON()
+					_log.info("Heating with upper element")
 				# If only lower temp is too cold turn on lower heating element
 				elif low_temp < self.low_deadband:
 					self.LowElement_ON()
+					_log.info("Heating with lower element")
 			# Check if either temp readings are below deadband but below
 					# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
 					(low_temp < self.low_deadband and low_temp >= 
 							self.low_limit)):
-				fast = False
+				self.fast = False
 				# Turn HP on
 				self.HP_ON()
+				_log.info("Temperature is low, heating w/ heat pump...")
 #_____________________________________________________________________________#
 
 
