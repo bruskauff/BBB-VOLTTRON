@@ -171,7 +171,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 	# Input simulated tank temperatures
 	def sim_temp(self, top_temp, bot_temp):
 		# Publish simulated temperatures via VOLTTRON
-		self.publish_json('user/temp_sim', {}, (top_temp, bot_temp))
+		self.publish_json('user/sim_temp', {}, (top_temp, bot_temp))
 
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
