@@ -132,6 +132,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 		self.state = False
 		self.fast = False
+		self.cost_level = "medium"
+		self.cost = 0
 
 		# Initialize up & lower temps
 		self.up_temp = 100
@@ -200,10 +202,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 	# Log information and reaction
 	def logger_guy(self, reaction):
-		_log.info("Cost level: %s at %s, Desired Temp: %sF, Deadband: %sF to "
-				"%sF, Low Limit: %sF. %s." %(self.cost_level, self.cost, 
+		_log.info("Cost level: %s at $%s, Desired Temp: %sF, Deadband: %sF to "
+				"%sF, Low Limit: %sF. %s" %(self.cost_level, self.cost, 
 				self.desired_temp, self.low_deadband, self.hi_deadband, 
 				self.low_limit, reaction))
+
+	# Define Deadbands
+	def deadbands(self, hi, low, loww):
+		self.hi_deadband = self.desired_temp + hi
+		self.low_deadband = self.desired_temp + low
+		self.low_limit = self.desired_temp + loww
 
 	# Check for User Input - Temperature
 	@matching.match_start('user/temp')
@@ -212,12 +220,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# User Agent published message = [old_temp, new_temp]
 		temp_info = jsonapi.loads(message[0])
 		self.desired_temp = temp_info[1]
+		# Define Deadbands
+		self.deadbands(5, -5, -20)
 		# High deadband limit is 5F above desired temp
-		self.hi_deadband = self.desired_temp + 5
 		# Low deadband limit is 5F below desired temp
-		self.low_deadband = self.desired_temp - 5
 		# Lowest limit before elements turn on is 20F below desired temp
-		self.low_limit = self.desired_temp - 20
 
 	# Check for User Input - state
 	@matching.match_start('user/state')
@@ -237,9 +244,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.low_temp = temp_info[1]
 
 	# Check for utility Agent Activity
-	@matching.match_start('utility/power_cost')
+	@matching.match_start('utility/cost_info')
 	# Adjust temp settings based on power level
-	def define_interval(self, topic, headers, message, match):
+	def import_costs(self, topic, headers, message, match):
 		# Utility Agent publishes message = [cost_level, cost]
 		cost_info = jsonapi.loads(message[0])
 		self.cost_level = cost_info[0]
@@ -248,17 +255,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		if self.cost_level == 'low':
 			print "Keep deadband in current location"
 		elif self.cost_level == 'medium':
-			# Shift low_limit 5F lower
-			self.low_limit = self.desired_temp - 25
+			# Shift low_limit 5F lower to 25F below desired temp
+			self.deadbands(5, -5, -25)
 		elif self.cost_level == 'high':
 			# Shift low_limit and deadband 5F lower
-			self.hi_deadband = self.desired_temp + 0
-			self.low_deadband = self.desired_temp - 10
-			self.low_limit = self.desired_temp - 25
+			self.deadbands(0, -10, -25)
 
 		# Log information & action
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
-				%(self.cost_level, cost, self.low_deadband, self.hi_deadband))
+				%(self.cost_level, self.cost, self.low_deadband,
+						self.hi_deadband))
 
 	# Check temperature periodically and adjust controls accordingly
 	@periodic(settings.interval)
@@ -268,7 +274,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		low_temp = self.low_temp
 		if self.state == False:
 			self.all_OFF()
-			_log.info("HPWH is off.")
+			reaction = "HPWH is off. Turn on for water heating."
+			self.logger_guy(reaction)
 		elif self.state == True:
 			# Check if both temp readings are in deadband
 			if up_temp >= self.low_deadband and low_temp >= self.low_deadband:
@@ -281,21 +288,22 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				self.logger_guy(reaction)
 			# Check if either temp readings are below low_limit
 			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
-					(low_temp < self.low_deadband and self.fast == True)):
+					(low_temp < self.desired_temp and self.fast == True)):
 				self.fast = True
-				_log.info("Temperature is really low, heating w/ elements...")
 				# If upper temp is too cold turn on the upper heating element
-				if up_temp < self.low_deadband:
+				if up_temp < self.desired_temp:
 					self.UpElement_ON()
-				reaction = "Temperature is really low. Heating w/ upper element"
-				self.logger_guy(reaction)
+					reaction = ("Temperature is really low."
+							" Heating w/ upper element")
+					self.logger_guy(reaction)
 				# If only lower temp is too cold turn on lower heating element
-				elif low_temp < self.low_deadband:
+				elif low_temp < self.desired_temp:
 					self.LowElement_ON()
-				reaction = "Temperature is really low. Heating w/ lower element"
-				self.logger_guy(reaction)
-			# Check if either temp readings are below deadband but below
-					# low_limit
+					reaction = ("Temperature is really low."
+							" Heating w/ lower element")
+					self.logger_guy(reaction)
+			# Check if either temp readings are below deadband but above
+			# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
 					(low_temp < self.low_deadband and low_temp >= 
 							self.low_limit)):
