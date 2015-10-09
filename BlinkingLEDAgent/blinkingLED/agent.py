@@ -70,14 +70,19 @@ This code was made to modulate the blinking rate of an LED. At low energy costs 
 This script can also allow direct user control of the LED flash interval. It will also let the user turn the flashing on or off.
 
 INPUT 
-	- signal from DemandAgent with [costlevel, cost]
-		- costlevel is 'high', 'medium', or 'low'
-		- cost is a float in dollars
-	- signal from UserAgent with [state, interval]
-		- state is 'ON' or 'OFF'
-		- interval
+	- signal from DemandAgent with:
+		- tpoic = 'powercost/demandagent'
+		- message = [power_level, power_cost]
+	- signal from UserAgent with:
+		- topic = 'user/mode'
+		- message = [old_mode, new_mode]
+		- topic = 'user/interval'
+		- message = [old_interval, new_interval]
+		- topic = 'user/state'
+		- message = [old_state, new_state]
 OUTPUT
 	- logs the inputted cost level, cost, and interval
+	- pysically controls the BBB GPIO pins
 '''
 #_____________________________________________________________________________#
 
