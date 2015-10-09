@@ -1,14 +1,15 @@
-#Instructions for installing the HPWH Control Agent into VOLTTRON
+# Instructions for installing the HPWH Control Agent into VOLTTRON
 
-#Make sure that when VOLTTRON is activated PyBBIO is installed. It may show up 
-#while volttron is not active but I needed to reinstall it while volttron was 
-#active
+# Make sure that when VOLTTRON is activated PyBBIO is installed. It may show up 
+# while volttron is not active but I needed to reinstall it while volttron was 
+# active
 
-#Copy the entire HPWHControlAgent folder into volttron/Agents
+# Copy the entire HPWHControlAgent folder into volttron/Agents
 
-#Copy and paste the code below into the lx command line of the BeagleBone Black 
-#(BBB).
-#This assumes the BBB was just turned on.
+# Copy and paste the code below into the lx command line of the BeagleBone Black 
+# (BBB).
+# This assumes the BBB was just turned on.
+# Super User is required to operate the pins on the BBB.
 
 sudo su
 cd volttron

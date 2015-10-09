@@ -61,23 +61,25 @@ under Contract DE-AC05-76RL01830
 '''
 Brian Ruskauff
 National Renewable Energy Labs (NREL)
-9/8/15
+10/9/15
 Referenced from Kathleen Genger's agent.py code for dehumidifier control as well as ListenerAgent
 
 
-This code was made to modulate the blinking rate of an LED. At low energy costs it will blink the LED every 1/4 of a second. At medium energy rates it will blink the LED every 1 second. At high energy rates it will blink the LED every 5 seconds. The duration of the on cycle is fixed at 1/16 of a second. If it is receiving an invalid signal from the demand agent it will blink the LED every 0.02 seconds to appear to be always on (use for debugging).
-
-This script can also allow direct user control of the LED flash interval. It will also let the user turn the flashing on or off.
+This code was made as a replacement for the controls implemented in a heat pump water heater (HPWH). 
 
 INPUT 
-	- signal from DemandAgent with [costlevel, cost]
+	- signal from UtilityAgent with [costlevel, cost]
 		- costlevel is 'high', 'medium', or 'low'
 		- cost is a float in dollars
-	- signal from UserAgent with [state, interval]
-		- state is 'ON' or 'OFF'
-		- interval
+	- signals from HPWHUserAgent with:
+		- topic = 'user/temp'
+		- message = [old_temp, new_temp]
+		- topic = 'user/state'
+		- message = [old_state, new_state]
+		- topic = 'user/sim_temp'
+		- message = [up_temp, low_temp]
 OUTPUT
-	- logs the inputted cost level, cost, and interval
+	- logs the inputted cost level, cost, and heating response.
 '''
 #_____________________________________________________________________________#
 
@@ -196,6 +198,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Turn the lower heating element on
 		digitalWrite(self.low_element, HIGH)
 
+	# Log information and reaction
+	def logger_guy(self, reaction):
+		_log.info("Cost level: %s at %s, Desired Temp: %sF, Deadband: %sF to "
+				"%sF, Low Limit: %sF. %s." %(self.cost_level, self.cost, 
+				self.desired_temp, self.low_deadband, self.hi_deadband, 
+				self.low_limit, reaction))
+
 	# Check for User Input - Temperature
 	@matching.match_start('user/temp')
 	# Define the desired temperature
@@ -233,15 +242,15 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	def define_interval(self, topic, headers, message, match):
 		# Utility Agent publishes message = [cost_level, cost]
 		cost_info = jsonapi.loads(message[0])
-		cost_level = cost_info[0]
-		cost = cost_info[1]
+		self.cost_level = cost_info[0]
+		self.cost = cost_info[1]
 
-		if cost_level == 'low':
+		if self.cost_level == 'low':
 			print "Keep deadband in current location"
-		elif cost_level == 'medium':
+		elif self.cost_level == 'medium':
 			# Shift low_limit 5F lower
 			self.low_limit = self.desired_temp - 25
-		elif cost_level == 'high':
+		elif self.cost_level == 'high':
 			# Shift low_limit and deadband 5F lower
 			self.hi_deadband = self.desired_temp + 0
 			self.low_deadband = self.desired_temp - 10
@@ -249,7 +258,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 		# Log information & action
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
-				%(cost_level, cost, self.low_deadband, self.hi_deadband))
+				%(self.cost_level, cost, self.low_deadband, self.hi_deadband))
 
 	# Check temperature periodically and adjust controls accordingly
 	@periodic(settings.interval)
@@ -259,7 +268,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		low_temp = self.low_temp
 		if self.state == False:
 			self.all_OFF()
-			_log.info("HPWH is off")
+				reaction = "HPWH is off. Turn on for water heating."
+				self.logger_guy(reaction)
 		elif self.state == True:
 			# Check if both temp readings are in deadband
 			if up_temp >= self.low_deadband and low_temp >= self.low_deadband:
@@ -267,22 +277,23 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				self.all_OFF()
 				# Fast is a variable to signal quick heating is needed
 				self.fast = False
-				_log.info("Temperature acceptable. All off")
-				_log. info("TD: %r, TU: %r, TL: %r" %(self.desired_temp,
-						self.up_temp, self.low_temp))
+				# Log information and reaction
+				reaction = "Temperature acceptable. All off"
+				self.logger_guy(reaction)
 			# Check if either temp readings are below low_limit
 			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.low_deadband and self.fast == True)):
 				self.fast = True
-				_log.info("Temperature is really low, heating w/ elements...")
 				# If upper temp is too cold turn on the upper heating element
 				if up_temp < self.low_deadband:
 					self.UpElement_ON()
-					_log.info("Heating with upper element")
+				reaction = "Temperature is really low. Heating w/ upper element"
+				self.logger_guy(reaction)
 				# If only lower temp is too cold turn on lower heating element
 				elif low_temp < self.low_deadband:
 					self.LowElement_ON()
-					_log.info("Heating with lower element")
+				reaction = "Temperature is really low. Heating w/ lower element"
+				self.logger_guy(reaction)
 			# Check if either temp readings are below deadband but below
 					# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
@@ -291,7 +302,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				self.fast = False
 				# Turn HP on
 				self.HP_ON()
-				_log.info("Temperature is low, heating w/ heat pump...")
+				reaction = "Temperature is low. Heating w/ heat pump"
+				self.logger_guy(reaction)
 #_____________________________________________________________________________#
 
 
