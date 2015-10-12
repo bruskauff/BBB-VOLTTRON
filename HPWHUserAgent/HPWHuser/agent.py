@@ -122,7 +122,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)'''
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
 		self.state = False
-		self.temp = 100
+		self.temp = 120
 
 	# Additional Setup
 	def setup(self):
@@ -194,10 +194,14 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 				elif response == 'temperature':
 					file.write('\nRedefine new temperature.\n\n>>>')
 					temp = float(file.readline())
-					self.temp_change(temp)
-					file.write('\nNew temperature set to: %r F.\n\n>>>' 
-							%temp)
-				# Chnage the simulated temperature
+					if 100 <= temp <= 140:
+						self.temp_change(temp)
+						file.write('\nNew temperature set to: %r F.\n\n>>>' 
+								%temp)
+					else:
+						file.write('\nTemp must be between 100F and 140F.'
+								'\n\n>>>')
+				# Change the simulated temperature
 				elif response == 'simulate':
 					file.write('\nDefine upper tank temperature.\n\n>>>')
 					top_temp = float(file.readline())
