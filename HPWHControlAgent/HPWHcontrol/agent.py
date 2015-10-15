@@ -79,6 +79,12 @@ INPUT
 		- topic = 'user/sim_temp'
 		- message = [up_temp, low_temp]
 OUTPUT
+	- when outputting state
+		- topic = 'control/state'
+		- message = [state]
+	- when outputting operation mode
+		- topic = 'control/mode'
+		- message = [mode]
 	- logs the inputted cost level, cost, and heating response.
 '''
 #_____________________________________________________________________________#
@@ -118,29 +124,38 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pins
+		self.fan1 = some_gpio
+		self.fan2 = some_gpio
 		self.HP = GPIO0_26	# heat pump relay (P8_3, RY1)
 		self.up_element = GPIO1_15	# upper element (P8_4, RY2)
 		self.low_element = GPIO1_14	# lower element (P8_5, RY3)
 		# Initialize GPIO pin mode
+		pinMode(self.fan1, OUTPUT)
+		pinMode(self.fan2, OUTPUT)
 		pinMode(self.HP, OUTPUT)
 		pinMode(self.up_element, OUTPUT)
 		pinMode(self.low_element, OUTPUT)
+
 		# Initialize output pins to LOW (off)
+		digitalWrite(self.fan1, LOW)
+		digitalWrite(self.fan2, LOW)
 		digitalWrite(self.HP, LOW)
 		digitalWrite(self.up_element, LOW)
 		digitalWrite(self.low_element, LOW)
 
+		# Initialize flags
 		self.state = False
 		self.fast = False
-		self.cost_level = "medium"
+		self.mode = "off"
+		self.cost_level = "low"
 		self.cost = 0
 
-		# Initialize up & lower temps
-		self.up_temp = 100
-		self.low_temp = 100
+		# Initialize upper & lower sensor temps (set to same as desired_temp)
+		self.up_temp = 120
+		self.low_temp = 120
 
 		# Initialize default temp
-		self.desired_temp = 100
+		self.desired_temp = 120
 		# High deadband limit is 5F above desired temp
 		self.hi_deadband = self.desired_temp + 5
 		# Low deadband limit is 5F below desired temp
@@ -166,11 +181,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	
 	# Turn on Fans
 	def fans_ON(self):
-		print "Fans on"
+		digitalWrite(self.fan1, HIGH)
+		digitalWrite(self.fan2, HIGH)
 	
 	# Turn off Fans
 	def fans_OFF(self):
-		print "Fans off"
+		digitalWrite(self.fan1, LOW)
+		digitalWrite(self.fan2, LOW)
 
 	# Turn on HP
 	def HP_ON(self):
@@ -266,9 +283,14 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				%(self.cost_level, self.cost, self.low_deadband,
 						self.hi_deadband))
 
+	@periodic(settings.pub_int)
+	# Publish the current mode of operation and tank temperature
+	def communicate(self)
+		self.publish_json('control/state', {}, (self.state)
+		self.publish_json('control/mode', {}, self.mode)
+
+	@periodic(settings.mode_int)
 	# Check temperature periodically and adjust controls accordingly
-	@periodic(settings.interval)
-	# Adjust controls accroding to temperature
 	def HPWH_Control(self):
 		up_temp = self.up_temp
 		low_temp = self.low_temp
@@ -276,6 +298,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			self.all_OFF()
 			reaction = "HPWH is off. Turn on for water heating."
 			self.logger_guy(reaction)
+			self.mode = "off"
 		elif self.state == True:
 			# Check if both temp readings are in deadband
 			if up_temp >= self.low_deadband and low_temp >= self.low_deadband:
@@ -284,8 +307,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				# Fast is a variable to signal quick heating is needed
 				self.fast = False
 				# Log information and reaction
-				reaction = "Temperature acceptable. All off"
+				reaction = "Temperature acceptable. All off."
 				self.logger_guy(reaction)
+				self.mode = "standby"
 			# Check if either temp readings are below low_limit
 			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.desired_temp and self.fast == True)):
@@ -294,14 +318,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				if up_temp < self.desired_temp:
 					self.UpElement_ON()
 					reaction = ("Temperature is really low."
-							" Heating w/ upper element")
+							" Heating w/ upper element.")
 					self.logger_guy(reaction)
+					self.mode = "Heating w/ upper element"
 				# If only lower temp is too cold turn on lower heating element
 				elif low_temp < self.desired_temp:
 					self.LowElement_ON()
 					reaction = ("Temperature is really low."
-							" Heating w/ lower element")
+							" Heating w/ lower element.")
 					self.logger_guy(reaction)
+					self.mode = "Heating w/ lower element."
 			# Check if either temp readings are below deadband but above
 			# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
@@ -310,13 +336,14 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				self.fast = False
 				# Turn HP on
 				self.HP_ON()
-				reaction = "Temperature is low. Heating w/ heat pump"
+				reaction = "Temperature is low. Heating w/ heat pump."
 				self.logger_guy(reaction)
+				self.mode = "Heating w/ heat pump."
 #_____________________________________________________________________________#
 
 
 
-#___________________________________Closure___________________________________#
+#________________________________Platform Stuff_______________________________#
 
 # Enable Agent to parse arguments on the command line by the agent launcher
 def main(argv=sys.argv):
