@@ -285,8 +285,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 	@periodic(settings.pub_int)
 	# Publish the current mode of operation and tank temperature
-	def communicate(self)
-		self.publish_json('control/state', {}, (self.state)
+	def communicate(self):
+		self.publish_json('control/state', {}, self.state)
 		self.publish_json('control/mode', {}, self.mode)
 
 	@periodic(settings.mode_int)
