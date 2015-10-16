@@ -124,11 +124,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pins
-		self.fan1 = some_gpio
-		self.fan2 = some_gpio
-		self.HP = GPIO0_26	# heat pump relay (P8_3, RY1)
-		self.up_element = GPIO1_15	# upper element (P8_4, RY2)
-		self.low_element = GPIO1_14	# lower element (P8_5, RY3)
+		self.fan1 = GPIO0_35	# fan 1 (P8_6)
+		self.fan2 = GPIO0_66	# fan 2 (P8_7)
+		self.HP = GPIO0_38	# heat pump relay (P8_3, RY1)
+		self.up_element = GPIO1_39	# upper element (P8_4, RY2)
+		self.low_element = GPIO1_34	# lower element (P8_5, RY3)
 		# Initialize GPIO pin mode
 		pinMode(self.fan1, OUTPUT)
 		pinMode(self.fan2, OUTPUT)
@@ -286,7 +286,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	@periodic(settings.pub_int)
 	# Publish the current mode of operation and tank temperature
 	def communicate(self):
-		self.publish_json('control/state', {}, (self.state)
+		self.publish_json('control/state', {}, self.state)
 		self.publish_json('control/mode', {}, self.mode)
 
 	@periodic(settings.mode_int)
