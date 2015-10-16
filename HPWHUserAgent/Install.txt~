@@ -10,10 +10,9 @@ cd volttron
 volttron -l volttron.log -vv&
 
 
-volttron-pkg package Agents/UserAgent
+volttron-pkg package Agents/HPWHUserAgent
 volttron-pkg configure /tmp/volttron_wheels/HPWHuseragent-0.1-py2-none-any.whl Agents/HPWHUserAgent/HPWHuseragent.config
 volttron-ctl install /tmp/volttron_wheels/HPWHuseragent-0.1-py2-none-any.whl
 
 #Check the status of the install with
 volttron-ctl status
-

@@ -98,8 +98,8 @@ OUTPUT
 #____________________________________Setup____________________________________#
 
 # Import required modules
-import logging, sys, datetime, socket
-from volttron.platform.agent import BaseAgent, PublishMixin, periodic, utils
+import logging, sys, datetime, socket, settings
+from volttron.platform.agent import BaseAgent, PublishMixin, utils, matching
 from zmq.utils import jsonapi
 
 # Setup logging
@@ -113,7 +113,7 @@ _log = logging.getLogger(__name__)
 
 class HPWHUserAgent(PublishMixin, BaseAgent):
 	'''Allows user to broadcase messages for BBB control directly from a
-			computer on a different network'''
+			computer on the same network'''
 	
 	# Initialize attributes
 	def __init__(self, config_path, **kwargs):
@@ -122,7 +122,8 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)'''
 		self.config = {'address': ('127.0.0.1', 7575), 'backlog': 5}
 		self.state = False
-		self.temp = 120
+		self.mode = "Standby"
+		self.desired_temp = 120
 
 	# Additional Setup
 	def setup(self):
@@ -139,8 +140,8 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 
 	# Send current state and ask for a new one
 	def ask_input(self, file):
-		file.write('\nRunning: %s.\nCurrent temp: %r.\n\n>>>'
-				%(self.state, self.temp))
+		file.write('\nState: %s.\nMode: %s\nDesired Temp: %rF.\n\n>>>'
+				%(self.state, self.mode, self.desired_temp))
 		
 	# Accept new connections
 	def handle_accept(self, ask_sock):
@@ -155,11 +156,11 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 		self.reactor.register(file, self.handle_input)
 
 	# Change temp and notify other agents
-	def temp_change(self, temp):
+	def temp_change(self, desired_temp):
 		# Assign old & new temp
-		old_temp, self.temp = self.temp, temp
+		old_temp, self.desired_temp = self.desired_temp, desired_temp
 		# Publish new state via VOLTTRON
-		self.publish_json('user/temp', {}, (old_temp, self.temp))
+		self.publish_json('user/temp', {}, (old_temp, self.desired_temp))
 
 	# Change state and notify other agents
 	def state_change(self, state):
@@ -172,7 +173,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 	def sim_temp(self, top_temp, bot_temp):
 		# Publish simulated temperatures via VOLTTRON
 		self.publish_json('user/sim_temp', {}, (top_temp, bot_temp))
-
+			
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
 		try:
@@ -193,11 +194,11 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 				# Change desired temperature
 				elif response == 'temperature':
 					file.write('\nRedefine new temperature.\n\n>>>')
-					temp = float(file.readline())
-					if 100 <= temp <= 140:
-						self.temp_change(temp)
+					desired_temp = float(file.readline())
+					if 100 <= desired_temp <= 140:
+						self.temp_change(desired_temp)
 						file.write('\nNew temperature set to: %r F.\n\n>>>' 
-								%temp)
+								%desired_temp)
 					else:
 						file.write('\nTemp must be between 100F and 140F.'
 								'\n\n>>>')
@@ -220,6 +221,15 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
+
+	@matching.match_start('control/status')
+	# Receive state info from control agent
+	def update_state(self, topic, headers, message, match):
+		# Control Agent publishes message = [state, mode]
+		status_info = jsonapi.loads(message[0])
+		self.state = status_info[0]
+		self.mode = status_info[1]
+		self.desired_temp = status_info[2]
 #_____________________________________________________________________________#
 
 

@@ -1,0 +1,5 @@
+'''
+Publish interval affects how often it publishes mode and temperature information.
+'''
+
+pub_int = 5
