@@ -193,24 +193,33 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 					file.write('\nTurning HPWH on...\n\n>>>')
 				# Change desired temperature
 				elif response == 'temperature':
-					file.write('\nRedefine new temperature.\n\n>>>')
-					desired_temp = float(file.readline())
-					if 100 <= desired_temp <= 140:
-						self.temp_change(desired_temp)
-						file.write('\nNew temperature set to: %r F.\n\n>>>' 
-								%desired_temp)
-					else:
-						file.write('\nTemp must be between 100F and 140F.'
-								'\n\n>>>')
+					file.write('\nRedefine new temperature.\n\nTemp>>>')
+					# Make sure a number is inputted
+					try:
+						desired_temp = float(file.readline())
+						if 100 <= desired_temp <= 140:
+							self.temp_change(desired_temp)
+							file.write('\nNew temperature set to: %r F.\n\n>>>' 
+									%desired_temp)
+						else:
+							file.write('\nTemp must be between 100F and 140F.'
+									'\n\n>>>')
+					except:
+						file.write('Temp must be a number.\n\n>>>')
 				# Change the simulated temperature
 				elif response == 'simulate':
 					file.write('\nDefine upper tank temperature.\n\n>>>')
-					top_temp = float(file.readline())
-					file.write('\nDefine lower tank temperature.\n\n>>>')
-					bot_temp = float(file.readline())
-					self.sim_temp(top_temp, bot_temp)
-					file.write('\nUpper temp: %r F\nLower temp: %r F.\n\n>>>'
-							%(top_temp, bot_temp))
+					# Make sure a number is inputted
+					try:
+						top_temp = float(file.readline())
+						file.write('\nDefine lower tank temperature.\n\n>>>')
+						bot_temp = float(file.readline())
+						self.sim_temp(top_temp, bot_temp)
+						file.write('\nUpper temp: %r F\nLower temp: %r F.'
+								'\n\n>>>' %(top_temp, bot_temp))
+					except:
+						file.write('Temp must be a number.\n\n>>>')
+
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
