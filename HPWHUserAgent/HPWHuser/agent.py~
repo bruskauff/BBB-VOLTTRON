@@ -173,6 +173,32 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 	def sim_temp(self, top_temp, bot_temp):
 		# Publish simulated temperatures via VOLTTRON
 		self.publish_json('user/sim_temp', {}, (top_temp, bot_temp))
+
+	# Help user define new topic and message for super command
+	def super_publish(self, file):
+		file.write('\nRedefine topic.\n\n>>>')
+		topic = file.readline()
+		topic = topic.strip() #strip gets rid of end line character
+		file.write(topic)
+		message = []
+		nn = 1
+		while True:
+			file.write('\nEnter message #%s.\n\n>>>' %nn)
+			msg = file.readline()
+			msg = msg.strip() #strip gets rid of end line character
+			try:
+				msg = float(msg)
+				message.append(msg)
+				nn += 1
+			except:
+				if msg == 'done':
+					file.write('\nMessage published.\n\n>>>')
+					break
+				message.append(msg)
+				nn += 1
+
+		self.publish_json(topic, {}, message)
+
 			
 	# Receive new state from user and ask for another'''
 	def handle_input(self, file):
@@ -223,10 +249,13 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 				# Update status information
 				elif response == 'status':
 					self.ask_input(file)
+				# Super allows user agent to publish with any topic/message
+				elif response == 'super':
+					self.super_publish(file)
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
 							'| on | off | temperature | simulate | status'
-									' |\n\n>>>')
+									' | super |\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
