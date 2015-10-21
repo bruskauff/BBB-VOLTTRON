@@ -179,11 +179,10 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 		file.write('\nRedefine topic.\n\n>>>')
 		topic = file.readline()
 		topic = topic.strip() #strip gets rid of end line character
-		file.write(topic)
 		message = []
 		nn = 1
 		while True:
-			file.write('\nEnter message #%s.\n\n>>>' %nn)
+			file.write('\nEnter message #%s. To finish, type done.\n\n>>>' %nn)
 			msg = file.readline()
 			msg = msg.strip() #strip gets rid of end line character
 			try:
