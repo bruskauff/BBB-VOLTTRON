@@ -91,7 +91,7 @@ OUTPUT
 #____________________________________Setup____________________________________#
 
 # Import Python dependencies
-import logging, sys, time, settings
+import logging, sys, time, settings, datetime
 
 # Not sure I actually need this
 from zmq.utils import jsonapi
@@ -165,6 +165,20 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Publish message from config file, usually a setup msg
 		_log.info(self.config['message'])
 		super(HPWHControlAgent, self).setup()
+
+		# Set up txt file to save data
+		# Define the start of test
+		now = datetime.datetime.now()
+		# Define the file as test_isotime
+		filename = 'test' + now.isoformat()
+		# Open the file
+		target = open(filename, 'w')
+		# Make sure file is clear
+		target.truncate()
+		# Write Header
+		target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n' %now)
+		target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
+				'Desired_Temp(F)    Status\n\n')
 
 	# Turn everything off
 	def all_OFF(self):
@@ -279,6 +293,22 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
 				%(self.cost_level, self.cost, self.low_deadband,
 						self.hi_deadband))
+
+	@periodic(settings.record_int)
+	# Write Data to txt file
+	def write_date(self):
+		now = datetime.datetime.now()
+		# Write Time Stamp
+		target.write('%s:%s:%s      ' %(now.hour, now.minute, now.second))
+		# Write Lower Tank Temperature
+		target.write(str(round(self.low_temp, 4)) + '          ')
+		# Write Upper Tank Temperature
+		target.write(str(round(self.up_temp, 4)) + '          ')
+		# Write Desired Temperature
+		target.write(str(round(self.desired_temp, 3)) + '              ')
+		# Write Status
+		target.write(self.status)
+		target.write('\n')
 
 	@periodic(settings.pub_int)
 	# Publish the current mode of operation and tank temperature
