@@ -153,10 +153,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 		# Initialize default temp
 		self.desired_temp = 120
-		# High deadband limit is 5F above desired temp
-		self.hi_deadband = self.desired_temp + 5
-		# Low deadband limit is 5F below desired temp
-		self.low_deadband = self.desired_temp - 5
+		# High deadband limit is 9F above desired temp
+		self.hi_deadband = self.desired_temp + 9
+		# Low deadband limit is 9F below desired temp
+		self.low_deadband = self.desired_temp - 9
 		# Lowest limit before elements turn on is 20F below desired temp
 		self.low_limit = self.desired_temp - 20
 
@@ -249,9 +249,9 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		temp_info = jsonapi.loads(message[0])
 		self.desired_temp = temp_info[1]
 		# Define Deadbands
-		self.deadbands(5, -5, -20)
-		# High deadband limit is 5F above desired temp
-		# Low deadband limit is 5F below desired temp
+		self.deadbands(9, -9, -20)
+		# High deadband limit is 9F above desired temp
+		# Low deadband limit is 9F below desired temp
 		# Lowest limit before elements turn on is 20F below desired temp
 
 	# Check for User Input - state
@@ -262,6 +262,15 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		state_info = jsonapi.loads(message[0])
 		old_state = state_info[0] # May be utilized in future iteration
 		self.state = state_info[1]
+
+	# Check for Temerature Input
+	@matching.match_start('instrument/temp')
+	# Define Upper and Lower tank temperatures
+	def define_temp(self, topic, headers, message, match):
+		# Instrument agent publishes message = [up_temp, low_temp]
+		temp_info = jsonapi.loads(message[0])
+		self.up_temp = temp_info[0]
+		self.low_temp = temp_info[1]
 
 	# Use User Agent to simulate & test temp input
 	@matching.match_start('user/sim_temp')
@@ -284,10 +293,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			print "Keep deadband in current location"
 		elif self.cost_level == 'medium':
 			# Shift low_limit 5F lower to 25F below desired temp
-			self.deadbands(5, -5, -25)
+			self.deadbands(9, -9, -25)
 		elif self.cost_level == 'high':
 			# Shift low_limit and deadband 5F lower
-			self.deadbands(0, -10, -25)
+			self.deadbands(4, -14, -25)
 
 		# Log information & action
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
