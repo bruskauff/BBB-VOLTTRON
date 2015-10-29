@@ -160,25 +160,26 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Lowest limit before elements turn on is 20F below desired temp
 		self.low_limit = self.desired_temp - 20
 
-	# Additional Setup
-	def setup(self):
-		# Publish message from config file, usually a setup msg
-		_log.info(self.config['message'])
-		super(HPWHControlAgent, self).setup()
-
 		# Set up txt file to save data
 		# Define the start of test
 		now = datetime.datetime.now()
 		# Define the file as test_isotime
 		filename = 'test' + now.isoformat()
 		# Open the file
-		target = open(filename, 'w')
+		self.target = open(filename, 'w')
 		# Make sure file is clear
-		target.truncate()
+		self.target.truncate()
 		# Write Header
-		target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n' %now)
-		target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
+		self.target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n'
+				%now)
+		self.target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
 				'Desired_Temp(F)    Status\n\n')
+
+	# Additional Setup
+	def setup(self):
+		# Publish message from config file, usually a setup msg
+		_log.info(self.config['message'])
+		super(HPWHControlAgent, self).setup()
 
 	# Turn everything off
 	def all_OFF(self):
@@ -308,16 +309,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	def write_date(self):
 		now = datetime.datetime.now()
 		# Write Time Stamp
-		target.write('%s:%s:%s      ' %(now.hour, now.minute, now.second))
+		self.target.write('%s:%s:%s     ' %(now.hour, now.minute, now.second))
 		# Write Lower Tank Temperature
-		target.write(str(round(self.low_temp, 4)) + '          ')
+		self.target.write(str(round(self.low_temp, 4)) + '            ')
 		# Write Upper Tank Temperature
-		target.write(str(round(self.up_temp, 4)) + '          ')
+		self.target.write(str(round(self.up_temp, 4)) + '            ')
 		# Write Desired Temperature
-		target.write(str(round(self.desired_temp, 3)) + '              ')
+		self.target.write(str(round(self.desired_temp, 3)) + '              ')
 		# Write Status
-		target.write(self.status)
-		target.write('\n')
+		self.target.write(self.mode)
+		self.target.write('\n')
 
 	@periodic(settings.pub_int)
 	# Publish the current mode of operation and tank temperature
