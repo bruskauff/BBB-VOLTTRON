@@ -1,0 +1,21 @@
+# Instructions for installing the HPWH Recording Agent into VOLTTRON
+
+# Copy the entire HPWHRecordAgent folder into volttron/Agents
+
+# Copy and paste the code below into the lx command line of the BeagleBone Black 
+# (BBB).
+# This assumes the BBB was just turned on.
+# Super User is required to operate the pins on the BBB.
+
+sudo su
+cd volttron
+. env/bin/activate
+volttron -l volttron.log -vv&
+
+volttron-pkg package Agents/HPWHRecordAgent
+volttron-pkg configure /tmp/volttron_wheels/HPWHrecordagent-0.1-py2-none-any.whl Agents/HPWHRecordAgent/HPWHrecordagent.config
+volttron-ctl install /tmp/volttron_wheels/HPWHrecordagent-0.1-py2-none-any.whl
+
+#Check the status of the install with
+volttron-ctl status
+
