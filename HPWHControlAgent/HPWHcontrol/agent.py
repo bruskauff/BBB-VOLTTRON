@@ -160,21 +160,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Lowest limit before elements turn on is 20F below desired temp
 		self.low_limit = self.desired_temp - 20
 
-		# Set up txt file to save data
-		# Define the start of test
-		now = datetime.datetime.now()
-		# Define the file as test_isotime
-		filename = 'test' + now.isoformat()
-		# Open the file
-		self.target = open(filename, 'w')
-		# Make sure file is clear
-		self.target.truncate()
-		# Write Header
-		self.target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n'
-				%now)
-		self.target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
-				'Desired_Temp(F)    Status\n\n')
-
 	# Additional Setup
 	def setup(self):
 		# Publish message from config file, usually a setup msg
@@ -303,22 +288,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
 				%(self.cost_level, self.cost, self.low_deadband,
 						self.hi_deadband))
-
-	@periodic(settings.record_int)
-	# Write Data to txt file
-	def write_date(self):
-		now = datetime.datetime.now()
-		# Write Time Stamp
-		self.target.write('%s:%s:%s     ' %(now.hour, now.minute, now.second))
-		# Write Lower Tank Temperature
-		self.target.write(str(round(self.low_temp, 4)) + '            ')
-		# Write Upper Tank Temperature
-		self.target.write(str(round(self.up_temp, 4)) + '            ')
-		# Write Desired Temperature
-		self.target.write(str(round(self.desired_temp, 3)) + '              ')
-		# Write Status
-		self.target.write(self.mode)
-		self.target.write('\n')
 
 	@periodic(settings.pub_int)
 	# Publish the current mode of operation and tank temperature
