@@ -264,8 +264,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		old_state = state_info[0] # May be utilized in future iteration
 		self.state = state_info[1]
 
-	# Check for Temerature Input
-	@matching.match_start('instrument/temp')
+	# Check for Measurement Input - Temperature
+	@matching.match_start('measure/temp')
 	# Define Upper and Lower tank temperatures
 	def define_temp(self, topic, headers, message, match):
 		# Instrument agent publishes message = [up_temp, low_temp]
