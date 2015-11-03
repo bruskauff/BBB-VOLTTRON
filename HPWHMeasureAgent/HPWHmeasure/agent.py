@@ -154,9 +154,9 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		# Add newest temp reading to list
 		self.values_up[self.nn] = temp_up
 		#self.values_low[self.nn] = temp_low
-		# Find average in value lists
-		self.temp_up = sum(self.values_up)/len(self.values_up)
-		#self.temp_low = sum(self.values_low)/len(self.values_low)
+		# Find average in value lists, re-linearize w/ Tactual = Tmeasured / 1.028 + 2.3295
+		self.temp_up = (sum(self.values_up)/len(self.values_up)) / 1.029 + 2.3295
+		#self.temp_low = (sum(self.values_low)/len(self.values_low)) / 1.029 + 2.3295
 		self.nn += 1
 		# Reset nn when at end of list
 		if self.nn == self.ii:
