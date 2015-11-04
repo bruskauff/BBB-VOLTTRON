@@ -127,14 +127,15 @@ class HPWHRecordAgent(PublishMixin, BaseAgent):
 		# Define the start of test
 		now = datetime.datetime.now()
 		# Define the file as test_isotime
-		filename = 'test' + now.isoformat()
+		#filename = 'test' + now.isoformat()
+		filename = 'benderisgreat'
 		# Open the file
-		target = open(filename, 'w')
+		self.target = open(filename, 'w')
 		# Make sure file is clear
-		target.truncate()
+		self.target.truncate()
 		# Write Header
-		target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n' %now)
-		target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
+		self.target.write('Brian Ruskauff\nNREL\nHPWH Control Test\n%s\n\n' %now)
+		self.target.write('TimeStamp    Temp_Lower(F)    Temp_Upper(F)    '
 				'Desired_Temp(F)    Power(KW)    Status\n\n')
 
 	# Check for Measurement Input - Temperature
@@ -142,45 +143,64 @@ class HPWHRecordAgent(PublishMixin, BaseAgent):
 	def tank_temp(self, topic, headers, message, match):
 		# Measure Agent publishes message = [up_temp, low_temp]
 		temp_info = jsonapi.loads(message[0])
-		try:
-			self.up_temp = temp_info[0]
-			self.low_temp = temp_info[1]
-		except:
-			self.up_temp = 'NaN'
-			self.low_temp = 'NaN'
-	
+		self.up_temp = temp_info[0]
+		self.low_temp = temp_info[1]
 
 	# Check for User Input - Temperature
 	@matching.match_start('user/temp')
 	# Define the desired temperature
 	def define_temp(self, topic, headers, message, match):
-		# User Agent published message = [old_temp, new_temp]
+		# User Agent publishes message = [old_temp, new_temp]
 		temp_info = jsonapi.loads(message[0])
 		self.desired_temp = temp_info[1]
+
+	# Check for Measurement Input - Power
+	@matching.match_start('measure/pow')
+	def define_pow(self, topic, headers, message, match):
+		# Measurement Agent publishes message = [power]
+		pow_info = jsonapi.loads(message[0])
+		self.power = pow_info[0]
+
+	# Check for Control Input - Mode Status
+	@matching.match_start('control/status')
+	def define_status(self, topic, headers, message, match):
+		# Measurement Agent publishes message = [state, mode, desired_temp]
+		status_info = jsonapi.loads(message[0])
+		self.status = status_info[1]
 
 	@periodic(settings.record_int)
 	# Write Data to txt file
 	def write_date(self):
 		now = datetime.datetime.now()
 		# Write Time Stamp
-		target.write('%s:%s:%s      ' %(now.hour, now.minute, now.second))
+		self.target.write('%s:%s:%s     ' %(now.hour, now.minute, now.second))
 		# Write Lower Tank Temperature
-		target.write(str(round(self.low_temp, 3)) + '          ')
+		try:
+			self.target.write(str(round(self.low_temp, 3)) + '          ')
+		except AttributeError:
+			self.target.write('NaN              ')
 		# Write Upper Tank Temperature
-		target.write(str(round(self.up_temp, 3)) + '          ')
+		try:
+			self.target.write(str(round(self.up_temp, 3)) + '          ')
+		except AttributeError:
+			self.target.write('NaN              ')
 		# Write Desired Temperature
-		target.write(str(round(self.desired_temp, 3)) + '              ')
+		try:
+			self.target.write(str(round(self.desired_temp, 3)) + '   '
+					'           ')
+		except AttributeError:
+			self.target.write('NaN                ')
 		# Write Power Consumption
-		target.write(str(round(self.power, 3)) + '             ')
+		try:
+			self.target.write(str(round(self.power, 3)) + '             ')
+		except AttributeError:
+			self.target.write('NaN          ')
 		# Write Status
-		target.write(self.status)
-		target.write('\n')
-
-	@periodic(settings.pub_int)
-	# Publish the current mode of operation and tank temperature
-	def send_status(self):
-		self.publish_json('control/status', {}, (self.state, self.mode, 
-				self.desired_temp))
+		try:
+			self.target.write(self.status)
+		except AttributeError:
+			self.target.write('NaN')
+		self.target.write('\n')
 #_____________________________________________________________________________#
 
 
