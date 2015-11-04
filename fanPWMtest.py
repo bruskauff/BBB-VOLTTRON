@@ -1,16 +1,17 @@
 from bbio import *
 
-FAN = PWM1A
-percent = 80
+FAN = 'PWM1A'#Pin P9.14
 
-# analogWrite() must be called before pwmFrequency() will work
-analogWrite(Fan, 0)	#Pin P9.14
+# Initialize pin at 0 duty cycle
+analogWrite(FAN, 0)
+# Set frequency to 30,000 Hz
+pwmFrequency(FAN, 30000)
 
-def loop():
+while True:
 	# Input percent speed
-	percent = float(rawinput(
-			'What % should I run at? 80% is default.\n>>>'))
-	# Determine Hz, range is 30Hz to 30kHz
-	hz = (percent/100) * (30000 - 30)/100 + 30
+	percent = float(raw_input(
+			'\nWhat % should I run at?\n100 = 3700 rpm.\n'
+			'>>>'))
+	duty = 255*percent/100
 	# Set pwm frequency
-	pwmFrequency(FAN, hz)
+	analogWrite(FAN, duty)
