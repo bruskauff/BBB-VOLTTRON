@@ -4,7 +4,7 @@ FAN = PWM1A
 percent = 80
 
 # analogWrite() must be called before pwmFrequency() will work
-analogWrite(Fan, 0)
+analogWrite(Fan, 0)	#Pin P9.14
 
 def loop():
 	# Input percent speed
