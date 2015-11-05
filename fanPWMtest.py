@@ -10,7 +10,7 @@ pwmFrequency(FAN, 30000)
 while True:
 	# Input percent speed
 	percent = float(raw_input(
-			'\nWhat % should I run at?\n100 = 3700 rpm.\n'
+			'\nWhat percent should I run at?\nTyp: 80%.\n'
 			'>>>'))
 	duty = 255*percent/100
 	# Set pwm frequency
