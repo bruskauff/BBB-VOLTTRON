@@ -127,8 +127,7 @@ class HPWHRecordAgent(PublishMixin, BaseAgent):
 		# Define the start of test
 		now = datetime.datetime.now()
 		# Define the file as test_isotime
-		#filename = 'test' + now.isoformat()
-		filename = 'benderisgreat'
+		filename = 'HPWH_test_' + now.isoformat()
 		# Open the file
 		self.target = open(filename, 'w')
 		# Make sure file is clear
