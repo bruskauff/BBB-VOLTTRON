@@ -1,0 +1,25 @@
+# Instructions for installing the HPWH Water Draw Agent into VOLTTRON
+
+# Make sure that when VOLTTRON is activated PyBBIO is installed. It may show up 
+# while volttron is not active but I needed to reinstall it while volttron was 
+# active
+
+# Copy the entire HPWHWaterAgent folder into volttron/Agents
+
+# Copy and paste the code below into the lx command line of the BeagleBone Black 
+# (BBB).
+# This assumes the BBB was just turned on.
+# Super User is required to operate the pins on the BBB.
+
+sudo su
+cd volttron
+. env/bin/activate
+volttron -l volttron.log -vv&
+
+volttron-pkg package Agents/HPWHWaterAgent
+volttron-pkg configure /tmp/volttron_wheels/HPWHwateragent-0.1-py2-none-any.whl Agents/HPWHWaterAgent/HPWHwateragent.config
+volttron-ctl install /tmp/volttron_wheels/HPWHwateragent-0.1-py2-none-any.whl
+
+#Check the status of the install with
+volttron-ctl status
+
