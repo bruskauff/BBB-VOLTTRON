@@ -143,6 +143,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Initialize flags
 		self.state = False
 		self.fast = False
+		self.regular = False
 		self.mode = "off"
 		self.cost_level = "low"
 		self.cost = 0
@@ -309,16 +310,18 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			# Check if either temp readings are below low_limit
 			if ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.desired_temp and self.fast == True)):
+				# Fast is a variable to signal quick heating is needed
 				self.fast = True
+				self.regular = False
 				# If upper temp is too cold turn on the upper heating element
-				if up_temp < self.desired_temp:
+				if up_temp < self.hi_deadband:
 					self.UpElement_ON()
 					reaction = ("Temperature is really low."
 							" Heating w/ upper element.")
 					self.logger_guy(reaction)
 					self.mode = reaction
 				# If only lower temp is too cold turn on lower heating element
-				elif low_temp < self.desired_temp:
+				elif low_temp < self.hi_deadband:
 					self.LowElement_ON()
 					reaction = ("Temperature is really low."
 							" Heating w/ lower element.")
@@ -328,7 +331,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			elif up_temp >= self.low_deadband and low_temp >= self.low_deadband:
 				# Turn everything off
 				self.all_OFF()
-				# Fast is a variable to signal quick heating is needed
 				self.fast = False
 				# Log information and reaction
 				reaction = "Temperature acceptable. All off."
@@ -338,8 +340,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
 					(low_temp < self.low_deadband and low_temp >= 
-							self.low_limit)):
+					self.low_limit) or (self.regular = True):
 				self.fast = False
+				self.regular = True
+				if (low_temp > hi_deadband and up_temp > hi_deadband):
+					self.regular = False
 				# Turn HP on
 				self.HP_ON()
 				reaction = "Temperature is low. Heating w/ heat pump."
