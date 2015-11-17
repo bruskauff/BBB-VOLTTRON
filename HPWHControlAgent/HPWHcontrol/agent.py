@@ -78,6 +78,9 @@ INPUT
 		- message = [old_state, new_state]
 		- topic = 'user/sim_temp'
 		- message = [up_temp, low_temp]
+	- signals from HPWHMeasureAgent with:
+		- topic = 'measure/temp'
+		- message = [up_temp, low_temp]
 OUTPUT
 	- when outputting status
 		- topic = 'control/status'
@@ -123,9 +126,12 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Make variables for GPIO Pins
 		self.fan1 = GPIO1_15	# fan 1 (P8_15)
 		self.fan2 = GPIO1_14	# fan 2 (P8_16)
+		self.fan1_pwm = PWM1A	# fan 2 speed (P9_14)
+		self.fan2_pwm = PWM1B	# fan 2 speed (P9_16)
 		self.HP = GPIO1_13	# heat pump relay (P8_11, RY1)
 		self.up_element = GPIO1_12	# upper element (P8_12, RY2)
 		self.low_element = GPIO0_26	# lower element (P8_14, RY3)
+
 		# Initialize GPIO pin mode
 		pinMode(self.fan1, OUTPUT)
 		pinMode(self.fan2, OUTPUT)
@@ -139,6 +145,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		digitalWrite(self.HP, LOW)
 		digitalWrite(self.up_element, LOW)
 		digitalWrite(self.low_element, LOW)
+
+		# Initialize fans to 0 duty cycle
+		analogWrite(fan1_pwm, 0)
+		analogWrite(fan2_pwm, 0)
+		# Set PWM frequency to 15,000 Hz
+		pwmFrequency(fan1_pwm, 15000)
+		pwmFrequency(fan2_pwm, 15000)
 
 		# Initialize flags
 		self.state = False
@@ -179,6 +192,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	
 	# Turn on Fans
 	def fans_ON(self):
+		# Set duty cycle to 85% (8 bit has 256 steps)
+		analogWrite(fan1_pwm, (255*85/100))
+		analogWrite(fan2_pwm, (255*85/100))
+		# Turn on Fans (opens MOSFETs)
 		digitalWrite(self.fan1, HIGH)
 		digitalWrite(self.fan2, HIGH)
 	
@@ -250,19 +267,19 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		old_state = state_info[0] # May be utilized in future iteration
 		self.state = state_info[1]
 
+	# Use User Agent to simulate & test temp input
+	@matching.match_start('user/sim_temp')
+	def set_temp(self, topic, headers, message, match):
+		# User agent publishes message = [up_temp, low_temp]
+		temp_info = jsonapi.loads(message[0])
+		self.up_temp = temp_info[0]
+		self.low_temp = temp_info[1]
+
 	# Check for Measurement Input - Temperature
 	@matching.match_start('measure/temp')
 	# Define Upper and Lower tank temperatures
 	def define_temp(self, topic, headers, message, match):
 		# Instrument agent publishes message = [up_temp, low_temp]
-		temp_info = jsonapi.loads(message[0])
-		self.up_temp = temp_info[0]
-		self.low_temp = temp_info[1]
-
-	# Use User Agent to simulate & test temp input
-	@matching.match_start('user/sim_temp')
-	def set_temp(self, topic, headers, message, match):
-		# User agent publishes message = [up_temp, low_temp]
 		temp_info = jsonapi.loads(message[0])
 		self.up_temp = temp_info[0]
 		self.low_temp = temp_info[1]
