@@ -65,24 +65,17 @@ National Renewable Energy Labs (NREL)
 Referenced from Kathleen Genger's code for dehumidifier control
 
 
-This code was made as a replacement for the controls implemented in a heat pump water heater (HPWH). 
+This script regulates water draws for testing the heat pump water heater (HPWH)
 
 INPUT 
-	- signal from UtilityAgent with [costlevel, cost]
-		- costlevel is 'high', 'medium', or 'low'
-		- cost is a float in dollars
-	- signals from HPWHUserAgent with:
-		- topic = 'user/temp'
-		- message = [old_temp, new_temp]
-		- topic = 'user/state'
-		- message = [old_state, new_state]
-		- topic = 'user/sim_temp'
-		- message = [up_temp, low_temp]
+	- signal from UserAgent with:
+		- topic = 'user/waterdraw'
+		- message = [state]
 OUTPUT
+	- outputs an I/O signal through a BeagbeBone Black's GPIO pin
 	- when outputting status
-		- topic = 'control/status'
-		- message = [state, mode, desired_temp]
-	- logs the inputted cost level, cost, and heating response.
+		- topic = 'waterdraw/state'
+		- message = [state]
 '''
 #_____________________________________________________________________________#
 
@@ -91,7 +84,7 @@ OUTPUT
 #____________________________________Setup____________________________________#
 
 # Import Python dependencies
-import logging, sys, time, settings, datetime
+import logging, sys, time, settings
 
 # Not sure I actually need this
 from zmq.utils import jsonapi
@@ -127,8 +120,10 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 		# Initialize output pins to LOW (off)
 		digitalWrite(self.draw, LOW)
 
-		# Initialize State
-		self.state = False
+		# Initialize state to off
+		self.state = 0
+		# Initialize water draw step
+		self.nn = 0
 
 	# Additional Setup
 	def setup(self):
@@ -138,27 +133,56 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 
 	# Turn water draw solenoid off
 	def OFF(self):
+		# Set GPIO pin to LOW
 		digitalWrite(self.draw, LOW)
+		# Publish water draw state
 		self.publish_json('waterdraw/state', {}, self.state)
 
 	# Turn water draw solenoid on
 	def ON(self):
+		# Set GPIO pin to HIGH
 		digitalWrite(self.draw, HIGH)
-		# Send action to log
+		# Publish water draw state
 		self.publish_json('waterdraw/state', {}, self.state)
 
-	# Check for User Input - Temperature
-	@matching.match_start('user/temp')
+	# Periodically perform water draws
+	@periodic(settings.draw_int)
+	def DRAW(self):
+		volume = self.config[str(self.nn)]	
+		# Calculate time to keep valve open, number is a constant representing
+		# the flow rate of the valve (units)
+		time_open = volume/1.2
+		# Mark the current time
+		time_start = time.time()
+		dt = 0
+		while dt <= time_open:
+			# Find elapsed time
+			dt = time.time() - time_start
+			# Open the valve
+			self.state = 1
+			self.ON()
+		self.state = 0
+		self.OFF()
+		# Move on to the next water draw value
+		self.nn += 1
+
+	# Check for User Input - Water Draw
+	@matching.match_start('user/waterdraw')
 	# Define the desired temperature
 	def define_temp(self, topic, headers, message, match):
-		# User Agent published message = [old_temp, new_temp]
-		temp_info = jsonapi.loads(message[0])
-		self.desired_temp = temp_info[1]
-		# Define Deadbands
-		self.deadbands(9, -9, -20)
-		# High deadband limit is 9F above desired temp
-		# Low deadband limit is 9F below desired temp
-		# Lowest limit before elements turn on is 20F below desired temp
+		# User Agent published message = [state]
+		state_info = jsonapi.loads(message[0])
+		self.state = state_info[0]
+		# Turn flow off
+		if self.state == 0:
+			self.OFF()
+		# Turn flow on
+		elif self.state == 1:
+			self.ON()
+		# If invalid input, turn flow off
+		else:
+			self.state = 0
+			self.OFF()
 #_____________________________________________________________________________#
 
 
