@@ -114,7 +114,7 @@ class HPWHWaterDrawAgent(PublishMixin, BaseAgent):
 		self.config = utils.load_config(config_path)
 
 		# Make variables for GPIO Pin
-		self.draw = GPIO1_15	# (P8_15)
+		self.draw = GPIO0_27	# (P8_17)
 		# Initialize GPIO pin mode
 		pinMode(self.draw, OUTPUT)
 		# Initialize output pins to LOW (off)
