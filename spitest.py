@@ -27,11 +27,13 @@ values = [0]*ii
 hertz = float(hertz)
 while True:
 	temp = sensor.readTempC() * 9 / 5 + 32
-	internal = sensor.readInternalC()
+	internal = sensor.readInternalC() * 9 / 5 + 32
 	values[nn] = temp
 	nn += 1
 	temp_avg = sum(values)/len(values)
 	if nn == ii:
 		nn = 0
-		print 'Thermocouple Temp: %s F' %temp_avg
+		print 'Raw Temp: %s F' %temp
+		print 'Thermocouple Avg Temp: %s F' %temp_avg
+		print 'Internal Temp: %s F' %internal
 	#time.sleep(1/hertz)
