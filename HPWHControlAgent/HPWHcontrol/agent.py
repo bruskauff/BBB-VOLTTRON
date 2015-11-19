@@ -127,7 +127,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.fan1 = GPIO1_15	# fan 1 (P8_15)
 		self.fan2 = GPIO1_14	# fan 2 (P8_16)
 		self.fan1_pwm = PWM1A	# fan 2 speed (P9_14)
-		self.fan2_pwm = PWM1B	# fan 2 speed (P9_16)
+		self.fan2_pwm = PWM2B	# fan 2 speed (P8_13)
 		self.HP = GPIO1_13	# heat pump relay (P8_11, RY1)
 		self.up_element = GPIO1_12	# upper element (P8_12, RY2)
 		self.low_element = GPIO0_26	# lower element (P8_14, RY3)
