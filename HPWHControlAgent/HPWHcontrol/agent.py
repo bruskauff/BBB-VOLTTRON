@@ -147,11 +147,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		digitalWrite(self.low_element, LOW)
 
 		# Initialize fans to 0 duty cycle
-		analogWrite(fan1_pwm, 0)
-		analogWrite(fan2_pwm, 0)
+		analogWrite(self.fan1_pwm, 0)
+		analogWrite(self.fan2_pwm, 0)
 		# Set PWM frequency to 15,000 Hz
-		pwmFrequency(fan1_pwm, 15000)
-		pwmFrequency(fan2_pwm, 15000)
+		pwmFrequency(self.fan1_pwm, 15000)
+		pwmFrequency(self.fan2_pwm, 15000)
 
 		# Initialize flags
 		self.state = False
@@ -167,12 +167,12 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 		# Initialize default temp
 		self.desired_temp = 120
-		# High deadband limit is 9F above desired temp
-		self.hi_deadband = self.desired_temp + 9
-		# Low deadband limit is 9F below desired temp
-		self.low_deadband = self.desired_temp - 9
-		# Lowest limit before elements turn on is 20F below desired temp
-		self.low_limit = self.desired_temp - 20
+		# High deadband limit is 0F above desired temp
+		self.hi_deadband = self.desired_temp + 0
+		# Low deadband limit is 18F below desired temp
+		self.low_deadband = self.desired_temp - 18
+		# Lowest limit before elements turn on is 22F below desired temp
+		self.low_limit = self.desired_temp - 22
 
 	# Additional Setup
 	def setup(self):
@@ -193,8 +193,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	# Turn on Fans
 	def fans_ON(self):
 		# Set duty cycle to 85% (8 bit has 256 steps)
-		analogWrite(fan1_pwm, (255*85/100))
-		analogWrite(fan2_pwm, (255*85/100))
+		analogWrite(self.fan1_pwm, (255*85/100))
+		analogWrite(self.fan2_pwm, (255*85/100))
 		# Turn on Fans (opens MOSFETs)
 		digitalWrite(self.fan1, HIGH)
 		digitalWrite(self.fan2, HIGH)
@@ -235,9 +235,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	# Log information and reaction
 	def logger_guy(self, reaction):
 		_log.info("Cost level: %s at $%s, Desired Temp: %sF, Deadband: %sF to "
-				"%sF, Low Limit: %sF. %s" %(self.cost_level, self.cost, 
-				self.desired_temp, self.low_deadband, self.hi_deadband, 
-				self.low_limit, reaction))
+				"%sF, Low Limit: %sF. H&L Temp: %sF & %sF %s" %
+				(self.cost_level, self.cost, self.desired_temp, 
+				self.low_deadband, self.hi_deadband, self.low_limit,
+				self.up_temp, self.low_temp, reaction))
 
 	# Define Deadbands
 	def deadbands(self, hi, low, loww):
@@ -253,10 +254,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		temp_info = jsonapi.loads(message[0])
 		self.desired_temp = temp_info[1]
 		# Define Deadbands
-		self.deadbands(9, -9, -20)
-		# High deadband limit is 9F above desired temp
-		# Low deadband limit is 9F below desired temp
-		# Lowest limit before elements turn on is 20F below desired temp
+		self.deadbands(0, -18, -22)
+		# High deadband limit is 0F above desired temp
+		# Low deadband limit is 18F below desired temp
+		# Lowest limit before elements turn on is 22F below desired temp
 
 	# Check for User Input - state
 	@matching.match_start('user/state')
@@ -296,11 +297,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		if self.cost_level == 'low':
 			print "Keep deadband in current location"
 		elif self.cost_level == 'medium':
-			# Shift low_limit 5F lower to 25F below desired temp
-			self.deadbands(9, -9, -25)
+			# Shift low_limit 5F lower
+			self.deadbands(0, -18, -27)
 		elif self.cost_level == 'high':
 			# Shift low_limit and deadband 5F lower
-			self.deadbands(4, -14, -25)
+			self.deadbands(0, -23, -27)
 
 		# Log information & action
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
@@ -345,7 +346,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 					self.logger_guy(reaction)
 					self.mode = reaction
 			# Check if both temp readings are in deadband
-			elif up_temp >= self.low_deadband and low_temp >= self.low_deadband:
+			elif (up_temp >= self.low_deadband and low_temp >= self.low_deadband
+					and self.regular == False):
 				# Turn everything off
 				self.all_OFF()
 				self.fast = False
@@ -357,10 +359,11 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
 					(low_temp < self.low_deadband and low_temp >= 
-					self.low_limit) or (self.regular = True):
+					self.low_limit) or (self.regular == True)):
 				self.fast = False
 				self.regular = True
-				if (low_temp > hi_deadband and up_temp > hi_deadband):
+				if (low_temp >= self.hi_deadband and up_temp >=
+						self.hi_deadband):
 					self.regular = False
 				# Turn HP on
 				self.HP_ON()
