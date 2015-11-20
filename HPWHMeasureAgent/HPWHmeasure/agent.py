@@ -151,13 +151,19 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		# Read temp and convert to Fahrenheit
 		temp_up = self.sensor_up.readTempC() * 9 / 5 + 32
 		#temp_low = self.sensor_low.readTempC() * 9 / 5 + 32
-		# Add newest temp reading to list
-		self.values_up[self.nn] = temp_up
-		#self.values_low[self.nn] = temp_low
-		# Find average in value lists, re-linearize w/ Tactual = Tmeasured / 1.028 + 2.3295
-		self.temp_up = (sum(self.values_up)/len(self.values_up)) / 1.029 + 2.3295
-		#self.temp_low = (sum(self.values_low)/len(self.values_low)) / 1.029 + 2.3295
-		self.nn += 1
+		# Don't add newest reading if either reading is nan
+		if self.temp_up == 'nan' or self.temp_low == 'nan':
+			return
+		else:
+			# Add newest temp reading to list
+			self.values_up[self.nn] = temp_up
+			#self.values_low[self.nn] = temp_low
+			self.nn += 1
+		# Find average in value lists, re-linearize for t-type
+		self.temp_up = (sum(self.values_up)/len(self.values_up)) /
+				1.029 + 2.3295
+		#self.temp_low = (sum(self.values_low)/len(self.values_low)) /
+				#1.029 + 2.3295
 		# Reset nn when at end of list
 		if self.nn == self.ii:
 			self.nn = 0
