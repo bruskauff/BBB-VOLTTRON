@@ -145,25 +145,33 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		_log.info(self.config['message'])
 		super(HPWHMeasureAgent, self).setup()
 
+	# Function to test for numbers
+	def is_int(self, numb):
+		try:
+			int(numb)
+			return True
+		except ValueError:
+			return False
+
 	@periodic(settings.temp_int)
 	# Measure tank temperature, perform moving average for stability
 	def measure_temp(self):
 		# Read temp and convert to Fahrenheit
 		temp_up = self.sensor_up.readTempC() * 9 / 5 + 32
-		#temp_low = self.sensor_low.readTempC() * 9 / 5 + 32
-		# Don't add newest reading if either reading is nan
-		if self.temp_up == 'nan' or self.temp_low == 'nan':
-			return
-		else:
+		temp_low = self.sensor_low.readTempC() * 9 / 5 + 32
+
+		# Add newest reading if neither reading is nan
+		if self.is_int(temp_up) and self.is_int(temp_low):
 			# Add newest temp reading to list
 			self.values_up[self.nn] = temp_up
-			#self.values_low[self.nn] = temp_low
+			self.values_low[self.nn] = temp_low
 			self.nn += 1
+
 		# Find average in value lists, re-linearize for t-type
-		self.temp_up = (sum(self.values_up)/len(self.values_up)) /
-				1.029 + 2.3295
-		#self.temp_low = (sum(self.values_low)/len(self.values_low)) /
-				#1.029 + 2.3295
+		self.temp_up = ((sum(self.values_up)/len(self.values_up)) /
+				1.029 + 2.3295)
+		self.temp_low = ((sum(self.values_low)/len(self.values_low)) /
+				1.029 + 2.3295)
 		# Reset nn when at end of list
 		if self.nn == self.ii:
 			self.nn = 0
@@ -172,8 +180,8 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 	# Publish tank temperature
 	def publish_temp(self):
 		try:
-			self.publish_json('measure/temp', {}, (self.temp_up))#, 
-					#self.low_temp)) 
+			self.publish_json('measure/temp', {}, (self.temp_up, 
+					self.temp_low))
 		except:
 			return
 
@@ -186,7 +194,7 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		# Vout = (Vin*R1)/(R1+R2), measure resisters on circuit
 		# Therefore, Vin = Vout(R1+R2)/R1
 		# 5KW = 10VDC, so pow = Vin*5/10 = Vin/2, in KiloWatts
-		self.power = (mv*1000 * 5000)/(5000 + 994)/2 
+		self.power = (mV*1000 * 5000)/(5000 + 994)/2 
 		
 
 	@periodic(settings.pub_pow_int)

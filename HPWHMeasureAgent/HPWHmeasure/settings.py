@@ -1,7 +1,7 @@
 # Interval at which to read temperature (seconds)
-temp_int = 0.2
+temp_int = 1
 # Interval at which to publish temperature (seconds)
-pub_temp_int = 5
+pub_temp_int = 1
 # Interval at which to read power (seconds)
 pow_int = 1
 # Interval at which to publish power (seconds)
