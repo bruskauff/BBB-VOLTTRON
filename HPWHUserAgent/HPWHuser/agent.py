@@ -216,6 +216,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 				elif response == 'on':
 					self.state_change(True)
 					file.write('\nTurning HPWH on...\n\n>>>')
+
 				# Change desired temperature
 				elif response == 'temperature':
 					file.write('\nRedefine new temperature.\n\nTemp>>>')
@@ -231,6 +232,24 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 									'\n\n>>>')
 					except:
 						file.write('Temp must be a number.\n\n>>>')
+
+				# Draw Water
+				elif response == 'waterdraw':
+					file.write('\nDraw ON or OFF?\n\n>>>')
+					onoff = file.readline()
+					onoff = onoff.strip()
+					if onoff == 'ON':
+						file.write('\nDrawing water...\n\n>>>')
+						# Publish new state via VOLTTRON
+						self.publish_json('user/state', {}, ('True'))
+					elif onoff == 'OFF':
+						file.write('\nStopping water draw...\n\n>>>')
+						# Publish new state via VOLTTRON
+						self.publish_json('user/state', {}, ('False'))
+					else:
+						file.write('\n"ON" and "OFF" are the valid responses'
+								'\n\n>>>')
+						
 				# Change the simulated temperature
 				elif response == 'simulate':
 					file.write('\nDefine upper tank temperature.\n\n>>>')
@@ -254,7 +273,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 				else:
 					file.write('\n** FAILED **\nValid commands are...\n'
 							'| on | off | temperature | simulate | status'
-									' | super |\n\n>>>')
+									'| waterdraw | super |\n\n>>>')
 		except socket.error:
 			_log.info('Connection {} disconnected'.format(file.fileno()))
 			self.reactor.unregister(file)
