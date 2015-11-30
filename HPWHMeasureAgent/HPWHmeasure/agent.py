@@ -194,7 +194,7 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 		# Vout = (Vin*R2)/(R1+R2), measure resisters on circuit
 		# Therefore, Vin = Vout(R1+R2)/R2
 		# 5KW = 10VDC, so pow = Vin*5/10 = Vin/2, in KiloWatts
-		self.power = (mV * (5000 + 994))/(994)/2 
+		self.power = [(mV * (5000 + 994))/(994)/2.0] 
 		
 
 	@periodic(settings.pub_pow_int)
