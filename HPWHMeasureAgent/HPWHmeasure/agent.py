@@ -189,12 +189,12 @@ class HPWHMeasureAgent(PublishMixin, BaseAgent):
 	# Measure power consumption
 	def measure_pow(self):
 		# AnalogRead gives a number in millivolts
-		V = analogRead(self.ADC)
+		mV = analogRead(self.ADC)
 		# Scale volts to power (watts), voltage divider
-		# Vout = (Vin*R1)/(R1+R2), measure resisters on circuit
-		# Therefore, Vin = Vout(R1+R2)/R1
+		# Vout = (Vin*R2)/(R1+R2), measure resisters on circuit
+		# Therefore, Vin = Vout(R1+R2)/R2
 		# 5KW = 10VDC, so pow = Vin*5/10 = Vin/2, in KiloWatts
-		self.power = (V * 5000)/(5000 + 994)/2 
+		self.power = (mV * (5000 + 994))/(994)/2 
 		
 
 	@periodic(settings.pub_pow_int)
