@@ -325,8 +325,17 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			self.logger_guy(reaction)
 			self.mode = reaction
 		elif self.state == True:
+			# Check if elements are above deadband
+			if up_temp > self.desired_temp and low_temp > self.desired_temp:
+				# Turn everything off and set to regular operation
+				self.fast = False
+				self.regular = False
+				self.all_OFF()
+				reaction = ("Temperature acceptable. All off")
+				self.logger_guy(reaction)
+				self.mode = reaction
 			# Check if either temp readings are below low_limit
-			if ((up_temp < self.low_limit or low_temp < self.low_limit) or
+			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.desired_temp and self.fast == True)):
 				# Fast is a variable to signal quick heating is needed
 				self.fast = True
@@ -351,6 +360,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				# Turn everything off
 				self.all_OFF()
 				self.fast = False
+				self.regular = False
 				# Log information and reaction
 				reaction = "Temperature acceptable. All off."
 				self.logger_guy(reaction)
@@ -362,8 +372,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 					self.low_limit) or (self.regular == True)):
 				self.fast = False
 				self.regular = True
-				if (low_temp >= self.hi_deadband and up_temp >=
-						self.hi_deadband):
+				if low_temp >= self.hi_deadband:
 					self.regular = False
 				# Turn HP on
 				self.HP_ON()
