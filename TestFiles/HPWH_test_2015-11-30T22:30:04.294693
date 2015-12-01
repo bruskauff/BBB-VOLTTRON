@@ -1,0 +1,1101 @@
+Brian Ruskauff
+NREL
+HPWH Control Test
+2015-11-30 22:30:04.294693
+
+TimeStamp    Temp_Lower(F)    Temp_Upper(F)    Desired_Temp(F)    Power(KW)    Status
+
+22:30:9     77.334          117.655          NaN                18.0             NaN
+22:30:14     76.897          118.005          NaN                21.0             NaN
+22:30:19     77.772          118.442          NaN                24.0             NaN
+22:30:24     77.422          117.83          NaN                21.0             NaN
+22:30:29     77.159          117.743          NaN                18.0             NaN
+22:30:34     78.209          116.955          NaN                21.0             NaN
+22:30:39     77.159          116.78          NaN                18.0             NaN
+22:30:44     76.722          117.043          NaN                21.0             NaN
+22:30:49     77.334          118.18          NaN                18.0             HPWH is off. Turn on for water heating.
+22:30:54     77.684          117.917          NaN                21.0             HPWH is off. Turn on for water heating.
+22:30:59     77.334          117.83          NaN                21.0             HPWH is off. Turn on for water heating.
+22:31:4     77.859          118.005          NaN                24.0             HPWH is off. Turn on for water heating.
+22:31:9     77.597          118.267          NaN                21.0             HPWH is off. Turn on for water heating.
+22:31:14     78.734          117.655          NaN                4673.0             Temperature is really low. Heating w/ upper element.
+22:31:19     78.646          117.043          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+22:31:24     79.433          115.206          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+22:31:29     79.346          115.468          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+22:31:34     80.396          116.955          NaN                4558.5             Temperature is really low. Heating w/ upper element.
+22:31:39     81.882          116.955          NaN                4540.5             Temperature is really low. Heating w/ upper element.
+22:31:44     80.745          117.13          NaN                4543.5             Temperature is really low. Heating w/ upper element.
+22:31:49     80.92          117.393          NaN                4546.5             Temperature is really low. Heating w/ upper element.
+22:31:54     79.696          116.693          NaN                4549.5             Temperature is really low. Heating w/ upper element.
+22:31:59     79.433          116.955          NaN                4540.5             Temperature is really low. Heating w/ upper element.
+22:32:4     79.608          116.605          NaN                4561.5             Temperature is really low. Heating w/ upper element.
+22:32:9     78.909          116.431          NaN                4555.5             Temperature is really low. Heating w/ upper element.
+22:32:14     79.346          116.256          NaN                4555.5             Temperature is really low. Heating w/ upper element.
+22:32:19     80.658          116.518          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+22:32:24     80.133          117.83          NaN                4579.5             Temperature is really low. Heating w/ upper element.
+22:32:29     81.183          117.917          NaN                4579.5             Temperature is really low. Heating w/ upper element.
+22:32:34     80.833          119.317          NaN                4576.5             Temperature is really low. Heating w/ upper element.
+22:32:39     79.171          118.005          NaN                4534.5             Temperature is really low. Heating w/ upper element.
+22:32:44     78.734          117.305          NaN                4579.5             Temperature is really low. Heating w/ upper element.
+22:32:49     79.871          117.655          NaN                4534.5             Temperature is really low. Heating w/ upper element.
+22:32:54     79.783          117.568          NaN                4567.5             Temperature is really low. Heating w/ upper element.
+22:32:59     79.084          117.917          NaN                4561.5             Temperature is really low. Heating w/ upper element.
+22:33:4     81.882          119.404          NaN                4573.5             Temperature is really low. Heating w/ upper element.
+22:33:9     82.932          118.88          NaN                4573.5             Temperature is really low. Heating w/ upper element.
+22:33:14     82.145          120.192          NaN                4540.5             Temperature is really low. Heating w/ upper element.
+22:33:19     81.27          120.192          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+22:33:24     78.821          119.579          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+22:33:29     78.909          119.492          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+22:33:34     78.734          119.754          NaN                4555.5             Temperature is really low. Heating w/ upper element.
+22:33:39     79.696          119.667          NaN                4555.5             Temperature is really low. Heating w/ upper element.
+22:33:44     79.521          119.842          NaN                4549.5             Temperature is really low. Heating w/ upper element.
+22:33:49     80.396          119.754          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+22:33:54     81.183          120.629          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:33:59     81.708          120.979          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:34:4     81.008          121.154          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:34:9     79.259          119.579          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:34:14     79.259          119.404          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+22:34:19     79.783          120.104          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+22:34:24     79.171          119.929          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+22:34:29     81.008          121.416          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:34:34     81.445          121.941          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:34:39     81.795          121.941          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:34:44     81.445          121.941          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+22:34:49     80.396          121.678          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:34:54     79.958          120.017          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:34:59     79.696          120.716          NaN                4658.0             Temperature is really low. Heating w/ upper element.
+22:35:4     80.133          120.629          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+22:35:9     79.958          119.929          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:35:14     81.62          122.553          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:35:19     81.533          122.466          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:35:24     82.582          121.941          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:35:29     80.745          122.116          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:35:34     80.92          122.116          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:35:39     80.92          120.629          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:35:44     80.571          120.716          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:35:49     80.571          120.804          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:35:54     81.882          121.766          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+22:35:59     84.506          122.553          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:36:4     82.757          122.203          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:36:9     82.582          121.241          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:36:14     81.882          121.853          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:36:19     81.533          121.066          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:36:24     81.795          121.503          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:36:29     81.795          120.804          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:36:34     83.369          121.241          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:36:39     82.407          121.678          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:36:44     83.544          122.203          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:36:49     85.206          122.116          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:36:54     84.681          122.203          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:36:59     83.632          121.591          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:37:4     82.845          120.804          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:37:9     83.632          121.329          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:37:14     82.407          119.842          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:37:19     84.594          121.503          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:37:24     83.719          122.203          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:37:29     85.556          121.941          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+22:37:34     85.468          121.154          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:37:39     84.419          122.028          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:37:44     83.544          120.979          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:37:49     84.331          121.241          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:37:54     84.419          121.154          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:37:59     85.294          120.716          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:38:4     86.868          121.154          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:38:9     86.518          122.028          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:38:14     86.256          122.116          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:38:19     85.906          122.116          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:38:24     85.031          121.241          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:38:29     85.031          120.017          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:38:34     85.818          120.979          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:38:39     85.206          120.804          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:38:44     87.393          121.766          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:38:49     87.218          122.64          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:38:54     88.617          122.553          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+22:38:59     88.617          122.116          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:39:4     86.78          122.028          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:39:9     85.906          120.279          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:39:14     87.393          121.241          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:39:19     86.693          121.416          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:39:24     87.043          121.154          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:39:29     87.917          120.629          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:39:34     88.967          122.203          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:39:39     89.492          122.378          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:39:44     88.005          122.028          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:39:49     87.655          121.678          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:39:54     87.743          120.891          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:39:59     87.305          120.541          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:40:4     87.655          120.366          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:40:9     88.967          121.329          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:40:14     88.967          122.116          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:40:19     90.366          122.378          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:40:24     90.104          122.203          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:40:29     89.842          122.116          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:40:34     88.792          122.203          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:40:39     88.53          121.503          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:40:44     89.054          121.066          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:40:49     90.017          121.066          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:40:54     89.667          122.028          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:40:59     89.404          122.203          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:41:4     90.891          122.116          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:41:9     90.279          122.028          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:41:14     90.716          121.766          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:41:19     89.404          120.891          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+22:41:24     89.579          120.804          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:41:29     89.754          120.279          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:41:34     90.366          120.279          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:41:39     91.591          120.541          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:41:44     91.678          121.503          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:41:49     91.241          120.891          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:41:54     92.378          121.154          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:41:59     90.454          121.329          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:42:4     90.891          121.766          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:42:9     90.804          119.317          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+22:42:14     90.891          120.454          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+22:42:19     91.329          121.241          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:42:24     92.203          121.241          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:42:29     92.028          121.066          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:42:34     93.952          121.329          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:42:39     91.766          121.853          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:42:44     91.066          121.154          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:42:49     91.241          119.579          NaN                4652.0             Temperature is really low. Heating w/ upper element.
+22:42:54     91.329          120.804          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+22:42:59     92.028          121.066          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+22:43:4     91.241          120.891          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:43:9     92.466          121.329          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:43:14     92.815          122.028          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:43:19     94.74          122.64          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:43:24     91.678          121.678          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:43:29     92.291          121.154          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:43:34     92.466          120.454          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:43:39     92.815          121.329          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:43:44     92.64          121.241          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:43:49     93.603          121.766          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:43:54     94.302          121.678          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:43:59     95.702          122.291          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:44:4     95.352          122.028          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:44:9     93.515          121.591          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:44:14     93.34          121.678          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:44:19     93.253          120.891          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:44:24     94.215          120.192          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:44:29     93.865          121.241          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:44:34     95.964          121.066          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:44:39     95.702          122.291          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:44:44     94.477          121.941          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:44:49     95.439          122.553          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:44:54     94.827          121.853          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:44:59     94.565          121.503          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:45:4     94.565          121.416          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:45:9     94.565          120.192          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:45:14     95.177          121.503          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:45:19     96.489          122.291          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:45:24     96.139          121.853          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:45:29     95.877          121.941          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:45:34     96.314          121.678          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:45:39     95.789          121.678          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:45:44     94.652          120.979          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:45:49     95.527          120.366          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:45:54     95.264          120.366          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:45:59     96.314          121.853          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:46:4     97.626          122.64          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:46:9     96.314          122.203          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:46:14     97.451          122.116          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:46:19     96.314          122.466          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+22:46:24     96.052          122.028          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:46:29     96.052          121.066          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:46:34     96.314          121.154          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+22:46:39     95.964          120.804          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:46:44     96.926          121.766          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:46:49     99.2          121.941          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+22:46:54     98.85          122.378          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:46:59     100.075          122.116          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:47:4     98.763          122.028          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:47:9     96.751          121.066          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:47:14     96.751          121.503          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:47:19     97.276          120.804          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:47:24     98.326          121.241          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:47:29     99.113          122.291          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+22:47:34     99.638          122.466          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:47:39     98.85          121.066          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:47:44     98.675          122.203          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:47:49     97.189          122.466          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:47:54     97.276          121.503          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:47:59     97.538          120.366          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:48:4     96.839          120.979          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+22:48:9     98.151          121.066          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+22:48:14     99.55          122.028          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:48:19     99.812          122.466          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:48:24     100.425          122.466          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:48:29     98.938          122.203          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:48:34     98.588          122.028          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:48:39     98.675          121.591          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:48:44     99.025          121.241          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:48:49     98.763          121.329          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:48:54     98.85          120.541          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:48:59     101.299          121.678          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:49:4     100.25          122.028          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:49:9     100.775          122.116          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:49:14     100.512          122.116          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:49:19     98.763          121.678          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:49:24     98.413          120.104          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:49:29     100.162          121.154          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:49:34     100.25          120.629          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:49:39     100.775          121.766          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:49:44     103.049          121.941          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:49:49     101.649          121.154          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:49:54     101.562          121.591          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+22:49:59     101.562          121.941          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+22:50:4     101.299          121.678          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:50:9     100.775          121.766          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:50:14     100.6          120.979          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:50:19     101.387          121.154          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:50:24     101.474          120.804          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:50:29     103.224          121.591          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+22:50:34     101.999          121.853          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:50:39     102.874          122.116          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:50:44     101.037          121.591          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:50:49     101.824          120.891          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+22:50:54     101.562          121.066          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:50:59     101.299          121.066          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:51:4     101.824          120.366          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:51:9     102.699          121.591          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:51:14     103.748          121.941          NaN                4637.0             Temperature is really low. Heating w/ lower element.
+22:51:19     103.923          121.941          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:51:24     102.786          121.941          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:51:29     102.174          122.203          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:51:34     102.261          121.766          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:51:39     102.349          120.541          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:51:44     102.611          120.804          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:51:49     102.699          121.066          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:51:54     102.961          121.591          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:51:59     105.235          121.678          NaN                4585.5             Temperature is really low. Heating w/ lower element.
+22:52:4     104.273          122.116          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:52:9     104.448          122.291          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:52:14     103.224          122.028          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:52:19     102.961          120.891          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:52:24     103.573          120.192          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:52:29     102.874          120.979          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:52:34     103.836          121.066          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:52:39     104.973          121.416          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:52:44     104.71          121.416          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:52:49     104.885          122.116          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:52:54     105.935          122.116          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:52:59     104.361          121.678          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:53:4     104.885          120.279          NaN                4588.5             Temperature is really low. Heating w/ lower element.
+22:53:9     104.623          120.891          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:53:14     104.011          121.329          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:53:19     104.361          120.279          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:53:24     105.585          121.066          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:53:29     105.847          121.503          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+22:53:34     105.673          122.203          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:53:39     107.334          121.766          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:53:44     104.973          121.591          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:53:49     105.498          120.017          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:53:54     106.11          120.541          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+22:53:59     106.547          118.705          NaN                4540.5             Temperature is really low. Heating w/ upper element.
+22:54:4     106.81          122.028          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+22:54:9     107.509          121.941          NaN                4588.5             Temperature is really low. Heating w/ lower element.
+22:54:14     107.947          122.203          NaN                4585.5             Temperature is really low. Heating w/ lower element.
+22:54:19     107.597          122.116          NaN                4625.0             Temperature is really low. Heating w/ lower element.
+22:54:24     106.81          122.553          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:54:29     106.022          121.678          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:54:34     106.022          121.066          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:54:39     106.197          120.979          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:54:44     105.847          121.154          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:54:49     107.334          120.804          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+22:54:54     108.209          121.853          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:54:59     108.821          121.678          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:55:4     107.772          121.329          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+22:55:9     107.684          120.891          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:55:14     106.46          120.192          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+22:55:19     106.635          120.192          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+22:55:24     107.159          119.579          NaN                4570.5             Temperature is really low. Heating w/ upper element.
+22:55:29     107.334          120.454          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+22:55:34     108.034          121.591          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:55:39     108.384          122.028          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:55:44     108.734          121.503          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:55:49     109.521          121.766          NaN                4579.5             Temperature is really low. Heating w/ lower element.
+22:55:54     108.471          121.941          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:55:59     108.296          120.629          NaN                4579.5             Temperature is really low. Heating w/ lower element.
+22:56:4     107.422          119.842          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+22:56:9     107.247          119.842          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+22:56:14     108.034          119.842          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+22:56:19     108.909          118.88          NaN                4570.5             Temperature is really low. Heating w/ upper element.
+22:56:24     108.909          120.017          NaN                4558.5             Temperature is really low. Heating w/ upper element.
+22:56:29     109.433          119.754          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+22:56:34     109.958          121.678          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:56:39     108.559          122.203          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:56:44     107.947          121.329          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:56:49     108.821          120.017          NaN                4585.5             Temperature is really low. Heating w/ lower element.
+22:56:54     108.646          119.754          NaN                4576.5             Temperature is really low. Heating w/ lower element.
+22:56:59     108.821          119.492          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+22:57:4     109.433          118.792          NaN                4552.5             Temperature is really low. Heating w/ upper element.
+22:57:9     110.396          120.017          NaN                4522.5             Temperature is really low. Heating w/ upper element.
+22:57:14     110.571          119.929          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+22:57:19     111.795          120.279          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:57:24     108.384          118.267          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+22:57:29     108.471          118.792          NaN                4537.5             Temperature is really low. Heating w/ upper element.
+22:57:34     108.646          119.667          NaN                4558.5             Temperature is really low. Heating w/ upper element.
+22:57:39     109.346          120.192          NaN                4510.5             Temperature is really low. Heating w/ upper element.
+22:57:44     108.996          120.366          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+22:57:49     110.046          120.891          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:57:54     111.795          119.579          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+22:57:59     111.27          120.541          NaN                4579.5             Temperature is really low. Heating w/ upper element.
+22:58:4     110.221          120.891          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+22:58:9     109.783          120.891          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:58:14     109.259          120.454          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+22:58:19     109.084          120.017          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:58:24     109.608          119.142          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+22:58:29     110.483          120.716          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+22:58:34     111.882          121.329          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+22:58:39     111.358          122.028          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+22:58:44     110.92          121.154          NaN                4576.5             Temperature is really low. Heating w/ lower element.
+22:58:49     110.92          121.853          NaN                4576.5             Temperature is really low. Heating w/ lower element.
+22:58:54     109.608          121.416          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+22:58:59     109.783          120.891          NaN                4576.5             Temperature is really low. Heating w/ lower element.
+22:59:4     110.92          121.066          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+22:59:9     110.308          119.754          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:59:14     110.658          120.541          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+22:59:19     112.232          122.028          NaN                4573.5             Temperature is really low. Heating w/ lower element.
+22:59:24     112.057          122.203          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+22:59:29     112.495          121.766          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+22:59:34     111.445          121.066          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+22:59:39     109.958          120.804          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+22:59:44     110.483          119.754          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+22:59:49     110.396          119.842          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+22:59:54     110.658          120.629          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+22:59:59     110.308          121.154          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+23:0:4     112.407          121.416          NaN                4585.5             Temperature is really low. Heating w/ lower element.
+23:0:9     113.194          121.591          NaN                4619.0             Temperature is really low. Heating w/ lower element.
+23:0:14     112.932          121.941          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+23:0:19     114.331          122.116          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+23:0:24     111.095          119.754          NaN                4567.5             Temperature is really low. Heating w/ lower element.
+23:0:29     110.833          120.366          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+23:0:34     111.795          121.066          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+23:0:39     112.32          121.416          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+23:0:44     111.62          119.579          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+23:0:49     113.457          121.066          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+23:0:54     115.206          121.941          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+23:0:59     113.457          121.591          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+23:1:4     114.506          120.891          NaN                4594.5             Temperature is really low. Heating w/ lower element.
+23:1:9     114.157          121.329          NaN                4588.5             Temperature is really low. Heating w/ lower element.
+23:1:14     113.194          120.891          NaN                4564.5             Temperature is really low. Heating w/ lower element.
+23:1:19     112.932          120.891          NaN                4579.5             Temperature is really low. Heating w/ lower element.
+23:1:24     112.057          120.366          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+23:1:29     114.594          121.678          NaN                4573.5             Temperature is really low. Heating w/ lower element.
+23:1:34     114.856          122.291          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+23:1:39     114.856          122.028          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+23:1:44     115.468          121.941          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+23:1:49     112.845          121.853          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+23:1:54     113.807          121.503          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+23:1:59     113.807          119.929          NaN                4610.0             Temperature is really low. Heating w/ lower element.
+23:2:4     114.769          120.629          NaN                4579.5             Temperature is really low. Heating w/ lower element.
+23:2:9     113.894          120.104          NaN                4564.5             Temperature is really low. Heating w/ lower element.
+23:2:14     114.681          121.241          NaN                4588.5             Temperature is really low. Heating w/ lower element.
+23:2:19     115.993          121.766          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+23:2:24     116.431          122.203          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+23:2:29     115.119          122.028          NaN                4585.5             Temperature is really low. Heating w/ lower element.
+23:2:34     113.894          121.941          NaN                4598.0             Temperature is really low. Heating w/ lower element.
+23:2:39     114.856          121.241          NaN                4567.5             Temperature is really low. Heating w/ lower element.
+23:2:44     114.856          121.066          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+23:2:49     114.944          120.979          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+23:2:54     114.069          119.579          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+23:2:59     115.556          120.804          NaN                4631.0             Temperature is really low. Heating w/ lower element.
+23:3:4     116.605          121.941          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+23:3:9     117.568          121.766          NaN                4607.0             Temperature is really low. Heating w/ lower element.
+23:3:14     117.13          121.678          NaN                4588.5             Temperature is really low. Heating w/ lower element.
+23:3:19     116.693          121.766          NaN                4601.0             Temperature is really low. Heating w/ lower element.
+23:3:24     115.643          120.716          NaN                4573.5             Temperature is really low. Heating w/ lower element.
+23:3:29     115.818          119.929          NaN                4570.5             Temperature is really low. Heating w/ lower element.
+23:3:34     115.818          120.017          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+23:3:39     115.294          120.891          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+23:3:44     115.556          121.154          NaN                4622.0             Temperature is really low. Heating w/ lower element.
+23:3:49     115.643          120.366          NaN                4582.5             Temperature is really low. Heating w/ lower element.
+23:3:54     119.492          120.366          NaN                4613.0             Temperature is really low. Heating w/ lower element.
+23:3:59     117.218          120.454          NaN                21.0             HPWH is off. Turn on for water heating.
+23:4:4     114.769          122.553          NaN                21.0             HPWH is off. Turn on for water heating.
+23:4:9     114.856          121.154          NaN                4628.0             Temperature is really low. Heating w/ lower element.
+23:4:14     116.78          120.716          NaN                4591.5             Temperature is really low. Heating w/ lower element.
+23:4:19     117.218          120.804          NaN                4616.0             Temperature is really low. Heating w/ lower element.
+23:4:24     116.693          120.366          NaN                4604.0             Temperature is really low. Heating w/ lower element.
+23:4:29     118.442          121.329          NaN                21.0             Temperature is really low. Heating w/ lower element.
+23:4:34     115.294          120.891          NaN                21.0             Temperature is really low. Heating w/ lower element.
+23:4:39     115.556          120.979          NaN                21.0             Temperature is really low. Heating w/ lower element.
+23:4:44     115.818          122.116          NaN                24.0             HPWH is off. Turn on for water heating.
+23:4:49     116.256          122.291          NaN                18.0             Temperature acceptable. All off.
+23:4:54     115.468          122.116          NaN                21.0             Temperature acceptable. All off.
+23:4:59     115.294          121.853          NaN                21.0             Temperature acceptable. All off.
+23:5:4     115.643          122.553          NaN                21.0             Temperature acceptable. All off.
+23:5:9     114.944          121.766          NaN                21.0             Temperature acceptable. All off.
+23:5:14     115.556          121.941          NaN                24.0             Temperature acceptable. All off.
+23:5:19     116.081          121.591          NaN                21.0             Temperature acceptable. All off.
+23:5:24     117.83          122.728          NaN                21.0             Temperature acceptable. All off.
+23:5:29     116.605          121.941          NaN                21.0             Temperature acceptable. All off.
+23:5:34     115.731          120.804          NaN                18.0             Temperature acceptable. All off.
+23:5:39     116.78          121.154          NaN                21.0             Temperature acceptable. All off.
+23:5:44     115.818          120.454          NaN                21.0             Temperature acceptable. All off.
+23:5:49     115.906          121.066          NaN                21.0             Temperature acceptable. All off.
+23:5:54     115.731          121.503          NaN                21.0             Temperature acceptable. All off.
+23:5:59     116.693          122.99          NaN                18.0             Temperature acceptable. All off.
+23:6:4     116.081          122.466          NaN                21.0             Temperature acceptable. All off.
+23:6:9     116.431          121.066          NaN                18.0             Temperature acceptable. All off.
+23:6:14     116.605          120.366          NaN                18.0             Temperature acceptable. All off.
+23:6:19     115.818          121.241          NaN                21.0             Temperature acceptable. All off.
+23:6:24     116.168          122.203          NaN                21.0             Temperature acceptable. All off.
+23:6:29     116.693          121.853          NaN                21.0             Temperature acceptable. All off.
+23:6:34     115.468          120.716          NaN                21.0             Temperature acceptable. All off.
+23:6:39     115.906          120.979          NaN                21.0             Temperature acceptable. All off.
+23:6:44     116.168          121.678          NaN                21.0             Temperature acceptable. All off.
+23:6:49     114.769          122.028          NaN                18.0             Temperature acceptable. All off.
+23:6:54     117.043          122.291          NaN                21.0             Temperature acceptable. All off.
+23:6:59     115.731          121.154          NaN                21.0             Temperature acceptable. All off.
+23:7:4     115.993          122.553          NaN                21.0             Temperature acceptable. All off.
+23:7:9     115.818          120.716          NaN                21.0             Temperature acceptable. All off.
+23:7:14     115.556          121.329          NaN                21.0             Temperature acceptable. All off.
+23:7:19     115.731          122.903          NaN                21.0             Temperature acceptable. All off.
+23:7:24     116.081          121.766          NaN                21.0             Temperature acceptable. All off.
+23:7:29     116.431          120.891          NaN                21.0             Temperature acceptable. All off.
+23:7:34     115.818          121.941          NaN                21.0             Temperature acceptable. All off.
+23:7:39     116.343          122.378          NaN                21.0             Temperature acceptable. All off.
+23:7:44     116.256          122.378          NaN                21.0             Temperature acceptable. All off.
+23:7:49     116.256          122.815          NaN                21.0             Temperature acceptable. All off.
+23:7:54     115.906          121.154          NaN                15.0             Temperature acceptable. All off.
+23:7:59     114.944          121.941          NaN                21.0             Temperature acceptable. All off.
+23:8:4     114.506          120.629          NaN                18.0             Temperature acceptable. All off.
+23:8:9     117.393          120.979          NaN                24.0             Temperature acceptable. All off.
+23:8:14     115.818          119.754          NaN                21.0             Temperature acceptable. All off.
+23:8:19     116.78          120.804          NaN                24.0             Temperature acceptable. All off.
+23:8:24     115.556          121.591          NaN                21.0             Temperature acceptable. All off.
+23:8:29     116.693          121.766          NaN                21.0             Temperature acceptable. All off.
+23:8:34     115.818          121.154          NaN                21.0             Temperature acceptable. All off.
+23:8:39     115.381          122.116          NaN                21.0             Temperature acceptable. All off.
+23:8:44     115.206          122.028          NaN                21.0             Temperature acceptable. All off.
+23:8:49     114.681          121.154          NaN                24.0             Temperature acceptable. All off.
+23:8:54     116.343          121.678          NaN                21.0             Temperature acceptable. All off.
+23:8:59     115.381          121.591          NaN                18.0             Temperature acceptable. All off.
+23:9:4     115.906          121.766          NaN                21.0             Temperature acceptable. All off.
+23:9:9     116.518          121.591          NaN                24.0             Temperature acceptable. All off.
+23:9:14     116.868          122.116          NaN                21.0             Temperature acceptable. All off.
+23:9:19     115.468          121.416          NaN                21.0             Temperature acceptable. All off.
+23:9:24     115.818          121.941          NaN                21.0             Temperature acceptable. All off.
+23:9:29     115.031          120.716          NaN                21.0             Temperature acceptable. All off.
+23:9:34     115.294          120.366          NaN                21.0             Temperature acceptable. All off.
+23:9:39     115.643          121.154          NaN                21.0             Temperature acceptable. All off.
+23:9:44     116.343          122.466          NaN                21.0             Temperature acceptable. All off.
+23:9:49     116.605          121.329          NaN                21.0             Temperature acceptable. All off.
+23:9:54     116.693          120.979          NaN                21.0             Temperature acceptable. All off.
+23:9:59     114.769          120.279          NaN                21.0             Temperature acceptable. All off.
+23:10:4     115.731          121.766          NaN                21.0             Temperature acceptable. All off.
+23:10:9     115.818          122.028          NaN                21.0             Temperature acceptable. All off.
+23:10:14     114.944          122.203          NaN                21.0             Temperature acceptable. All off.
+23:10:19     114.594          121.503          NaN                21.0             Temperature acceptable. All off.
+23:10:24     115.818          120.279          NaN                21.0             Temperature acceptable. All off.
+23:10:29     116.605          121.503          NaN                21.0             Temperature acceptable. All off.
+23:10:34     115.731          120.454          NaN                21.0             Temperature acceptable. All off.
+23:10:39     115.818          122.028          NaN                21.0             Temperature acceptable. All off.
+23:10:44     116.431          120.979          NaN                21.0             Temperature acceptable. All off.
+23:10:49     115.993          121.766          NaN                21.0             Temperature acceptable. All off.
+23:10:54     116.168          119.667          NaN                21.0             Temperature acceptable. All off.
+23:10:59     114.769          121.154          NaN                21.0             Temperature acceptable. All off.
+23:11:4     115.468          121.154          NaN                21.0             Temperature acceptable. All off.
+23:11:9     115.468          121.503          NaN                21.0             Temperature acceptable. All off.
+23:11:14     115.381          121.416          NaN                21.0             Temperature acceptable. All off.
+23:11:19     116.081          122.203          NaN                24.0             Temperature acceptable. All off.
+23:11:24     115.906          121.678          NaN                18.0             Temperature acceptable. All off.
+23:11:29     116.518          122.116          NaN                21.0             Temperature acceptable. All off.
+23:11:34     115.381          120.891          NaN                21.0             Temperature acceptable. All off.
+23:11:39     115.556          121.154          NaN                18.0             Temperature acceptable. All off.
+23:11:44     115.119          120.804          NaN                21.0             Temperature acceptable. All off.
+23:11:49     116.168          121.853          NaN                21.0             Temperature acceptable. All off.
+23:11:54     115.556          120.891          NaN                21.0             Temperature acceptable. All off.
+23:11:59     115.556          121.853          NaN                21.0             Temperature acceptable. All off.
+23:12:4     116.168          121.329          NaN                21.0             Temperature acceptable. All off.
+23:12:9     115.294          121.416          NaN                18.0             Temperature acceptable. All off.
+23:12:14     113.894          120.979          NaN                18.0             Temperature acceptable. All off.
+23:12:19     115.119          120.979          NaN                21.0             Temperature acceptable. All off.
+23:12:24     115.294          120.366          NaN                21.0             Temperature acceptable. All off.
+23:12:29     115.381          121.591          NaN                21.0             Temperature acceptable. All off.
+23:12:34     115.206          121.591          NaN                21.0             Temperature acceptable. All off.
+23:12:39     116.081          121.503          NaN                21.0             Temperature acceptable. All off.
+23:12:44     115.643          121.591          NaN                21.0             Temperature acceptable. All off.
+23:12:49     115.643          121.503          NaN                21.0             Temperature acceptable. All off.
+23:12:54     115.556          121.416          NaN                21.0             Temperature acceptable. All off.
+23:12:59     115.031          120.891          NaN                21.0             Temperature acceptable. All off.
+23:13:4     115.381          121.241          NaN                21.0             Temperature acceptable. All off.
+23:13:9     116.256          122.028          NaN                21.0             Temperature acceptable. All off.
+23:13:14     115.556          121.853          NaN                15.0             Temperature acceptable. All off.
+23:13:19     114.681          121.678          NaN                21.0             Temperature acceptable. All off.
+23:13:24     115.643          122.116          NaN                21.0             Temperature acceptable. All off.
+23:13:29     115.993          122.203          NaN                21.0             Temperature acceptable. All off.
+23:13:34     116.518          121.066          NaN                18.0             Temperature acceptable. All off.
+23:13:39     115.468          121.329          NaN                18.0             Temperature acceptable. All off.
+23:13:44     115.906          121.678          NaN                21.0             Temperature acceptable. All off.
+23:13:49     116.168          121.416          NaN                21.0             Temperature acceptable. All off.
+23:13:54     114.681          121.678          NaN                21.0             Temperature acceptable. All off.
+23:13:59     114.856          121.329          NaN                21.0             Temperature acceptable. All off.
+23:14:4     116.431          121.503          NaN                21.0             Temperature acceptable. All off.
+23:14:9     116.518          121.766          NaN                21.0             Temperature acceptable. All off.
+23:14:14     115.818          121.503          NaN                21.0             Temperature acceptable. All off.
+23:14:19     117.13          122.116          NaN                21.0             Temperature acceptable. All off.
+23:14:24     114.681          121.853          NaN                24.0             Temperature acceptable. All off.
+23:14:29     116.343          121.503          NaN                21.0             Temperature acceptable. All off.
+23:14:34     115.818          121.329          NaN                21.0             Temperature acceptable. All off.
+23:14:39     115.119          120.541          NaN                18.0             Temperature acceptable. All off.
+23:14:44     114.331          120.804          NaN                18.0             Temperature acceptable. All off.
+23:14:49     116.168          121.941          NaN                18.0             Temperature acceptable. All off.
+23:14:54     115.119          121.853          NaN                21.0             Temperature acceptable. All off.
+23:14:59     116.081          122.728          NaN                21.0             Temperature acceptable. All off.
+23:15:4     116.78          122.728          NaN                21.0             Temperature acceptable. All off.
+23:15:9     115.294          122.028          NaN                21.0             Temperature acceptable. All off.
+23:15:14     116.256          121.416          NaN                18.0             Temperature acceptable. All off.
+23:15:19     116.168          121.591          NaN                24.0             Temperature acceptable. All off.
+23:15:24     115.294          122.028          NaN                21.0             Temperature acceptable. All off.
+23:15:29     115.818          121.853          NaN                21.0             Temperature acceptable. All off.
+23:15:34     116.431          121.853          NaN                18.0             Temperature acceptable. All off.
+23:15:39     116.256          122.203          NaN                24.0             Temperature acceptable. All off.
+23:15:44     116.605          122.291          NaN                18.0             Temperature acceptable. All off.
+23:15:49     115.643          122.116          NaN                18.0             Temperature acceptable. All off.
+23:15:54     115.731          121.503          NaN                21.0             Temperature acceptable. All off.
+23:15:59     114.944          121.853          NaN                21.0             Temperature acceptable. All off.
+23:16:4     116.256          121.853          NaN                18.0             Temperature acceptable. All off.
+23:16:9     115.556          121.503          NaN                21.0             Temperature acceptable. All off.
+23:16:14     116.518          121.766          NaN                21.0             Temperature acceptable. All off.
+23:16:19     115.993          122.028          NaN                21.0             Temperature acceptable. All off.
+23:16:24     114.506          121.329          NaN                21.0             Temperature acceptable. All off.
+23:16:29     115.468          121.678          NaN                21.0             Temperature acceptable. All off.
+23:16:34     115.818          121.678          NaN                21.0             Temperature acceptable. All off.
+23:16:39     116.518          121.591          NaN                21.0             Temperature acceptable. All off.
+23:16:44     115.206          121.941          NaN                21.0             Temperature acceptable. All off.
+23:16:49     115.643          121.241          NaN                24.0             Temperature acceptable. All off.
+23:16:54     115.818          122.116          NaN                24.0             Temperature acceptable. All off.
+23:16:59     116.518          121.853          NaN                21.0             Temperature acceptable. All off.
+23:17:4     115.643          121.941          NaN                24.0             Temperature acceptable. All off.
+23:17:9     116.693          121.416          NaN                21.0             Temperature acceptable. All off.
+23:17:14     116.955          121.503          NaN                21.0             Temperature acceptable. All off.
+23:17:19     116.343          121.416          NaN                21.0             Temperature acceptable. All off.
+23:17:24     115.031          120.979          NaN                21.0             Temperature acceptable. All off.
+23:17:29     115.381          121.241          NaN                21.0             Temperature acceptable. All off.
+23:17:34     115.906          120.891          NaN                21.0             Temperature acceptable. All off.
+23:17:39     115.993          121.591          NaN                21.0             Temperature acceptable. All off.
+23:17:44     115.643          121.766          NaN                21.0             Temperature acceptable. All off.
+23:17:49     115.818          121.941          NaN                21.0             Temperature acceptable. All off.
+23:17:54     116.518          122.203          NaN                21.0             Temperature acceptable. All off.
+23:17:59     115.643          122.028          NaN                21.0             Temperature acceptable. All off.
+23:18:4     115.381          121.678          NaN                21.0             Temperature acceptable. All off.
+23:18:9     115.643          121.503          NaN                21.0             Temperature acceptable. All off.
+23:18:14     114.594          121.241          NaN                21.0             Temperature acceptable. All off.
+23:18:19     115.556          121.416          NaN                21.0             Temperature acceptable. All off.
+23:18:24     116.605          121.591          NaN                21.0             Temperature acceptable. All off.
+23:18:29     116.256          121.766          NaN                21.0             Temperature acceptable. All off.
+23:18:34     115.468          121.503          NaN                21.0             Temperature acceptable. All off.
+23:18:39     116.256          121.678          NaN                21.0             Temperature acceptable. All off.
+23:18:44     115.381          121.591          NaN                24.0             Temperature acceptable. All off.
+23:18:49     115.468          121.154          NaN                21.0             Temperature acceptable. All off.
+23:18:54     115.818          121.241          NaN                21.0             Temperature acceptable. All off.
+23:18:59     115.993          121.766          NaN                18.0             Temperature acceptable. All off.
+23:19:4     115.993          121.154          NaN                21.0             Temperature acceptable. All off.
+23:19:9     115.556          121.591          NaN                21.0             Temperature acceptable. All off.
+23:19:14     115.031          121.503          NaN                21.0             Temperature acceptable. All off.
+23:19:19     115.381          121.853          NaN                21.0             Temperature acceptable. All off.
+23:19:24     116.518          121.941          NaN                21.0             Temperature acceptable. All off.
+23:19:29     115.993          121.766          NaN                21.0             Temperature acceptable. All off.
+23:19:34     114.944          121.241          NaN                21.0             Temperature acceptable. All off.
+23:19:39     115.294          121.853          NaN                21.0             Temperature acceptable. All off.
+23:19:44     115.381          121.416          NaN                21.0             Temperature acceptable. All off.
+23:19:49     113.982          121.329          NaN                21.0             Temperature acceptable. All off.
+23:19:54     114.069          120.804          NaN                21.0             Temperature acceptable. All off.
+23:19:59     115.294          122.028          NaN                21.0             Temperature acceptable. All off.
+23:20:4     115.294          121.591          NaN                21.0             Temperature acceptable. All off.
+23:20:9     115.119          121.503          NaN                21.0             Temperature acceptable. All off.
+23:20:14     115.381          121.591          NaN                21.0             Temperature acceptable. All off.
+23:20:19     115.556          121.503          NaN                21.0             Temperature acceptable. All off.
+23:20:24     115.381          121.241          NaN                21.0             Temperature acceptable. All off.
+23:20:29     115.643          121.066          NaN                21.0             Temperature acceptable. All off.
+23:20:34     115.731          121.241          NaN                21.0             Temperature acceptable. All off.
+23:20:39     115.731          121.678          NaN                21.0             Temperature acceptable. All off.
+23:20:44     115.993          121.766          NaN                21.0             Temperature acceptable. All off.
+23:20:49     115.468          121.766          NaN                21.0             Temperature acceptable. All off.
+23:20:54     115.294          121.503          NaN                21.0             Temperature acceptable. All off.
+23:20:59     115.031          121.241          NaN                21.0             Temperature acceptable. All off.
+23:21:4     114.681          120.541          NaN                21.0             Temperature acceptable. All off.
+23:21:9     116.256          121.329          NaN                21.0             Temperature acceptable. All off.
+23:21:14     116.518          121.416          NaN                21.0             Temperature acceptable. All off.
+23:21:19     115.818          121.503          NaN                18.0             Temperature acceptable. All off.
+23:21:24     116.693          121.678          NaN                15.0             Temperature acceptable. All off.
+23:21:29     115.731          121.503          NaN                24.0             Temperature acceptable. All off.
+23:21:34     116.168          121.766          NaN                21.0             Temperature acceptable. All off.
+23:21:39     115.031          121.766          NaN                21.0             Temperature acceptable. All off.
+23:21:44     115.468          121.678          NaN                21.0             Temperature acceptable. All off.
+23:21:49     115.119          121.066          NaN                18.0             Temperature acceptable. All off.
+23:21:54     115.206          121.503          NaN                21.0             Temperature acceptable. All off.
+23:21:59     116.605          121.591          NaN                18.0             Temperature acceptable. All off.
+23:22:4     115.818          121.329          NaN                21.0             Temperature acceptable. All off.
+23:22:9     115.731          121.503          NaN                21.0             Temperature acceptable. All off.
+23:22:14     116.605          121.066          NaN                21.0             Temperature acceptable. All off.
+23:22:19     116.343          121.241          NaN                21.0             Temperature acceptable. All off.
+23:22:24     115.381          121.678          NaN                21.0             Temperature acceptable. All off.
+23:22:29     115.556          121.329          NaN                18.0             Temperature acceptable. All off.
+23:22:34     115.993          121.678          NaN                21.0             Temperature acceptable. All off.
+23:22:39     116.343          121.853          NaN                21.0             Temperature acceptable. All off.
+23:22:44     116.518          121.503          NaN                21.0             Temperature acceptable. All off.
+23:22:49     116.343          121.329          NaN                24.0             Temperature acceptable. All off.
+23:22:54     116.518          120.979          NaN                21.0             Temperature acceptable. All off.
+23:22:59     116.78          121.853          NaN                21.0             Temperature acceptable. All off.
+23:23:4     115.468          121.241          NaN                21.0             Temperature acceptable. All off.
+23:23:9     115.993          121.766          NaN                21.0             Temperature acceptable. All off.
+23:23:14     116.081          120.891          NaN                21.0             Temperature acceptable. All off.
+23:23:19     116.168          121.766          NaN                21.0             Temperature acceptable. All off.
+23:23:24     116.081          120.366          NaN                21.0             Temperature acceptable. All off.
+23:23:29     116.693          121.766          NaN                24.0             Temperature acceptable. All off.
+23:23:34     115.206          121.416          NaN                21.0             Temperature acceptable. All off.
+23:23:39     115.818          121.591          NaN                21.0             Temperature acceptable. All off.
+23:23:44     115.993          120.891          NaN                21.0             Temperature acceptable. All off.
+23:23:49     116.518          121.766          NaN                21.0             Temperature acceptable. All off.
+23:23:54     116.081          121.329          NaN                21.0             Temperature acceptable. All off.
+23:23:59     115.031          121.066          NaN                18.0             Temperature acceptable. All off.
+23:24:4     115.294          120.716          NaN                21.0             Temperature acceptable. All off.
+23:24:9     114.944          119.929          NaN                21.0             Temperature acceptable. All off.
+23:24:14     115.906          120.629          NaN                21.0             Temperature acceptable. All off.
+23:24:19     116.431          121.329          NaN                21.0             Temperature acceptable. All off.
+23:24:24     117.218          121.241          NaN                21.0             Temperature acceptable. All off.
+23:24:29     115.731          120.979          NaN                18.0             Temperature acceptable. All off.
+23:24:34     115.731          120.804          NaN                24.0             Temperature acceptable. All off.
+23:24:39     116.081          121.678          NaN                21.0             Temperature acceptable. All off.
+23:24:44     115.993          121.416          NaN                18.0             Temperature acceptable. All off.
+23:24:49     115.731          121.241          NaN                21.0             Temperature acceptable. All off.
+23:24:54     116.256          120.192          NaN                21.0             Temperature acceptable. All off.
+23:24:59     116.518          121.154          NaN                21.0             Temperature acceptable. All off.
+23:25:4     116.431          121.853          NaN                21.0             Temperature acceptable. All off.
+23:25:9     115.993          121.678          NaN                21.0             Temperature acceptable. All off.
+23:25:14     115.031          121.241          NaN                24.0             Temperature acceptable. All off.
+23:25:19     115.993          121.766          NaN                21.0             Temperature acceptable. All off.
+23:25:24     116.256          120.979          NaN                21.0             Temperature acceptable. All off.
+23:25:29     115.643          121.154          NaN                18.0             Temperature acceptable. All off.
+23:25:34     116.256          121.241          NaN                21.0             Temperature acceptable. All off.
+23:25:39     115.468          121.416          NaN                21.0             Temperature acceptable. All off.
+23:25:44     115.381          121.066          NaN                21.0             Temperature acceptable. All off.
+23:25:49     115.818          121.154          NaN                21.0             Temperature acceptable. All off.
+23:25:54     116.081          121.416          NaN                21.0             Temperature acceptable. All off.
+23:25:59     115.993          121.591          NaN                21.0             Temperature acceptable. All off.
+23:26:4     115.119          121.416          NaN                24.0             Temperature acceptable. All off.
+23:26:9     116.693          121.853          NaN                21.0             Temperature acceptable. All off.
+23:26:14     115.206          120.629          NaN                24.0             Temperature acceptable. All off.
+23:26:19     114.944          121.066          NaN                21.0             Temperature acceptable. All off.
+23:26:24     116.343          121.591          NaN                21.0             Temperature acceptable. All off.
+23:26:29     116.518          121.503          NaN                21.0             Temperature acceptable. All off.
+23:26:34     115.906          121.678          NaN                21.0             Temperature acceptable. All off.
+23:26:39     116.256          121.241          NaN                21.0             Temperature acceptable. All off.
+23:26:44     115.818          121.329          NaN                18.0             Temperature acceptable. All off.
+23:26:49     115.818          121.066          NaN                21.0             Temperature acceptable. All off.
+23:26:54     115.993          120.804          NaN                21.0             Temperature acceptable. All off.
+23:26:59     116.605          120.979          NaN                21.0             Temperature acceptable. All off.
+23:27:4     115.643          121.503          NaN                21.0             Temperature acceptable. All off.
+23:27:9     116.518          120.716          NaN                21.0             Temperature acceptable. All off.
+23:27:14     116.693          121.329          NaN                21.0             Temperature acceptable. All off.
+23:27:19     117.13          121.416          NaN                18.0             Temperature acceptable. All off.
+23:27:24     115.731          121.853          NaN                21.0             Temperature acceptable. All off.
+23:27:29     115.119          120.891          NaN                21.0             Temperature acceptable. All off.
+23:27:34     116.256          120.804          NaN                21.0             Temperature acceptable. All off.
+23:27:39     115.818          120.716          NaN                21.0             Temperature acceptable. All off.
+23:27:44     116.431          121.241          NaN                21.0             Temperature acceptable. All off.
+23:27:49     115.818          121.591          NaN                21.0             Temperature acceptable. All off.
+23:27:54     116.431          121.154          NaN                21.0             Temperature acceptable. All off.
+23:27:59     116.518          121.678          NaN                21.0             Temperature acceptable. All off.
+23:28:4     116.256          122.028          NaN                21.0             Temperature acceptable. All off.
+23:28:9     116.168          121.241          NaN                18.0             Temperature acceptable. All off.
+23:28:14     116.081          121.416          NaN                21.0             Temperature acceptable. All off.
+23:28:19     116.868          120.629          NaN                24.0             Temperature acceptable. All off.
+23:28:24     116.081          121.416          NaN                24.0             Temperature acceptable. All off.
+23:28:29     115.731          120.366          NaN                21.0             Temperature acceptable. All off.
+23:28:34     116.081          120.541          NaN                21.0             Temperature acceptable. All off.
+23:28:39     116.168          121.416          NaN                21.0             Temperature acceptable. All off.
+23:28:44     115.818          121.416          NaN                21.0             Temperature acceptable. All off.
+23:28:49     115.643          121.503          NaN                21.0             Temperature acceptable. All off.
+23:28:54     116.081          121.241          NaN                18.0             Temperature acceptable. All off.
+23:28:59     116.518          121.416          NaN                21.0             Temperature acceptable. All off.
+23:29:4     116.868          122.028          NaN                21.0             Temperature acceptable. All off.
+23:29:9     116.256          120.891          NaN                18.0             Temperature acceptable. All off.
+23:29:14     116.168          120.454          NaN                21.0             Temperature acceptable. All off.
+23:29:19     115.643          121.241          NaN                21.0             Temperature acceptable. All off.
+23:29:24     115.643          121.591          NaN                21.0             Temperature acceptable. All off.
+23:29:29     116.868          121.329          NaN                24.0             Temperature acceptable. All off.
+23:29:34     116.78          121.329          NaN                21.0             Temperature acceptable. All off.
+23:29:39     115.294          120.279          NaN                21.0             Temperature acceptable. All off.
+23:29:44     116.081          121.416          NaN                18.0             Temperature acceptable. All off.
+23:29:49     115.643          121.766          NaN                21.0             Temperature acceptable. All off.
+23:29:54     116.518          120.716          NaN                24.0             Temperature acceptable. All off.
+23:29:59     114.856          120.629          NaN                21.0             Temperature acceptable. All off.
+23:30:4     116.78          120.192          NaN                21.0             Temperature acceptable. All off.
+23:30:9     115.731          121.154          NaN                21.0             Temperature acceptable. All off.
+23:30:14     116.955          121.154          NaN                21.0             Temperature acceptable. All off.
+23:30:19     115.468          121.241          NaN                18.0             Temperature acceptable. All off.
+23:30:24     115.643          120.804          NaN                21.0             Temperature acceptable. All off.
+23:30:29     115.731          120.891          NaN                24.0             Temperature acceptable. All off.
+23:30:34     115.906          121.329          NaN                21.0             Temperature acceptable. All off.
+23:30:39     115.731          120.979          NaN                21.0             Temperature acceptable. All off.
+23:30:44     116.78          120.541          NaN                24.0             Temperature acceptable. All off.
+23:30:49     115.818          121.329          NaN                21.0             Temperature acceptable. All off.
+23:30:54     116.081          120.716          NaN                21.0             Temperature acceptable. All off.
+23:30:59     116.081          121.766          NaN                18.0             Temperature acceptable. All off.
+23:31:4     116.343          120.279          NaN                21.0             Temperature acceptable. All off.
+23:31:9     116.256          121.066          NaN                21.0             Temperature acceptable. All off.
+23:31:14     115.818          120.804          NaN                21.0             Temperature acceptable. All off.
+23:31:19     115.731          119.229          NaN                21.0             Temperature acceptable. All off.
+23:31:24     116.168          120.454          NaN                21.0             Temperature acceptable. All off.
+23:31:29     115.468          121.154          NaN                18.0             Temperature acceptable. All off.
+23:31:34     115.993          120.629          NaN                24.0             Temperature acceptable. All off.
+23:31:39     116.343          120.541          NaN                21.0             Temperature acceptable. All off.
+23:31:44     115.993          119.929          NaN                21.0             Temperature acceptable. All off.
+23:31:49     115.556          120.541          NaN                21.0             Temperature acceptable. All off.
+23:31:54     116.605          120.279          NaN                21.0             Temperature acceptable. All off.
+23:31:59     115.206          120.104          NaN                21.0             Temperature acceptable. All off.
+23:32:4     115.119          119.842          NaN                21.0             Temperature acceptable. All off.
+23:32:9     114.856          120.804          NaN                18.0             Temperature acceptable. All off.
+23:32:14     114.769          121.329          NaN                24.0             Temperature acceptable. All off.
+23:32:19     115.993          120.716          NaN                21.0             Temperature acceptable. All off.
+23:32:24     116.605          120.891          NaN                21.0             Temperature acceptable. All off.
+23:32:29     115.643          120.979          NaN                24.0             Temperature acceptable. All off.
+23:32:34     114.594          120.716          NaN                21.0             Temperature acceptable. All off.
+23:32:39     114.331          121.066          NaN                21.0             Temperature acceptable. All off.
+23:32:44     115.381          119.929          NaN                18.0             Temperature acceptable. All off.
+23:32:49     116.431          120.716          NaN                21.0             Temperature acceptable. All off.
+23:32:54     115.818          120.891          NaN                21.0             Temperature acceptable. All off.
+23:32:59     114.856          120.541          NaN                21.0             Temperature acceptable. All off.
+23:33:4     116.955          121.154          NaN                21.0             Temperature acceptable. All off.
+23:33:9     115.468          121.066          NaN                21.0             Temperature acceptable. All off.
+23:33:14     115.643          120.891          NaN                18.0             Temperature acceptable. All off.
+23:33:19     114.681          120.541          NaN                21.0             Temperature acceptable. All off.
+23:33:24     114.769          121.416          NaN                21.0             Temperature acceptable. All off.
+23:33:29     116.081          120.979          NaN                21.0             Temperature acceptable. All off.
+23:33:34     115.731          120.629          NaN                21.0             Temperature acceptable. All off.
+23:33:39     116.168          120.279          NaN                18.0             Temperature acceptable. All off.
+23:33:44     115.119          121.591          NaN                18.0             Temperature acceptable. All off.
+23:33:49     115.556          121.591          NaN                21.0             Temperature acceptable. All off.
+23:33:54     114.944          120.979          NaN                21.0             Temperature acceptable. All off.
+23:33:59     115.556          120.629          NaN                21.0             Temperature acceptable. All off.
+23:34:4     115.031          120.192          NaN                21.0             Temperature acceptable. All off.
+23:34:9     115.381          120.804          NaN                21.0             Temperature acceptable. All off.
+23:34:14     115.468          120.104          NaN                21.0             Temperature acceptable. All off.
+23:34:19     116.343          120.279          NaN                21.0             Temperature acceptable. All off.
+23:34:24     116.256          120.366          NaN                21.0             Temperature acceptable. All off.
+23:34:29     116.868          121.066          NaN                24.0             Temperature acceptable. All off.
+23:34:34     115.906          120.979          NaN                21.0             Temperature acceptable. All off.
+23:34:39     116.431          121.503          NaN                21.0             Temperature acceptable. All off.
+23:34:44     115.206          120.979          NaN                21.0             Temperature acceptable. All off.
+23:34:49     115.468          121.503          NaN                18.0             Temperature acceptable. All off.
+23:34:54     115.119          120.891          NaN                21.0             Temperature acceptable. All off.
+23:34:59     116.168          121.241          NaN                21.0             Temperature acceptable. All off.
+23:35:4     115.731          121.241          NaN                21.0             Temperature acceptable. All off.
+23:35:9     115.556          121.154          NaN                21.0             Temperature acceptable. All off.
+23:35:14     115.818          121.329          NaN                24.0             Temperature acceptable. All off.
+23:35:19     115.818          121.853          NaN                21.0             Temperature acceptable. All off.
+23:35:24     114.944          120.716          NaN                21.0             Temperature acceptable. All off.
+23:35:29     115.556          121.416          NaN                21.0             Temperature acceptable. All off.
+23:35:34     115.119          120.017          NaN                21.0             Temperature acceptable. All off.
+23:35:39     115.643          121.329          NaN                21.0             Temperature acceptable. All off.
+23:35:44     115.556          120.804          NaN                18.0             Temperature acceptable. All off.
+23:35:49     115.294          121.241          NaN                21.0             Temperature acceptable. All off.
+23:35:54     115.906          121.154          NaN                24.0             Temperature acceptable. All off.
+23:35:59     115.556          120.804          NaN                21.0             Temperature acceptable. All off.
+23:36:4     115.993          120.979          NaN                21.0             Temperature acceptable. All off.
+23:36:9     115.906          121.066          NaN                21.0             Temperature acceptable. All off.
+23:36:14     115.818          121.066          NaN                21.0             Temperature acceptable. All off.
+23:36:19     115.468          120.716          NaN                21.0             Temperature acceptable. All off.
+23:36:24     115.468          120.804          NaN                21.0             Temperature acceptable. All off.
+23:36:29     115.206          120.979          NaN                18.0             Temperature acceptable. All off.
+23:36:34     115.731          120.891          NaN                21.0             Temperature acceptable. All off.
+23:36:39     115.993          120.979          NaN                21.0             Temperature acceptable. All off.
+23:36:44     115.731          120.891          NaN                21.0             Temperature acceptable. All off.
+23:36:49     115.993          121.066          NaN                21.0             Temperature acceptable. All off.
+23:36:54     115.818          120.979          NaN                21.0             Temperature acceptable. All off.
+23:36:59     114.594          119.667          NaN                21.0             Temperature acceptable. All off.
+23:37:4     115.993          120.804          NaN                18.0             Temperature acceptable. All off.
+23:37:9     114.944          120.017          NaN                18.0             Temperature acceptable. All off.
+23:37:14     115.906          121.241          NaN                24.0             Temperature acceptable. All off.
+23:37:19     115.119          119.754          NaN                18.0             Temperature acceptable. All off.
+23:37:24     116.605          121.678          NaN                21.0             Temperature acceptable. All off.
+23:37:29     115.556          119.492          NaN                21.0             Temperature acceptable. All off.
+23:37:34     115.818          121.154          NaN                18.0             Temperature acceptable. All off.
+23:37:39     116.081          119.492          NaN                21.0             Temperature acceptable. All off.
+23:37:44     114.944          120.279          NaN                21.0             Temperature acceptable. All off.
+23:37:49     114.769          120.192          NaN                21.0             Temperature acceptable. All off.
+23:37:54     115.731          121.241          NaN                21.0             Temperature acceptable. All off.
+23:37:59     116.081          120.891          NaN                18.0             Temperature acceptable. All off.
+23:38:4     115.031          120.192          NaN                21.0             Temperature acceptable. All off.
+23:38:9     115.906          121.154          NaN                21.0             Temperature acceptable. All off.
+23:38:14     116.518          121.416          NaN                21.0             Temperature acceptable. All off.
+23:38:19     116.343          120.804          NaN                18.0             Temperature acceptable. All off.
+23:38:24     115.818          119.317          NaN                21.0             Temperature acceptable. All off.
+23:38:29     116.518          120.891          NaN                18.0             Temperature acceptable. All off.
+23:38:34     116.518          121.154          NaN                21.0             Temperature acceptable. All off.
+23:38:39     115.993          121.154          NaN                21.0             Temperature acceptable. All off.
+23:38:44     115.818          120.192          NaN                21.0             Temperature acceptable. All off.
+23:38:49     115.294          120.366          NaN                21.0             Temperature acceptable. All off.
+23:38:54     115.206          121.154          NaN                24.0             Temperature acceptable. All off.
+23:38:59     116.168          121.154          NaN                21.0             Temperature acceptable. All off.
+23:39:4     115.119          119.667          NaN                24.0             Temperature acceptable. All off.
+23:39:9     115.993          120.629          NaN                21.0             Temperature acceptable. All off.
+23:39:14     115.556          120.979          NaN                21.0             Temperature acceptable. All off.
+23:39:19     115.381          119.667          NaN                21.0             Temperature acceptable. All off.
+23:39:24     115.468          120.279          NaN                21.0             Temperature acceptable. All off.
+23:39:29     115.556          120.454          NaN                21.0             Temperature acceptable. All off.
+23:39:34     115.906          120.979          NaN                18.0             Temperature acceptable. All off.
+23:39:39     116.343          121.154          NaN                21.0             Temperature acceptable. All off.
+23:39:44     116.256          120.454          NaN                21.0             Temperature acceptable. All off.
+23:39:49     116.343          120.192          NaN                18.0             Temperature acceptable. All off.
+23:39:54     115.993          120.804          NaN                21.0             Temperature acceptable. All off.
+23:39:59     116.081          120.541          NaN                18.0             Temperature acceptable. All off.
+23:40:4     115.993          120.279          NaN                21.0             Temperature acceptable. All off.
+23:40:9     115.731          121.241          NaN                21.0             Temperature acceptable. All off.
+23:40:14     115.731          121.329          NaN                24.0             Temperature acceptable. All off.
+23:40:19     115.993          120.541          NaN                21.0             Temperature acceptable. All off.
+23:40:24     114.944          120.891          NaN                21.0             Temperature acceptable. All off.
+23:40:29     115.556          119.929          NaN                21.0             Temperature acceptable. All off.
+23:40:34     115.906          121.154          NaN                21.0             Temperature acceptable. All off.
+23:40:39     114.769          120.279          NaN                18.0             Temperature acceptable. All off.
+23:40:44     115.906          119.929          NaN                18.0             Temperature acceptable. All off.
+23:40:49     116.605          120.716          NaN                21.0             Temperature acceptable. All off.
+23:40:54     116.168          121.241          NaN                21.0             Temperature acceptable. All off.
+23:40:59     116.081          120.891          NaN                24.0             Temperature acceptable. All off.
+23:41:4     115.294          119.929          NaN                21.0             Temperature acceptable. All off.
+23:41:9     115.731          120.891          NaN                24.0             Temperature acceptable. All off.
+23:41:14     116.168          121.154          NaN                21.0             Temperature acceptable. All off.
+23:41:19     116.343          119.667          NaN                21.0             Temperature acceptable. All off.
+23:41:24     115.206          120.541          NaN                18.0             Temperature acceptable. All off.
+23:41:29     115.731          120.017          NaN                18.0             Temperature acceptable. All off.
+23:41:34     116.693          121.066          NaN                21.0             Temperature acceptable. All off.
+23:41:39     115.993          120.541          NaN                21.0             Temperature acceptable. All off.
+23:41:44     116.431          119.929          NaN                21.0             Temperature acceptable. All off.
+23:41:49     116.605          120.279          NaN                21.0             Temperature acceptable. All off.
+23:41:54     116.168          121.329          NaN                21.0             Temperature acceptable. All off.
+23:41:59     116.343          120.716          NaN                21.0             Temperature acceptable. All off.
+23:42:4     116.693          121.154          NaN                21.0             Temperature acceptable. All off.
+23:42:9     116.168          119.579          NaN                21.0             Temperature acceptable. All off.
+23:42:14     115.556          121.066          NaN                21.0             Temperature acceptable. All off.
+23:42:19     115.906          120.017          NaN                21.0             Temperature acceptable. All off.
+23:42:24     116.693          121.329          NaN                21.0             Temperature acceptable. All off.
+23:42:29     116.168          121.066          NaN                24.0             Temperature acceptable. All off.
+23:42:34     115.381          120.279          NaN                21.0             Temperature acceptable. All off.
+23:42:39     115.818          120.104          NaN                21.0             Temperature acceptable. All off.
+23:42:44     115.993          120.629          NaN                21.0             Temperature acceptable. All off.
+23:42:49     115.381          120.891          NaN                21.0             Temperature acceptable. All off.
+23:42:54     114.681          120.454          NaN                24.0             Temperature acceptable. All off.
+23:42:59     115.906          120.454          NaN                21.0             Temperature acceptable. All off.
+23:43:4     114.944          120.366          NaN                18.0             Temperature acceptable. All off.
+23:43:9     116.168          121.066          NaN                18.0             Temperature acceptable. All off.
+23:43:14     116.431          119.404          NaN                21.0             Temperature acceptable. All off.
+23:43:19     115.468          120.629          NaN                18.0             Temperature acceptable. All off.
+23:43:24     115.294          119.579          NaN                21.0             Temperature acceptable. All off.
+23:43:29     114.944          120.192          NaN                21.0             Temperature acceptable. All off.
+23:43:34     115.643          120.192          NaN                18.0             Temperature acceptable. All off.
+23:43:39     115.556          121.066          NaN                21.0             Temperature acceptable. All off.
+23:43:44     114.944          120.192          NaN                21.0             Temperature acceptable. All off.
+23:43:49     115.468          121.066          NaN                21.0             Temperature acceptable. All off.
+23:43:54     116.256          120.891          NaN                21.0             Temperature acceptable. All off.
+23:43:59     115.818          119.579          NaN                24.0             Temperature acceptable. All off.
+23:44:4     115.906          121.066          NaN                21.0             Temperature acceptable. All off.
+23:44:9     115.468          120.104          NaN                21.0             Temperature acceptable. All off.
+23:44:14     114.594          119.054          NaN                21.0             Temperature acceptable. All off.
+23:44:19     115.731          121.066          NaN                24.0             Temperature acceptable. All off.
+23:44:24     115.643          121.416          NaN                18.0             Temperature acceptable. All off.
+23:44:29     115.906          119.754          NaN                18.0             Temperature acceptable. All off.
+23:44:34     116.168          120.804          NaN                21.0             Temperature acceptable. All off.
+23:44:39     115.294          121.066          NaN                21.0             Temperature acceptable. All off.
+23:44:44     115.556          119.317          NaN                21.0             Temperature acceptable. All off.
+23:44:49     115.643          120.629          NaN                18.0             Temperature acceptable. All off.
+23:44:54     116.431          120.192          NaN                21.0             Temperature acceptable. All off.
+23:44:59     115.906          120.716          NaN                24.0             Temperature acceptable. All off.
+23:45:4     116.343          120.454          NaN                18.0             Temperature acceptable. All off.
+23:45:9     115.468          120.017          NaN                21.0             Temperature acceptable. All off.
+23:45:14     116.168          120.454          NaN                21.0             Temperature acceptable. All off.
+23:45:19     116.168          120.629          NaN                21.0             Temperature acceptable. All off.
+23:45:24     115.031          120.104          NaN                24.0             Temperature acceptable. All off.
+23:45:29     115.906          120.279          NaN                24.0             Temperature acceptable. All off.
+23:45:34     115.556          120.804          NaN                21.0             Temperature acceptable. All off.
+23:45:39     116.431          120.454          NaN                21.0             Temperature acceptable. All off.
+23:45:44     115.731          120.454          NaN                21.0             Temperature acceptable. All off.
+23:45:49     115.993          120.279          NaN                21.0             Temperature acceptable. All off.
+23:45:54     115.381          120.192          NaN                21.0             Temperature acceptable. All off.
+23:45:59     115.031          121.066          NaN                21.0             Temperature acceptable. All off.
+23:46:4     115.818          121.066          NaN                21.0             Temperature acceptable. All off.
+23:46:9     116.431          121.154          NaN                21.0             Temperature acceptable. All off.
+23:46:14     115.294          120.891          NaN                21.0             Temperature acceptable. All off.
+23:46:19     115.993          120.454          NaN                18.0             Temperature acceptable. All off.
+23:46:24     115.906          119.842          NaN                18.0             Temperature acceptable. All off.
+23:46:29     115.731          120.804          NaN                21.0             Temperature acceptable. All off.
+23:46:34     116.081          119.579          NaN                21.0             Temperature acceptable. All off.
+23:46:39     115.643          121.416          NaN                24.0             Temperature acceptable. All off.
+23:46:44     115.731          119.142          NaN                21.0             Temperature acceptable. All off.
+23:46:49     115.906          120.804          NaN                18.0             Temperature acceptable. All off.
+23:46:54     115.119          119.229          NaN                21.0             Temperature acceptable. All off.
+23:46:59     115.294          120.541          NaN                21.0             Temperature acceptable. All off.
+23:47:4     114.856          119.667          NaN                24.0             Temperature acceptable. All off.
+23:47:9     114.157          120.454          NaN                18.0             Temperature acceptable. All off.
+23:47:14     115.906          120.454          NaN                21.0             Temperature acceptable. All off.
+23:47:19     116.605          120.979          NaN                24.0             Temperature acceptable. All off.
+23:47:24     115.119          120.192          NaN                24.0             Temperature acceptable. All off.
+23:47:29     115.993          120.629          NaN                21.0             Temperature acceptable. All off.
+23:47:34     116.168          120.366          NaN                21.0             Temperature acceptable. All off.
+23:47:39     115.906          120.804          NaN                21.0             Temperature acceptable. All off.
+23:47:44     115.294          119.842          NaN                21.0             Temperature acceptable. All off.
+23:47:49     115.643          118.705          NaN                18.0             Temperature acceptable. All off.
+23:47:54     114.856          119.754          NaN                21.0             Temperature acceptable. All off.
+23:47:59     116.431          121.154          NaN                21.0             Temperature acceptable. All off.
+23:48:4     115.906          120.629          NaN                21.0             Temperature acceptable. All off.
+23:48:9     116.168          120.366          NaN                21.0             Temperature acceptable. All off.
+23:48:14     114.769          120.366          NaN                21.0             Temperature acceptable. All off.
+23:48:19     115.643          120.979          NaN                24.0             Temperature acceptable. All off.
+23:48:24     114.944          120.804          NaN                21.0             Temperature acceptable. All off.
+23:48:29     115.119          119.754          NaN                21.0             Temperature acceptable. All off.
+23:48:34     116.168          120.279          NaN                24.0             Temperature acceptable. All off.
+23:48:39     115.906          120.891          NaN                21.0             Temperature acceptable. All off.
+23:48:44     116.256          121.066          NaN                21.0             Temperature acceptable. All off.
+23:48:49     116.256          120.716          NaN                18.0             Temperature acceptable. All off.
+23:48:54     116.081          121.416          NaN                18.0             Temperature acceptable. All off.
+23:48:59     115.818          120.979          NaN                21.0             Temperature acceptable. All off.
+23:49:4     115.818          120.804          NaN                21.0             Temperature acceptable. All off.
+23:49:9     115.294          119.842          NaN                21.0             Temperature acceptable. All off.
+23:49:14     115.643          120.192          NaN                21.0             Temperature acceptable. All off.
+23:49:19     115.731          120.366          NaN                18.0             Temperature acceptable. All off.
+23:49:24     115.643          121.154          NaN                24.0             Temperature acceptable. All off.
+23:49:29     113.719          120.541          NaN                21.0             Temperature acceptable. All off.
+23:49:34     114.069          120.541          NaN                18.0             Temperature acceptable. All off.
+23:49:39     114.681          120.104          NaN                21.0             Temperature acceptable. All off.
+23:49:44     115.294          120.541          NaN                21.0             Temperature acceptable. All off.
+23:49:49     115.468          120.192          NaN                21.0             Temperature acceptable. All off.
+23:49:54     115.731          119.579          NaN                21.0             Temperature acceptable. All off.
+23:49:59     114.244          118.967          NaN                18.0             Temperature acceptable. All off.
+23:50:4     115.993          120.979          NaN                18.0             Temperature acceptable. All off.
+23:50:9     114.419          120.104          NaN                21.0             Temperature acceptable. All off.
+23:50:14     115.906          119.842          NaN                21.0             Temperature acceptable. All off.
+23:50:19     115.556          120.192          NaN                21.0             Temperature acceptable. All off.
+23:50:24     115.643          121.329          NaN                21.0             Temperature acceptable. All off.
+23:50:29     114.856          119.842          NaN                21.0             Temperature acceptable. All off.
+23:50:34     115.206          120.804          NaN                21.0             Temperature acceptable. All off.
+23:50:39     114.681          119.404          NaN                24.0             Temperature acceptable. All off.
+23:50:44     116.343          120.629          NaN                21.0             Temperature acceptable. All off.
+23:50:49     115.031          120.017          NaN                21.0             Temperature acceptable. All off.
+23:50:54     114.157          120.017          NaN                21.0             Temperature acceptable. All off.
+23:50:59     114.856          120.629          NaN                21.0             Temperature acceptable. All off.
+23:51:4     115.993          120.366          NaN                21.0             Temperature acceptable. All off.
+23:51:9     115.993          121.066          NaN                21.0             Temperature acceptable. All off.
+23:51:14     114.244          120.017          NaN                21.0             Temperature acceptable. All off.
+23:51:19     115.643          120.279          NaN                21.0             Temperature acceptable. All off.
+23:51:24     115.468          120.192          NaN                21.0             Temperature acceptable. All off.
+23:51:29     115.294          120.891          NaN                21.0             Temperature acceptable. All off.
+23:51:34     114.769          120.366          NaN                21.0             Temperature acceptable. All off.
+23:51:39     116.168          120.454          NaN                21.0             Temperature acceptable. All off.
+23:51:44     115.556          120.716          NaN                21.0             Temperature acceptable. All off.
+23:51:49     115.556          120.804          NaN                21.0             Temperature acceptable. All off.
+23:51:54     115.206          120.192          NaN                18.0             Temperature acceptable. All off.
+23:51:59     115.993          120.279          NaN                18.0             Temperature acceptable. All off.
+23:52:4     115.294          120.192          NaN                18.0             Temperature acceptable. All off.
+23:52:9     115.031          119.929          NaN                21.0             Temperature acceptable. All off.
+23:52:14     115.731          119.929          NaN                21.0             Temperature acceptable. All off.
+23:52:19     114.856          120.541          NaN                21.0             Temperature acceptable. All off.
+23:52:24     115.643          120.804          NaN                21.0             Temperature acceptable. All off.
+23:52:29     116.168          120.541          NaN                24.0             Temperature acceptable. All off.
+23:52:34     114.419          119.754          NaN                24.0             Temperature acceptable. All off.
+23:52:39     115.119          120.017          NaN                21.0             Temperature acceptable. All off.
+23:52:44     116.256          120.891          NaN                21.0             Temperature acceptable. All off.
+23:52:49     115.206          120.017          NaN                21.0             Temperature acceptable. All off.
+23:52:54     116.256          119.842          NaN                24.0             Temperature acceptable. All off.
+23:52:59     115.468          120.716          NaN                21.0             Temperature acceptable. All off.
+23:53:4     116.168          120.979          NaN                21.0             Temperature acceptable. All off.
+23:53:9     115.381          120.192          NaN                21.0             Temperature acceptable. All off.
+23:53:14     115.206          120.366          NaN                21.0             Temperature acceptable. All off.
+23:53:19     114.681          120.192          NaN                21.0             Temperature acceptable. All off.
+23:53:24     114.681          120.454          NaN                21.0             Temperature acceptable. All off.
+23:53:29     115.206          120.192          NaN                21.0             Temperature acceptable. All off.
+23:53:34     115.818          118.792          NaN                24.0             Temperature acceptable. All off.
+23:53:39     115.468          120.891          NaN                21.0             Temperature acceptable. All off.
+23:53:44     115.731          120.979          NaN                21.0             Temperature acceptable. All off.
+23:53:49     116.868          120.104          NaN                21.0             Temperature acceptable. All off.
+23:53:54     115.906          120.366          NaN                21.0             Temperature acceptable. All off.
+23:53:59     114.594          119.754          NaN                24.0             Temperature acceptable. All off.
+23:54:4     115.906          120.716          NaN                21.0             Temperature acceptable. All off.
+23:54:9     115.556          120.192          NaN                21.0             Temperature acceptable. All off.
+23:54:14     115.818          120.541          NaN                24.0             Temperature acceptable. All off.
+23:54:19     116.605          120.366          NaN                21.0             Temperature acceptable. All off.
+23:54:24     115.818          120.716          NaN                21.0             Temperature acceptable. All off.
+23:54:29     116.256          120.629          NaN                21.0             Temperature acceptable. All off.
+23:54:34     115.731          120.629          NaN                21.0             Temperature acceptable. All off.
+23:54:39     115.294          120.017          NaN                21.0             Temperature acceptable. All off.
+23:54:44     115.468          120.891          NaN                21.0             Temperature acceptable. All off.
+23:54:49     115.206          120.017          NaN                21.0             Temperature acceptable. All off.
+23:54:54     115.906          119.142          NaN                21.0             Temperature acceptable. All off.
+23:54:59     115.993          119.317          NaN                18.0             Temperature acceptable. All off.
+23:55:4     115.643          120.454          NaN                24.0             Temperature acceptable. All off.
+23:55:9     115.818          120.804          NaN                21.0             Temperature acceptable. All off.
+23:55:14     116.168          120.541          NaN                21.0             Temperature acceptable. All off.
+23:55:19     114.944          119.842          NaN                21.0             Temperature acceptable. All off.
+23:55:24     116.168          120.979          NaN                21.0             Temperature acceptable. All off.
+23:55:29     116.343          120.891          NaN                21.0             Temperature acceptable. All off.
+23:55:34     115.381          119.754          NaN                21.0             Temperature acceptable. All off.
+23:55:39     115.818          118.092          NaN                21.0             Temperature acceptable. All off.
+23:55:44     115.119          120.804          NaN                21.0             Temperature acceptable. All off.
+23:55:49     115.643          120.454          NaN                21.0             Temperature acceptable. All off.
+23:55:54     116.081          120.541          NaN                21.0             Temperature acceptable. All off.
+23:55:59     114.681          120.104          NaN                18.0             Temperature acceptable. All off.
+23:56:4     115.381          119.492          NaN                21.0             Temperature acceptable. All off.
+23:56:9     115.468          120.017          NaN                21.0             Temperature acceptable. All off.
+23:56:14     114.856          120.366          NaN                21.0             Temperature acceptable. All off.
+23:56:19     115.906          120.629          NaN                18.0             Temperature acceptable. All off.
+23:56:24     116.431          119.492          NaN                24.0             Temperature acceptable. All off.
+23:56:29     115.906          120.716          NaN                21.0             Temperature acceptable. All off.
+23:56:34     115.643          119.929          NaN                24.0             Temperature acceptable. All off.
+23:56:39     116.168          120.541          NaN                21.0             Temperature acceptable. All off.
+23:56:44     116.343          120.629          NaN                18.0             Temperature acceptable. All off.
+23:56:49     116.518          120.804          NaN                21.0             Temperature acceptable. All off.
+23:56:54     115.119          120.541          NaN                21.0             Temperature acceptable. All off.
+23:56:59     115.818          120.454          NaN                21.0             Temperature acceptable. All off.
+23:57:4     116.168          120.716          NaN                21.0             Temperature acceptable. All off.
+23:57:9     115.556          120.891          NaN                21.0             Temperature acceptable. All off.
+23:57:14     115.468          119.579          NaN                24.0             Temperature acceptable. All off.
+23:57:19     115.906          119.929          NaN                21.0             Temperature acceptable. All off.
+23:57:24     116.081          121.066          NaN                21.0             Temperature acceptable. All off.
+23:57:29     114.681          119.842          NaN                18.0             Temperature acceptable. All off.
+23:57:34     116.168          119.667          NaN                21.0             Temperature acceptable. All off.
+23:57:39     116.693          120.192          NaN                21.0             Temperature acceptable. All off.
+23:57:44     115.643          120.454          NaN                21.0             Temperature acceptable. All off.
+23:57:49     115.731          120.629          NaN                21.0             Temperature acceptable. All off.
+23:57:54     115.731          120.804          NaN                21.0             Temperature acceptable. All off.
+23:57:59     116.081          120.279          NaN                18.0             Temperature acceptable. All off.
+23:58:4     115.731          120.192          NaN                21.0             Temperature acceptable. All off.
+23:58:9     115.731          121.066          NaN                21.0             Temperature acceptable. All off.
+23:58:14     115.556          120.979          NaN                21.0             Temperature acceptable. All off.
+23:58:19     115.381          120.804          NaN                18.0             Temperature acceptable. All off.
+23:58:24     115.906          120.192          NaN                21.0             Temperature acceptable. All off.
+23:58:29     116.343          120.629          NaN                21.0             Temperature acceptable. All off.
+23:58:34     116.343          120.716          NaN                21.0             Temperature acceptable. All off.
+23:58:39     115.731          120.891          NaN                21.0             Temperature acceptable. All off.
+23:58:44     116.256          120.366          NaN                21.0             Temperature acceptable. All off.
+23:58:49     115.643          120.629          NaN                21.0             Temperature acceptable. All off.
+23:58:54     114.856          120.366          NaN                21.0             Temperature acceptable. All off.
+23:58:59     115.643          119.842          NaN                24.0             HPWH is off. Turn on for water heating.
+23:59:4     115.381          120.017          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:9     116.081          120.629          NaN                24.0             HPWH is off. Turn on for water heating.
+23:59:14     116.168          120.279          NaN                24.0             HPWH is off. Turn on for water heating.
+23:59:19     115.818          120.629          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:24     115.468          119.667          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:29     114.856          119.754          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:34     115.993          120.192          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:39     115.906          120.716          NaN                24.0             HPWH is off. Turn on for water heating.
+23:59:44     116.256          119.929          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:49     115.556          120.629          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:54     116.081          120.017          NaN                21.0             HPWH is off. Turn on for water heating.
+23:59:59     115.031          120.017          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:4     113.544          120.192          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:9     115.643          120.454          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:14     114.944          120.279          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:19     115.031          120.192          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:24     115.818          120.104          NaN                18.0             HPWH is off. Turn on for water heating.
+0:0:29     114.856          119.842          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:34     116.168          120.716          NaN                18.0             HPWH is off. Turn on for water heating.
+0:0:39     115.993          120.104          NaN                24.0             HPWH is off. Turn on for water heating.
+0:0:44     114.856          120.279          NaN                21.0             HPWH is off. Turn on for water heating.
+0:0:49     115.993          120.716          NaN                24.0             HPWH is off. Turn on for water heating.
+0:0:54     115.906          119.229          NaN                18.0             HPWH is off. Turn on for water heating.
+0:0:59     116.168          120.017          NaN                24.0             HPWH is off. Turn on for water heating.
+0:1:4     115.731          120.279          NaN                21.0             HPWH is off. Turn on for water heating.
+0:1:9     115.643          119.579          NaN                18.0             HPWH is off. Turn on for water heating.
+0:1:14     115.206          119.
