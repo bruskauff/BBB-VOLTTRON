@@ -241,7 +241,7 @@ class HPWHUserAgent(PublishMixin, BaseAgent):
 					if onoff == 'ON':
 						file.write('\nDrawing water...\n\n>>>')
 						# Publish new state via VOLTTRON
-						self.publish_json('user/state', {}, ('True'))
+						self.publish_json('user/waterdraw', {}, ('True'))
 					elif onoff == 'OFF':
 						file.write('\nStopping water draw...\n\n>>>')
 						# Publish new state via VOLTTRON
