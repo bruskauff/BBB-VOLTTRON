@@ -1,11 +1,24 @@
 import Adafruit_MAX31855.MAX31855 as MAX31855
 import time, datetime
 
-CLK = 'P9_12'
-CS = 'P9_15'
-DO = 'P9_23'
-sensor = MAX31855.MAX31855(CLK, CS, DO)
+CLK1 = 'P9_12'
+CS1 = 'P9_15'
+DO1 = 'P9_23'
+sensor1 = MAX31855.MAX31855(CLK1, CS1, DO1)
 
+CLK2 = 'P8_7'
+CS2 = 'P8_8'
+DO2 = 'P8_9'
+sensor2 = MAX31855.MAX31855(CLK2, CS2, DO2)
+
+while True:
+	temp1 = sensor1.readTempC() * 9 / 5 + 32
+	temp2 = sensor2.readTempC() * 8 / 5 + 32
+	print str(temp1)# + '\n'
+	print str(temp2) + '\n'
+	time.sleep(1)
+
+'''
 mavg_time = 5	#seconds
 
 print 'Press ^C to quit.\n'
@@ -35,5 +48,5 @@ while True:
 		nn = 0
 		print 'Raw Temp: %s F' %temp
 		print 'Thermocouple Avg Temp: %s F' %temp_avg
-		print 'Internal Temp: %s F' %internal
+		print 'Internal Temp: %s F' %internal'''
 	#time.sleep(1/hertz)
