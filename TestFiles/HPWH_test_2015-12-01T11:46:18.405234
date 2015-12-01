@@ -1,0 +1,1375 @@
+Brian Ruskauff
+NREL
+HPWH Control Test
+2015-12-01 11:46:18.405234
+
+TimeStamp    Temp_Lower(F)    Temp_Upper(F)    Desired_Temp(F)    Power(KW)    Status
+
+11:46:23     128.326          127.626          NaN                18.0             Temperature acceptable. All off
+11:46:28     126.664          127.713          NaN                18.0             Temperature acceptable. All off
+11:46:33     127.101          127.976          NaN                21.0             Temperature acceptable. All off
+11:46:38     127.713          128.063          NaN                21.0             Temperature acceptable. All off
+11:46:43     127.189          127.451          NaN                21.0             Temperature acceptable. All off
+11:46:48     127.276          127.101          NaN                21.0             Temperature acceptable. All off
+11:46:53     126.751          126.226          NaN                21.0             Temperature acceptable. All off
+11:46:58     127.101          127.101          NaN                21.0             Temperature acceptable. All off
+11:47:3     127.801          127.451          NaN                24.0             Temperature acceptable. All off
+11:47:8     128.063          127.976          NaN                21.0             Temperature acceptable. All off
+11:47:13     127.801          127.451          NaN                18.0             Temperature acceptable. All off
+11:47:18     127.364          127.538          NaN                21.0             Temperature acceptable. All off
+11:47:23     127.888          128.238          NaN                21.0             Temperature acceptable. All off
+11:47:28     127.538          127.713          NaN                21.0             Temperature acceptable. All off
+11:47:33     127.976          126.489          NaN                24.0             Temperature acceptable. All off
+11:47:38     127.538          127.801          NaN                18.0             Temperature acceptable. All off
+11:47:43     127.014          127.801          NaN                21.0             Temperature acceptable. All off
+11:47:48     126.839          126.576          NaN                21.0             Temperature acceptable. All off
+11:47:53     127.451          126.839          NaN                21.0             Temperature acceptable. All off
+11:47:58     127.189          127.538          NaN                24.0             Temperature acceptable. All off
+11:48:3     127.713          127.538          NaN                21.0             Temperature acceptable. All off
+11:48:8     127.276          127.626          NaN                21.0             Temperature acceptable. All off
+11:48:13     127.101          127.451          NaN                21.0             Temperature acceptable. All off
+11:48:18     125.877          127.538          NaN                21.0             Temperature acceptable. All off
+11:48:23     127.538          127.014          NaN                21.0             Temperature acceptable. All off
+11:48:28     127.364          127.713          NaN                18.0             Temperature acceptable. All off
+11:48:33     127.101          126.751          NaN                21.0             Temperature acceptable. All off
+11:48:38     127.976          127.101          NaN                21.0             Temperature acceptable. All off
+11:48:43     128.238          127.101          NaN                24.0             Temperature acceptable. All off
+11:48:48     126.664          127.538          NaN                21.0             Temperature acceptable. All off
+11:48:53     127.713          126.489          NaN                24.0             Temperature acceptable. All off
+11:48:58     127.189          127.538          NaN                21.0             Temperature acceptable. All off
+11:49:3     126.751          127.189          NaN                21.0             Temperature acceptable. All off
+11:49:8     127.364          127.801          NaN                21.0             Temperature acceptable. All off
+11:49:13     127.189          127.014          NaN                21.0             Temperature acceptable. All off
+11:49:18     127.276          126.926          NaN                21.0             Temperature acceptable. All off
+11:49:23     128.326          127.538          NaN                21.0             Temperature acceptable. All off
+11:49:28     128.326          127.888          NaN                21.0             Temperature acceptable. All off
+11:49:33     127.364          127.713          NaN                21.0             Temperature acceptable. All off
+11:49:38     128.238          127.364          NaN                21.0             Temperature acceptable. All off
+11:49:43     126.664          126.489          NaN                21.0             Temperature acceptable. All off
+11:49:48     127.888          127.888          NaN                21.0             Temperature acceptable. All off
+11:49:53     126.314          127.451          NaN                21.0             Temperature acceptable. All off
+11:49:58     128.063          126.664          NaN                21.0             Temperature acceptable. All off
+11:50:3     127.451          126.926          NaN                21.0             Temperature acceptable. All off
+11:50:8     127.801          127.364          NaN                21.0             Temperature acceptable. All off
+11:50:13     126.489          127.364          NaN                21.0             Temperature acceptable. All off
+11:50:18     127.801          127.801          NaN                21.0             Temperature acceptable. All off
+11:50:23     129.987          127.713          NaN                18.0             Temperature acceptable. All off
+11:50:28     127.976          127.713          NaN                21.0             Temperature acceptable. All off
+11:50:33     127.626          127.451          NaN                21.0             Temperature acceptable. All off
+11:50:38     127.626          127.364          NaN                21.0             Temperature acceptable. All off
+11:50:43     126.926          126.576          NaN                21.0             Temperature acceptable. All off
+11:50:48     127.276          126.139          NaN                21.0             Temperature acceptable. All off
+11:50:53     128.326          126.576          NaN                21.0             Temperature acceptable. All off
+11:50:58     129.2          127.713          NaN                24.0             Temperature acceptable. All off
+11:51:3     127.976          127.538          NaN                21.0             Temperature acceptable. All off
+11:51:8     126.664          127.451          NaN                21.0             Temperature acceptable. All off
+11:51:13     127.626          127.101          NaN                21.0             Temperature acceptable. All off
+11:51:18     125.964          127.189          NaN                24.0             Temperature acceptable. All off
+11:51:23     127.538          126.401          NaN                21.0             Temperature acceptable. All off
+11:51:28     126.926          126.839          NaN                18.0             Temperature acceptable. All off
+11:51:33     127.364          126.489          NaN                21.0             Temperature acceptable. All off
+11:51:38     126.751          126.314          NaN                24.0             Temperature acceptable. All off
+11:51:43     125.702          126.226          NaN                21.0             Temperature acceptable. All off
+11:51:48     125.964          127.189          NaN                24.0             Temperature acceptable. All off
+11:51:53     127.888          126.839          NaN                24.0             Temperature acceptable. All off
+11:51:58     125.964          126.751          NaN                21.0             Temperature acceptable. All off
+11:52:3     125.789          126.314          NaN                18.0             Temperature acceptable. All off
+11:52:8     126.401          127.364          NaN                21.0             Temperature acceptable. All off
+11:52:13     126.576          126.664          NaN                21.0             Temperature acceptable. All off
+11:52:18     125.877          125.089          NaN                21.0             Temperature acceptable. All off
+11:52:23     126.751          125.877          NaN                21.0             Temperature acceptable. All off
+11:52:28     126.926          127.189          NaN                24.0             Temperature acceptable. All off
+11:52:33     126.314          126.489          NaN                21.0             Temperature acceptable. All off
+11:52:38     126.489          126.751          NaN                21.0             Temperature acceptable. All off
+11:52:43     127.276          126.489          NaN                21.0             Temperature acceptable. All off
+11:52:48     125.877          126.839          NaN                24.0             Temperature acceptable. All off
+11:52:53     125.527          126.314          NaN                21.0             Temperature acceptable. All off
+11:52:58     125.264          125.702          NaN                24.0             Temperature acceptable. All off
+11:53:3     123.952          126.139          NaN                21.0             Temperature acceptable. All off
+11:53:8     124.915          125.877          NaN                18.0             Temperature acceptable. All off
+11:53:13     125.002          126.839          NaN                24.0             Temperature acceptable. All off
+11:53:18     126.139          126.751          NaN                21.0             Temperature acceptable. All off
+11:53:23     125.527          126.926          NaN                24.0             Temperature acceptable. All off
+11:53:28     126.751          126.664          NaN                21.0             Temperature acceptable. All off
+11:53:33     124.565          126.226          NaN                21.0             Temperature acceptable. All off
+11:53:38     122.028          126.401          NaN                21.0             Temperature acceptable. All off
+11:53:43     122.378          126.401          NaN                21.0             Temperature acceptable. All off
+11:53:48     118.442          126.489          NaN                21.0             Temperature acceptable. All off
+11:53:53     114.506          125.352          NaN                24.0             Temperature acceptable. All off.
+11:53:58     108.034          126.052          NaN                21.0             Temperature acceptable. All off.
+11:54:3     101.737          126.314          NaN                21.0             Temperature acceptable. All off.
+11:54:8     101.387          124.477          NaN                443.0             Temperature is low. Heating w/ heat pump.
+11:54:13     101.649          123.253          NaN                425.0             Temperature is low. Heating w/ heat pump.
+11:54:18     95.964          123.515          NaN                431.0             Temperature is low. Heating w/ heat pump.
+11:54:23     91.241          124.127          NaN                4736.5             Temperature is really low. Heating w/ lower element.
+11:54:28     89.667          123.428          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:54:33     88.005          124.302          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:54:38     87.743          124.565          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+11:54:43     86.605          124.215          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+11:54:48     88.967          125.264          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+11:54:53     88.092          125.002          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+11:54:58     88.617          125.177          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+11:55:3     87.218          124.827          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+11:55:8     86.78          124.74          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+11:55:13     87.218          122.99          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+11:55:18     87.655          124.04          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:55:23     87.83          122.728          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+11:55:28     89.667          123.865          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+11:55:33     89.229          124.652          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+11:55:38     91.066          125.089          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:55:43     89.492          124.477          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:55:48     88.617          125.177          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+11:55:53     87.48          123.69          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:55:58     88.18          123.778          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+11:56:3     89.142          123.428          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+11:56:8     89.754          123.778          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+11:56:13     88.442          124.127          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+11:56:18     90.366          124.565          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+11:56:23     90.017          124.652          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+11:56:28     90.804          124.915          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+11:56:33     91.591          124.565          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:56:38     89.754          124.915          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+11:56:43     90.017          123.952          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:56:48     90.017          123.69          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:56:53     89.229          123.515          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+11:56:58     90.804          124.215          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+11:57:3     90.891          124.565          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+11:57:8     92.116          124.652          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:57:13     91.066          124.565          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:57:18     91.416          125.002          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+11:57:23     89.492          124.565          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:57:28     90.017          122.728          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+11:57:33     90.104          123.865          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+11:57:38     90.017          124.565          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+11:57:43     90.454          124.215          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+11:57:48     90.979          124.302          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+11:57:53     92.028          124.74          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:57:58     91.241          124.565          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:58:3     90.192          124.127          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+11:58:8     89.842          123.952          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:58:13     89.842          123.078          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+11:58:18     89.842          123.69          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:58:23     89.317          122.466          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+11:58:28     90.454          123.952          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+11:58:33     92.378          124.302          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+11:58:38     92.116          124.215          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:58:43     92.291          124.04          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+11:58:48     92.553          124.477          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+11:58:53     89.317          124.127          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+11:58:58     89.579          123.69          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:59:3     89.054          122.116          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+11:59:8     90.017          122.466          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:59:13     90.541          123.253          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+11:59:18     91.591          123.778          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+11:59:23     90.629          123.69          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+11:59:28     90.541          123.34          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+11:59:33     89.929          123.69          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+11:59:38     89.929          123.253          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+11:59:43     89.492          122.378          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+11:59:48     89.229          123.078          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+11:59:53     89.317          122.466          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+11:59:58     90.804          123.34          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:0:3     91.503          123.515          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:0:8     91.329          123.515          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:0:13     91.416          122.64          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:0:18     90.017          122.64          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:0:23     88.967          122.815          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:0:28     88.53          122.291          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:0:33     88.617          122.028          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:0:38     88.442          121.591          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:0:43     90.104          122.116          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:0:48     90.541          122.903          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:0:53     90.979          122.815          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:0:58     90.192          123.078          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:1:3     88.705          123.34          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:1:8     89.404          122.99          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:1:13     88.617          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:1:18     89.404          122.378          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:1:23     89.054          121.766          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:1:28     92.203          123.078          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:1:33     89.317          122.553          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:1:38     91.591          123.253          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:1:43     91.591          123.165          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:1:48     89.929          122.553          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:1:53     87.48          121.941          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:1:58     89.754          122.028          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:2:3     89.929          121.591          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:2:8     89.229          121.416          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:2:13     89.929          122.116          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:2:18     90.891          122.903          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+12:2:23     91.591          122.466          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:2:28     93.078          122.99          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:2:33     92.903          122.99          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:2:38     91.241          123.078          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:2:43     90.017          122.378          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:2:48     90.366          122.203          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:2:53     92.203          122.203          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:2:58     91.591          121.853          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:3:3     92.553          122.815          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:3:8     94.04          123.078          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:3:13     94.215          122.815          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:3:18     93.34          123.515          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:3:23     94.127          123.253          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:3:28     92.64          122.116          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:3:33     92.553          121.503          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:3:38     92.99          121.766          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:3:43     92.291          122.728          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:3:48     93.253          122.99          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:3:53     95.002          122.728          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:3:58     96.926          122.99          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:4:3     96.314          123.165          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:4:8     94.74          123.515          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:4:13     94.565          122.291          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:4:18     93.778          122.116          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:4:23     94.477          122.378          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:4:28     93.34          122.815          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:4:33     96.314          123.078          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:4:38     96.226          123.253          NaN                4640.0             Temperature is really low. Heating w/ lower element.
+12:4:43     96.401          122.99          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:4:48     95.439          123.428          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:4:53     94.652          123.078          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:4:58     94.74          122.728          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:5:3     94.565          122.028          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:5:8     94.915          122.116          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:5:13     95.877          122.291          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:5:18     96.314          123.078          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:5:23     97.276          122.903          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:5:28     96.401          123.253          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:5:33     99.2          123.253          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:5:38     99.113          123.253          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:5:43     97.276          122.028          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:5:48     97.626          121.766          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:5:53     98.675          122.116          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:5:58     98.063          121.853          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:6:3     96.751          122.116          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:6:8     97.888          123.253          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:6:13     99.55          123.078          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:6:18     99.025          122.99          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:6:23     97.801          123.34          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:6:28     97.538          122.903          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:6:33     98.763          122.028          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:6:38     97.364          121.766          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:6:43     97.888          122.291          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:6:48     98.326          121.941          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:6:53     98.588          122.903          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:6:58     99.9          122.64          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:7:3     101.212          123.078          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:7:8     100.687          122.728          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:7:13     99.2          123.078          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:7:18     99.638          122.203          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:7:23     99.638          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:7:28     100.775          122.203          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:7:33     102.087          122.553          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:7:38     102.524          123.078          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:7:43     101.999          122.903          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:7:48     102.174          122.99          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:7:53     101.737          123.165          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:7:58     101.912          122.903          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:8:3     101.124          121.853          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:8:8     102.261          122.203          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:8:13     102.087          122.028          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:8:18     100.95          122.028          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:8:23     100.95          122.99          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:8:28     102.524          123.428          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:8:33     104.885          123.253          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:8:38     102.087          123.078          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:8:43     102.261          122.903          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:8:48     101.387          122.291          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:8:53     101.562          122.378          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:8:58     103.573          122.203          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:9:3     102.961          122.728          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:9:8     103.836          123.253          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:9:13     104.798          123.34          NaN                4634.0             Temperature is really low. Heating w/ lower element.
+12:9:18     106.547          123.34          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:9:23     105.235          123.428          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:9:28     104.973          123.34          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:9:33     106.022          122.64          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:9:38     105.235          122.728          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:9:43     103.748          122.028          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:9:48     105.76          122.903          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:9:53     106.197          123.428          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:9:58     107.422          123.428          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:10:3     105.847          123.078          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:10:8     107.072          122.903          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:10:13     106.372          122.903          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:10:18     106.197          122.291          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:10:23     106.11          121.766          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:10:28     107.247          121.941          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:10:33     107.684          122.378          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:10:38     108.384          122.466          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:10:43     107.859          122.291          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:10:48     110.571          122.728          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:10:53     107.772          122.99          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:10:58     107.597          122.903          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:11:3     107.247          122.028          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:11:8     107.509          121.853          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:11:13     107.422          121.678          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:11:18     108.296          121.853          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:11:23     107.947          122.203          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:11:28     108.296          122.728          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:11:33     108.471          122.378          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:11:38     107.772          122.203          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:11:43     107.859          121.503          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:11:48     108.034          120.804          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:11:53     107.334          120.716          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:11:58     107.422          120.279          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:12:3     107.509          120.192          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:12:8     108.209          121.329          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:12:13     109.084          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:12:18     108.209          121.416          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:12:23     107.859          121.241          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:12:28     106.11          121.154          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:12:33     106.985          120.716          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:12:38     106.547          120.629          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:12:43     107.334          120.629          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:12:48     107.072          120.192          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:12:53     105.935          120.454          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:12:58     106.197          121.241          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:13:3     106.81          121.416          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:13:8     106.985          121.329          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:13:13     105.585          120.017          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:13:18     105.498          119.754          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:13:23     104.973          119.492          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:13:28     104.361          119.492          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:13:33     104.011          119.842          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:13:38     104.448          121.154          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+12:13:43     103.398          121.154          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:13:48     104.361          121.416          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:13:53     102.349          120.979          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:13:58     100.862          120.192          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:14:3     100.95          120.279          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:14:8     100.25          119.929          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:14:13     99.025          119.579          NaN                4658.0             Temperature is really low. Heating w/ upper element.
+12:14:18     99.725          119.667          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:14:23     97.976          119.579          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:14:28     98.588          120.279          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:14:33     98.413          120.804          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:14:38     96.489          121.066          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:14:43     95.177          119.404          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:14:48     94.565          119.317          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:14:53     93.603          119.229          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:14:58     93.865          119.142          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:15:3     93.515          120.017          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:15:8     94.827          121.329          NaN                4718.5             Temperature is really low. Heating w/ lower element.
+12:15:13     94.74          120.541          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:15:18     95.264          120.716          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:15:23     92.466          120.454          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:15:28     92.291          120.192          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:15:33     91.853          118.88          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:15:38     90.192          118.705          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:15:43     89.229          118.705          NaN                4646.0             Temperature is really low. Heating w/ upper element.
+12:15:48     91.678          120.366          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:15:53     91.591          120.541          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:15:58     91.241          120.629          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:16:3     90.891          120.192          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:16:8     90.629          120.192          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:16:13     89.404          119.929          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:16:18     88.005          119.054          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+12:16:23     88.88          118.705          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:16:28     88.53          119.142          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:16:33     89.754          119.579          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:16:38     90.366          120.629          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:16:43     89.317          121.066          NaN                4724.5             Temperature is really low. Heating w/ lower element.
+12:16:48     90.192          120.804          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:16:53     89.842          120.454          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:16:58     88.442          120.891          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:17:3     88.005          119.667          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:17:8     89.142          119.929          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:17:13     89.054          119.754          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:17:18     91.329          120.541          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+12:17:23     92.116          121.154          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:17:28     91.154          121.678          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:17:33     91.154          121.066          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:17:38     89.404          121.329          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:17:43     89.317          120.017          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:17:48     89.317          120.104          NaN                4673.0             Temperature is really low. Heating w/ upper element.
+12:17:53     90.891          119.492          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:17:58     90.541          119.754          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:18:3     92.64          120.716          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:18:8     92.203          121.329          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:18:13     91.853          122.203          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:18:18     93.165          121.941          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:18:23     89.754          121.241          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:18:28     93.078          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:18:33     92.903          120.804          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:18:38     93.69          120.716          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:18:43     92.728          120.891          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:18:48     94.827          121.416          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:18:53     92.378          121.853          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:18:58     95.089          121.591          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:19:3     96.401          121.941          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:19:8     95.177          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:19:13     93.778          120.716          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:19:18     94.127          120.279          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:19:23     96.751          120.716          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:19:28     96.139          121.154          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:19:33     96.664          121.329          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:19:38     97.276          121.853          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:19:43     98.501          122.028          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:19:48     98.938          122.291          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:19:53     96.139          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:19:58     97.189          121.241          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:20:3     96.664          120.629          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:20:8     98.501          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:20:13     97.101          120.804          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:20:18     100.075          121.766          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:20:23     97.713          121.941          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:20:28     99.638          122.116          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:20:33     100.162          122.028          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:20:38     98.588          121.853          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:20:43     98.85          121.416          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:20:48     99.2          121.329          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:20:53     99.55          120.454          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:20:58     99.812          120.716          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:21:3     101.124          122.028          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:21:8     99.9          122.116          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:21:13     101.474          121.329          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:21:18     100.95          121.678          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:21:23     101.562          121.591          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:21:28     100.162          121.241          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:21:33     101.124          120.454          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:21:38     101.562          120.804          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:21:43     100.95          120.104          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:21:48     100.162          121.503          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:21:53     101.387          121.941          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:21:58     101.474          121.853          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:22:3     101.912          121.416          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:22:8     100.337          121.503          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:22:13     102.349          120.366          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:22:18     101.824          120.454          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:22:23     102.611          120.366          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:22:28     103.398          120.454          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:22:33     103.311          121.416          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:22:38     103.836          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:22:43     104.973          121.678          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:22:48     103.398          121.678          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:22:53     103.136          120.716          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:22:58     102.436          120.716          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:23:3     104.186          120.279          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:23:8     103.748          120.629          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:23:13     104.011          120.541          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:23:18     104.885          120.716          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:23:23     105.41          121.503          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:23:28     104.186          121.591          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:23:33     109.783          121.241          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:23:38     105.498          121.853          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:23:43     105.06          120.454          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:23:48     105.41          120.716          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:23:53     105.498          119.404          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:23:58     105.935          120.104          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:24:3     105.148          121.066          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:24:8     105.935          121.766          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:24:13     106.46          121.241          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:24:18     108.471          121.503          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:24:23     105.148          120.891          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:24:28     106.11          120.629          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:24:33     106.11          119.492          NaN                4661.0             Temperature is really low. Heating w/ upper element.
+12:24:38     107.597          120.454          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+12:24:43     106.022          120.279          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:24:48     106.81          121.416          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:24:53     109.171          121.853          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:24:58     109.871          122.116          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:25:3     109.259          121.154          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:25:8     106.897          121.766          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:25:13     108.296          120.366          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:25:18     108.821          121.066          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:25:23     108.559          120.541          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:25:28     107.247          121.503          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:25:33     109.346          121.766          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:25:38     109.346          121.941          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:25:43     108.909          121.154          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:25:48     108.821          121.503          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:25:53     109.171          121.416          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:25:58     108.909          120.891          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:26:3     108.646          119.667          NaN                4670.0             Temperature is really low. Heating w/ upper element.
+12:26:8     110.833          120.979          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:26:13     109.958          120.629          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:26:18     110.658          121.678          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:26:23     111.008          121.329          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:26:28     111.183          121.941          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:26:33     109.783          121.329          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:26:38     108.734          120.979          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:26:43     109.433          120.716          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:26:48     110.92          120.979          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:26:53     109.259          120.192          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:26:58     111.708          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:27:3     110.221          122.116          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:27:8     110.92          121.941          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:27:13     113.807          122.116          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:27:18     111.358          121.853          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:27:23     110.133          120.804          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:27:28     110.658          121.066          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:27:33     110.658          120.891          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:27:38     110.571          120.629          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:27:43     111.708          121.853          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:27:48     111.445          121.941          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:27:53     111.795          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:27:58     111.27          122.116          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:28:3     112.495          122.116          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:28:8     111.708          121.066          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:28:13     112.232          120.804          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:28:18     111.882          120.279          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:28:23     112.582          120.192          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:28:28     112.057          120.979          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:28:33     113.807          121.853          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:28:38     113.544          121.503          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:28:43     114.856          121.503          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:28:48     113.369          121.241          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:28:53     111.533          121.329          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:28:58     112.232          120.891          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:29:3     111.795          120.804          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:29:8     112.582          120.541          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:29:13     113.194          121.241          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:29:18     115.206          121.416          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:29:23     114.331          121.416          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:29:28     113.807          121.329          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:29:33     112.145          121.154          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:29:38     112.057          120.629          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:29:43     113.107          120.366          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:29:48     112.932          120.541          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:29:53     113.632          120.541          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:29:58     114.681          121.766          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:30:3     115.643          121.591          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:30:8     114.856          121.591          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:30:13     114.944          121.503          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:30:18     115.119          121.066          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:30:23     113.982          118.005          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:30:28     114.331          118.967          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:30:33     114.681          118.442          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:30:38     114.944          118.092          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:30:43     115.381          117.568          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:30:48     116.168          117.83          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:30:53     115.993          118.53          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:30:58     118.267          119.142          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:31:3     114.244          119.667          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:31:8     114.856          118.705          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:31:13     115.206          118.442          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:31:18     114.681          119.317          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:31:23     115.468          118.967          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:31:28     116.081          119.754          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:31:33     115.906          119.929          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:31:38     117.043          120.192          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:31:43     116.955          120.104          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+12:31:48     115.906          120.454          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:31:53     115.993          119.842          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:31:58     115.294          119.054          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:32:3     114.594          118.792          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+12:32:8     115.818          119.754          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:32:13     116.605          120.279          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:32:18     117.13          120.804          NaN                4724.5             Temperature is really low. Heating w/ lower element.
+12:32:23     116.168          120.541          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:32:28     116.256          120.366          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:32:33     114.506          120.891          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:32:38     113.632          120.541          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:32:43     114.506          118.442          NaN                4670.0             Temperature is really low. Heating w/ upper element.
+12:32:48     114.944          119.579          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:32:53     113.369          118.705          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:32:58     114.244          120.454          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+12:33:3     112.757          120.279          NaN                4718.5             Temperature is really low. Heating w/ lower element.
+12:33:8     114.244          120.279          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:33:13     114.419          120.192          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:33:18     111.708          120.192          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:33:23     108.296          118.88          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:33:28     109.259          118.267          NaN                4676.0             Temperature is really low. Heating w/ upper element.
+12:33:33     107.334          117.83          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:33:38     104.623          118.355          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+12:33:43     104.448          119.492          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:33:48     99.55          119.929          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:33:53     99.725          119.667          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:33:58     97.801          119.754          NaN                4736.5             Temperature is really low. Heating w/ lower element.
+12:34:3     95.702          119.229          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+12:34:8     90.541          119.229          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:34:13     91.329          118.18          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:34:18     88.267          119.404          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:34:23     87.48          118.442          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:34:28     88.092          120.366          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:34:33     86.78          120.454          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:34:38     84.594          121.066          NaN                4727.5             Temperature is really low. Heating w/ lower element.
+12:34:43     83.894          120.716          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:34:48     82.845          120.804          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:34:53     81.795          119.929          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:34:58     83.107          119.929          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:35:3     82.845          119.579          NaN                4664.0             Temperature is really low. Heating w/ upper element.
+12:35:8     83.282          119.404          NaN                4646.0             Temperature is really low. Heating w/ upper element.
+12:35:13     83.632          120.104          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:35:18     84.331          120.979          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:35:23     82.232          120.454          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:35:28     83.719          121.154          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:35:33     83.894          120.629          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:35:38     81.882          119.929          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:35:43     82.407          119.142          NaN                4676.0             Temperature is really low. Heating w/ upper element.
+12:35:48     81.183          119.054          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+12:35:53     82.057          119.229          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:35:58     83.282          120.541          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:36:3     82.845          120.804          NaN                4736.5             Temperature is really low. Heating w/ lower element.
+12:36:8     82.495          120.541          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:36:13     82.757          120.279          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:36:18     81.183          120.192          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:36:23     80.658          119.579          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+12:36:28     81.62          118.53          NaN                4679.0             Temperature is really low. Heating w/ upper element.
+12:36:33     80.833          118.005          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:36:38     81.358          118.88          NaN                4646.0             Temperature is really low. Heating w/ upper element.
+12:36:43     81.183          119.317          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:36:48     81.445          119.929          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:36:53     82.145          119.492          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:36:58     80.92          119.492          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:37:3     80.483          119.317          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+12:37:8     79.084          119.667          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:37:13     77.947          119.579          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:37:18     79.084          119.404          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:37:23     77.859          119.317          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:37:28     80.221          120.891          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:37:33     78.996          120.716          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+12:37:38     79.783          121.329          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:37:43     79.346          120.716          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:37:48     77.072          121.329          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:37:53     76.897          120.192          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:37:58     77.422          120.104          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:38:3     77.947          119.404          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:38:8     76.81          118.442          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:38:13     77.072          119.579          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:38:18     80.308          120.979          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:38:23     78.559          120.279          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:38:28     78.122          120.804          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:38:33     78.559          120.891          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:38:38     77.597          120.804          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:38:43     78.209          119.054          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:38:48     78.471          119.317          NaN                4676.0             Temperature is really low. Heating w/ upper element.
+12:38:53     79.259          118.53          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:38:58     79.171          120.017          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:39:3     78.909          119.929          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:39:8     80.308          120.891          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:39:13     79.346          119.929          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:39:18     76.022          120.017          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:39:23     76.547          118.705          NaN                4652.0             Temperature is really low. Heating w/ upper element.
+12:39:28     78.734          118.53          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:39:33     77.159          118.267          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:39:38     77.859          119.054          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:39:43     78.296          119.929          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:39:48     77.947          120.279          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:39:53     77.247          118.792          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+12:39:58     79.871          118.967          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:40:3     77.597          118.967          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:40:8     76.197          118.53          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:40:13     74.973          118.355          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:40:18     75.847          118.705          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:40:23     75.673          118.355          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:40:28     78.122          120.104          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:40:33     76.11          120.192          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:40:38     77.334          120.541          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:40:43     79.346          120.629          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:40:48     76.197          120.979          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:40:53     75.935          120.716          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:40:58     74.011          118.967          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:41:3     75.235          117.743          NaN                4670.0             Temperature is really low. Heating w/ upper element.
+12:41:8     74.885          118.88          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:41:13     76.11          119.754          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:41:18     74.973          120.366          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:41:23     76.46          119.754          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:41:28     78.209          120.716          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:41:33     75.673          119.667          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:41:38     75.06          118.792          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+12:41:43     73.836          118.092          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:41:48     75.41          119.054          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:41:53     74.885          118.705          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:41:58     75.673          120.279          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:42:3     77.159          120.541          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+12:42:8     76.285          120.366          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:42:13     76.81          119.842          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:42:18     75.847          120.279          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:42:23     76.46          119.667          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:42:28     76.285          119.317          NaN                4664.0             Temperature is really low. Heating w/ upper element.
+12:42:33     75.148          119.492          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:42:38     75.41          119.754          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:42:43     77.947          120.891          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:42:48     76.81          120.804          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:42:53     77.422          120.629          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:42:58     79.958          121.241          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:43:3     77.509          121.154          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:43:8     77.247          120.279          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:43:13     77.509          119.842          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:43:18     77.597          119.842          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:43:23     77.947          120.279          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:43:28     76.81          121.241          NaN                4724.5             Temperature is really low. Heating w/ lower element.
+12:43:33     78.296          121.591          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:43:38     80.046          121.766          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:43:43     79.171          121.503          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:43:48     78.034          121.678          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:43:53     77.334          120.979          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:43:58     76.985          120.541          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:44:3     78.034          120.366          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:44:8     78.996          120.454          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:44:13     80.833          120.891          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:44:18     80.133          122.203          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:44:23     80.571          121.853          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:44:28     80.658          122.116          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:44:33     79.696          121.766          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:44:38     80.396          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:44:43     78.646          120.279          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:44:48     79.871          120.804          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:44:53     81.095          120.716          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:44:58     82.582          120.804          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:45:3     82.232          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:45:8     83.457          121.941          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:45:13     82.845          121.853          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:45:18     81.882          121.766          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:45:23     80.92          121.066          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:45:28     82.232          120.629          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:45:33     82.845          120.454          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:45:38     82.145          120.629          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:45:43     81.445          120.804          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:45:48     81.882          121.066          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:45:53     83.807          121.853          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:45:58     84.331          121.066          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:46:3     81.97          121.241          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:46:8     83.457          121.066          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:46:13     83.719          120.541          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:46:18     83.544          120.192          NaN                4652.0             Temperature is really low. Heating w/ upper element.
+12:46:23     83.807          120.629          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:46:28     85.381          121.766          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:46:33     85.468          121.503          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:46:38     84.069          121.503          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:46:43     86.168          121.329          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:46:48     83.282          122.028          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:46:53     84.769          121.154          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:46:58     83.457          121.066          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+12:47:3     83.544          119.842          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:47:8     83.107          120.104          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:47:13     86.955          121.853          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:47:18     86.343          121.766          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:47:23     87.393          121.503          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:47:28     87.043          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+12:47:33     86.78          121.416          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:47:38     85.643          121.591          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:47:43     85.731          120.104          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:47:48     84.681          120.541          NaN                4643.0             Temperature is really low. Heating w/ lower element.
+12:47:53     85.468          120.891          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:47:58     86.605          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:48:3     89.667          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:48:8     90.366          121.241          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:48:13     88.18          121.766          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:48:18     87.393          121.503          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+12:48:23     84.944          119.754          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:48:28     86.518          119.929          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+12:48:33     87.568          120.804          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:48:38     87.218          120.716          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:48:43     89.054          121.154          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:48:48     88.705          122.203          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:48:53     90.017          122.116          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+12:48:58     89.929          122.116          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:49:3     87.655          121.853          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+12:49:8     86.868          121.503          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:49:13     88.267          120.804          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+12:49:18     88.53          121.154          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+12:49:23     88.18          121.241          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+12:49:28     88.355          122.378          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:49:33     89.754          122.028          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+12:49:38     91.591          122.028          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:49:43     90.716          121.678          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:49:48     90.017          122.116          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+12:49:53     89.404          120.891          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+12:49:58     90.192          120.979          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:50:3     90.454          120.804          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:50:8     89.492          121.154          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+12:50:13     91.154          121.241          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:50:18     92.466          121.503          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:50:23     91.853          121.503          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+12:50:28     91.241          121.416          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:50:33     91.329          121.678          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:50:38     91.591          120.804          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+12:50:43     91.066          119.404          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+12:50:48     90.979          119.579          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:50:53     90.192          118.88          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:50:58     90.454          120.192          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+12:51:3     92.291          120.891          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+12:51:8     92.64          121.766          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:51:13     93.865          121.503          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+12:51:18     93.253          121.066          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:51:23     91.766          119.929          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:51:28     91.678          119.317          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:51:33     90.804          119.142          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+12:51:38     90.366          118.88          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:51:43     90.891          120.366          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:51:48     94.652          120.891          NaN                4733.5             Temperature is really low. Heating w/ lower element.
+12:51:53     92.64          121.154          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+12:51:58     92.378          120.891          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+12:52:3     91.329          119.754          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+12:52:8     91.241          118.967          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:52:13     90.104          119.054          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:52:18     90.104          119.054          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:52:23     90.279          119.754          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:52:28     91.503          119.667          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+12:52:33     91.678          120.192          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+12:52:38     90.279          119.842          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+12:52:43     90.629          119.667          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+12:52:48     90.017          119.667          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+12:52:53     88.442          118.355          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:52:58     89.229          118.967          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:53:3     87.83          118.53          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:53:8     89.404          118.442          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+12:53:13     87.743          118.88          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+12:53:18     89.054          119.754          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:53:23     87.218          119.404          NaN                4721.5             Temperature is really low. Heating w/ lower element.
+12:53:28     85.906          119.754          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:53:33     84.069          119.229          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:53:38     83.107          119.579          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:53:43     82.145          118.617          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:53:48     80.046          118.267          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:53:53     78.821          118.967          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:53:58     78.734          117.655          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:54:3     81.27          118.617          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:54:8     79.958          119.492          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:54:13     80.396          119.667          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:54:18     79.433          119.492          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:54:23     77.422          119.054          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:54:28     75.585          118.355          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:54:33     75.235          118.005          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:54:38     76.197          119.142          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:54:43     75.585          118.442          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:54:48     76.635          119.492          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:54:53     74.536          118.53          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:54:58     76.635          119.229          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:55:3     75.235          118.88          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:55:8     74.273          118.092          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+12:55:13     74.798          117.043          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:55:18     74.448          118.18          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:55:23     73.836          117.218          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:55:28     75.06          117.043          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:55:33     75.06          117.393          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:55:38     76.372          117.655          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:55:43     76.81          117.568          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:55:48     74.361          117.83          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:55:53     73.923          117.655          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:55:58     74.186          116.431          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:56:3     73.573          115.206          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:56:8     74.448          116.081          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:56:13     75.323          116.081          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:56:18     75.673          116.605          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:56:23     73.836          116.081          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:56:28     74.186          115.818          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:56:33     74.71          115.468          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:56:38     73.573          115.556          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:56:43     73.398          114.157          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:56:48     73.836          114.506          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:56:53     73.136          114.944          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:56:58     73.836          113.982          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:57:3     73.049          115.381          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+12:57:8     74.273          115.206          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:57:13     74.798          114.856          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:57:18     74.798          115.031          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:57:23     72.087          114.331          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:57:28     73.486          113.894          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:57:33     72.261          112.582          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+12:57:38     72.874          113.282          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:57:43     73.049          112.582          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:57:48     75.06          114.069          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:57:53     73.923          113.457          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:57:58     74.536          114.069          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:58:3     73.136          113.369          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+12:58:8     72.611          113.457          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+12:58:13     72.611          111.62          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+12:58:18     73.486          112.407          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:58:23     71.999          112.057          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:58:28     73.311          112.057          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:58:33     73.049          112.407          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:58:38     73.748          112.932          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+12:58:43     73.486          113.194          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:58:48     73.311          113.282          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:58:53     71.999          111.97          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+12:58:58     71.912          111.533          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+12:59:3     72.961          111.445          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+12:59:8     71.737          111.533          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+12:59:13     72.786          110.92          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:59:18     74.798          112.232          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:59:23     73.311          112.32          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+12:59:28     72.786          112.407          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+12:59:33     73.311          112.32          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+12:59:38     71.999          111.97          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+12:59:43     71.999          110.92          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+12:59:48     70.162          111.008          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+12:59:53     71.562          111.27          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+12:59:58     72.261          111.882          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+13:0:3     72.349          111.97          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+13:0:8     72.961          112.845          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+13:0:13     72.349          112.757          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+13:0:18     73.398          112.582          NaN                4585.5             Temperature is really low. Heating w/ upper element.
+13:0:23     72.174          112.582          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+13:0:28     71.737          112.145          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+13:0:33     71.737          112.232          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:0:38     70.337          112.145          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+13:0:43     71.824          111.97          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:0:48     72.261          112.582          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+13:0:53     74.273          114.069          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+13:0:58     73.311          113.544          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+13:1:3     71.737          113.807          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+13:1:8     72.699          113.982          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+13:1:13     71.737          114.594          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+13:1:18     71.212          113.982          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:1:23     71.737          113.544          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+13:1:28     70.162          113.282          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+13:1:33     70.862          113.457          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+13:1:38     72.786          115.119          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+13:1:43     70.775          114.856          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+13:1:48     72.611          115.294          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+13:1:53     70.862          115.381          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+13:1:58     72.087          115.556          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+13:2:3     71.737          115.643          NaN                4619.0             Temperature is really low. Heating w/ upper element.
+13:2:8     71.824          114.944          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:2:13     71.562          115.206          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+13:2:18     71.562          116.518          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+13:2:23     72.874          117.568          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:2:28     72.349          117.83          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:2:33     72.436          117.655          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:2:38     71.037          117.83          NaN                4582.5             Temperature is really low. Heating w/ upper element.
+13:2:43     71.037          117.917          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+13:2:48     72.087          117.218          NaN                4622.0             Temperature is really low. Heating w/ upper element.
+13:2:53     70.6          117.13          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:2:58     71.824          117.743          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+13:3:3     71.649          117.13          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+13:3:8     73.136          118.267          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+13:3:13     71.212          118.267          NaN                4591.5             Temperature is really low. Heating w/ upper element.
+13:3:18     74.71          119.142          NaN                4594.5             Temperature is really low. Heating w/ upper element.
+13:3:23     72.961          119.317          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+13:3:28     71.212          119.492          NaN                4625.0             Temperature is really low. Heating w/ upper element.
+13:3:33     71.299          118.792          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+13:3:38     72.349          118.792          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:3:43     71.824          119.054          NaN                4579.5             Temperature is really low. Heating w/ upper element.
+13:3:48     71.824          118.792          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+13:3:53     73.573          119.667          NaN                4588.5             Temperature is really low. Heating w/ upper element.
+13:3:58     73.398          120.366          NaN                4607.0             Temperature is really low. Heating w/ upper element.
+13:4:3     72.786          120.366          NaN                4748.5             Temperature is really low. Heating w/ lower element.
+13:4:8     73.136          120.629          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:4:13     70.162          120.192          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:4:18     71.124          119.667          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:4:23     69.987          119.317          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+13:4:28     71.562          120.192          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:4:33     71.124          119.754          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:4:38     73.661          121.241          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:4:43     73.136          121.503          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:4:48     72.699          120.454          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:4:53     70.337          121.066          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:4:58     71.824          121.591          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:5:3     71.912          119.842          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:5:8     71.387          120.454          NaN                4685.0             Temperature is really low. Heating w/ upper element.
+13:5:13     72.524          119.492          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+13:5:18     73.836          119.667          NaN                4628.0             Temperature is really low. Heating w/ upper element.
+13:5:23     74.448          121.066          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+13:5:28     73.748          121.241          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:5:33     74.448          122.116          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:5:38     73.836          122.116          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:5:43     70.687          121.503          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:5:48     72.874          119.142          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:5:53     74.71          121.591          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+13:5:58     74.098          121.591          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:6:3     74.186          120.979          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:6:8     75.06          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:6:13     74.885          122.553          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:6:18     76.722          122.64          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:6:23     76.372          122.028          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:6:28     76.285          121.766          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:6:33     74.71          121.154          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:6:38     75.935          121.416          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:6:43     75.498          120.716          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:6:48     76.46          121.154          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:6:53     75.847          121.241          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:6:58     77.859          122.64          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:7:3     78.734          122.028          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:7:8     79.433          122.728          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:7:13     74.798          121.678          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:7:18     77.509          122.116          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:7:23     77.334          120.541          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:7:28     78.034          121.766          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:7:33     76.722          120.979          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:7:38     78.821          122.64          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:7:43     79.696          121.941          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:7:48     79.084          122.203          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:7:53     78.646          121.678          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:7:58     78.296          122.553          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:8:3     77.334          120.366          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:8:8     77.334          120.279          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:8:13     76.197          120.366          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:8:18     80.308          121.416          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:8:23     81.358          121.241          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:8:28     80.483          121.941          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:8:33     80.658          121.503          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:8:38     81.183          122.203          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:8:43     80.745          122.378          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:8:48     80.046          121.154          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:8:53     79.259          120.541          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:8:58     78.122          120.629          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+13:9:3     79.783          120.979          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:9:8     79.871          121.591          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:9:13     80.046          121.503          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:9:18     80.833          121.678          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:9:23     82.932          122.64          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:9:28     80.396          121.941          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:9:33     80.833          121.766          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:9:38     80.571          121.766          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:9:43     81.97          122.028          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:9:48     81.095          120.541          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:9:53     84.157          121.941          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:9:58     83.369          122.028          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:10:3     83.632          122.028          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:10:8     84.069          121.853          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:10:13     82.495          122.64          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:10:18     82.757          122.291          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:10:23     83.369          121.591          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:10:28     84.069          121.503          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:10:33     84.681          121.503          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:10:38     85.119          122.028          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:10:43     85.119          122.116          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:10:48     85.993          121.503          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:10:53     85.119          121.853          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:10:58     85.643          121.853          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:11:3     84.944          122.203          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:11:8     84.506          121.678          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:11:13     84.331          120.629          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:11:18     83.632          121.066          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:11:23     85.818          121.678          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:11:28     86.518          122.553          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:11:33     85.818          121.416          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:11:38     87.568          122.466          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:11:43     85.818          122.378          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:11:48     84.244          120.454          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:11:53     83.632          120.104          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:11:58     85.906          121.066          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:12:3     85.381          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:12:8     86.081          120.716          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:12:13     88.267          122.203          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:12:18     89.054          122.466          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:12:23     87.218          122.553          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:12:28     84.594          121.066          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:12:33     87.48          120.366          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:12:38     87.655          121.678          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:12:43     87.393          121.329          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:12:48     87.305          120.454          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:12:53     87.13          119.579          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:12:58     88.442          122.203          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:13:3     88.705          122.64          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:13:8     89.142          121.154          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:13:13     88.967          122.028          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:13:18     88.18          122.378          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:13:23     89.054          121.066          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:13:28     89.667          120.716          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:13:33     88.442          121.241          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:13:38     89.317          121.503          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:13:43     90.104          121.678          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:13:48     89.142          121.766          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:13:53     90.629          121.066          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:13:58     89.492          122.466          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:14:3     89.929          121.503          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:14:8     90.804          120.804          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:14:13     89.317          120.454          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:14:18     88.967          121.503          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:14:23     88.18          121.591          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:14:28     91.329          121.678          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:14:33     90.891          121.154          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:14:38     92.903          122.553          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:14:43     93.078          122.291          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:14:48     91.241          121.416          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:14:53     90.017          120.454          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:14:58     91.154          121.416          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:15:3     90.366          120.891          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:15:8     92.728          121.503          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:15:13     93.34          122.203          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:15:18     93.34          122.291          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:15:23     95.877          122.553          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:15:28     91.154          122.291          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:15:33     92.728          121.766          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:15:38     92.466          120.804          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:15:43     93.165          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:15:48     93.428          121.241          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:15:53     93.165          121.329          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:15:58     95.177          122.291          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:16:3     93.69          122.378          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:16:8     96.664          122.378          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:16:13     92.378          122.203          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:16:18     93.778          122.466          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:16:23     93.515          121.591          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:16:28     94.565          121.329          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:16:33     93.69          120.891          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:16:38     93.428          122.203          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:16:43     95.789          122.466          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:16:48     95.527          122.553          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:16:53     95.264          122.291          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:16:58     93.778          122.378          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:17:3     94.39          121.766          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:17:8     93.865          121.329          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:17:13     93.69          120.192          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:17:18     93.952          121.329          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:17:23     96.401          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:17:28     95.439          122.291          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:17:33     96.139          121.941          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:17:38     95.527          122.116          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:17:43     96.052          122.466          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:17:48     95.089          121.241          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:17:53     96.226          120.104          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:17:58     95.702          120.891          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:18:3     95.089          120.716          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:18:8     97.014          121.066          NaN                4691.0             Temperature is really low. Heating w/ upper element.
+13:18:13     96.751          121.154          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+13:18:18     94.565          120.366          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:18:23     97.276          122.378          NaN                4706.5             Temperature is really low. Heating w/ lower element.
+13:18:28     98.238          122.203          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:18:33     94.39          119.842          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:18:38     96.226          120.454          NaN                4655.0             Temperature is really low. Heating w/ upper element.
+13:18:43     96.751          121.241          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+13:18:48     97.626          121.591          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:18:53     96.839          120.104          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:18:58     98.501          120.804          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:19:3     99.113          122.64          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:19:8     100.6          122.728          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+13:19:13     98.151          119.754          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:19:18     97.189          120.979          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:19:23     98.063          121.329          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:19:28     97.364          121.853          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:19:33     97.101          120.017          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:19:38     96.839          120.716          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:19:43     98.063          122.203          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:19:48     97.888          122.728          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:19:53     97.713          120.454          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:19:58     97.801          120.541          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:20:3     95.877          121.678          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:20:8     98.151          121.678          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:20:13     97.451          120.716          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:20:18     98.151          121.853          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:20:23     97.801          117.83          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:20:28     100.687          122.553          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+13:20:33     100.25          120.541          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:20:38     100.95          122.815          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:20:43     98.501          120.979          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:20:48     99.55          122.728          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:20:53     97.276          117.83          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:20:58     98.938          121.941          NaN                4634.0             Temperature is really low. Heating w/ upper element.
+13:21:3     98.063          120.716          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:21:8     100.337          122.116          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:21:13     99.725          122.116          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+13:21:18     100.512          122.815          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:21:23     101.037          121.154          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:21:28     101.824          122.728          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:21:33     98.763          118.092          NaN                4649.0             Temperature is really low. Heating w/ lower element.
+13:21:38     99.987          121.853          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+13:21:43     100.687          119.667          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:21:48     100.25          121.503          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:21:53     100.512          118.092          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:21:58     101.474          122.553          NaN                4658.0             Temperature is really low. Heating w/ upper element.
+13:22:3     101.474          122.553          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:22:8     104.011          122.553          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:22:13     100.95          120.891          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:22:18     100.687          121.853          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:22:23     100.337          120.979          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:22:28     101.737          121.503          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:22:33     101.562          121.329          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:22:38     100.425          121.853          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:22:43     102.786          122.553          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:22:48     102.961          122.99          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:22:53     104.448          122.291          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:22:58     102.349          122.291          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:23:3     99.987          121.678          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:23:8     100.95          121.416          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:23:13     100.95          121.678          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:23:18     101.299          121.766          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:23:23     102.874          120.979          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:23:28     103.573          122.291          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:23:33     102.611          122.64          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:23:38     104.71          122.64          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:23:43     103.136          121.329          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:23:48     101.912          122.815          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:23:53     100.687          120.017          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:23:58     101.562          121.329          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:24:3     102.786          120.979          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:24:8     103.573          121.678          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:24:13     102.087          121.678          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:24:18     103.748          122.64          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:24:23     104.011          122.116          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:24:28     104.623          122.553          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:24:33     101.912          121.241          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:24:38     102.524          120.629          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:24:43     103.136          120.366          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:24:48     103.398          120.716          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:24:53     102.436          120.366          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:24:58     105.323          122.028          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:25:3     104.973          122.116          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:25:8     106.022          122.64          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:25:13     103.398          121.941          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:25:18     103.573          120.716          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:25:23     102.174          120.804          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+13:25:28     104.448          121.766          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:25:33     102.874          120.104          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:25:38     104.098          120.804          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:25:43     105.673          120.891          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:25:48     106.722          122.64          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+13:25:53     105.76          121.941          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:25:58     104.71          122.466          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:26:3     103.661          121.329          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:26:8     105.41          121.678          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:26:13     103.311          120.192          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:26:18     104.798          120.891          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:26:23     105.235          121.066          NaN                4694.0             Temperature is really low. Heating w/ lower element.
+13:26:28     106.197          122.64          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:26:33     107.247          121.416          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:26:38     107.772          122.291          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:26:43     107.684          122.466          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:26:48     106.985          122.815          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:26:53     105.76          121.241          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:26:58     106.635          121.416          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:27:3     105.498          121.241          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:27:8     105.585          121.766          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:27:13     107.334          121.241          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:27:18     109.346          122.553          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:27:23     107.947          122.028          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:27:28     106.81          122.815          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:27:33     106.11          121.241          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:27:38     106.722          121.678          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:27:43     104.71          120.454          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:27:48     107.772          121.678          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:27:53     107.159          119.667          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+13:27:58     109.084          120.541          NaN                4616.0             Temperature is really low. Heating w/ upper element.
+13:28:3     109.696          121.154          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:28:8     108.296          122.64          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:28:13     107.859          121.766          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:28:18     107.334          121.154          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:28:23     107.072          120.804          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:28:28     106.285          121.329          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:28:33     107.422          120.104          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:28:38     108.296          121.503          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:28:43     109.521          122.378          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:28:48     109.871          122.203          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:28:53     110.221          121.941          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:28:58     109.259          122.553          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:29:3     107.947          122.466          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:29:8     108.122          121.503          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:29:13     107.684          120.891          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:29:18     108.821          121.241          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:29:23     109.521          121.766          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:29:28     108.909          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:29:33     108.909          120.541          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:29:38     109.871          121.503          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:29:43     109.259          121.503          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:29:48     108.471          121.416          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:29:53     108.471          120.017          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:29:58     108.471          121.066          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:30:3     108.384          119.229          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:30:8     111.183          121.329          NaN                4679.0             Temperature is really low. Heating w/ upper element.
+13:30:13     112.232          121.766          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:30:18     110.658          121.678          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:30:23     112.407          121.766          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:30:28     108.909          122.378          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:30:33     110.571          120.716          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:30:38     111.183          120.279          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:30:43     110.571          120.541          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:30:48     110.745          120.454          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:30:53     110.833          121.416          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+13:30:58     111.882          120.716          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:31:3     114.157          122.64          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:31:8     113.807          121.503          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:31:13     111.97          122.378          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:31:18     111.183          120.454          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:31:23     111.62          119.929          NaN                4643.0             Temperature is really low. Heating w/ upper element.
+13:31:28     111.795          118.792          NaN                4646.0             Temperature is really low. Heating w/ upper element.
+13:31:33     112.057          117.743          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:31:38     112.232          120.454          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+13:31:43     112.932          121.329          NaN                4712.5             Temperature is really low. Heating w/ lower element.
+13:31:48     114.157          120.891          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:31:53     113.982          118.88          NaN                4688.0             Temperature is really low. Heating w/ lower element.
+13:31:58     113.194          118.005          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:32:3     112.145          119.929          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:32:8     112.232          119.667          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:32:13     111.882          120.454          NaN                4610.0             Temperature is really low. Heating w/ upper element.
+13:32:18     112.67          121.066          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:32:23     113.544          120.279          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:32:28     113.369          121.416          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:32:33     114.244          121.503          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:32:38     114.856          120.804          NaN                4661.0             Temperature is really low. Heating w/ lower element.
+13:32:43     112.232          121.066          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:32:48     112.932          120.454          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:32:53     112.32          119.492          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:32:58     113.107          120.454          NaN                4637.0             Temperature is really low. Heating w/ upper element.
+13:33:3     112.67          120.804          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:33:8     113.982          120.541          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:33:13     113.632          121.503          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:33:18     114.157          120.979          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:33:23     114.769          119.929          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:33:28     115.119          121.591          NaN                4646.0             Temperature is really low. Heating w/ upper element.
+13:33:33     112.67          119.754          NaN                4703.5             Temperature is really low. Heating w/ lower element.
+13:33:38     113.807          120.629          NaN                4640.0             Temperature is really low. Heating w/ upper element.
+13:33:43     113.544          120.279          NaN                4709.5             Temperature is really low. Heating w/ lower element.
+13:33:48     114.681          120.454          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:33:53     114.069          120.804          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:33:58     113.457          120.804          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:34:3     115.206          119.404          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:34:8     115.206          120.192          NaN                4682.0             Temperature is really low. Heating w/ upper element.
+13:34:13     115.818          120.104          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:34:18     113.632          121.416          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:34:23     113.544          120.454          NaN                4697.5             Temperature is really low. Heating w/ lower element.
+13:34:28     114.157          120.629          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:34:33     114.769          118.967          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:34:38     116.518          119.579          NaN                4658.0             Temperature is really low. Heating w/ upper element.
+13:34:43     115.294          119.754          NaN                4601.0             Temperature is really low. Heating w/ upper element.
+13:34:48     116.168          121.066          NaN                4613.0             Temperature is really low. Heating w/ upper element.
+13:34:53     116.256          121.591          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:34:58     117.48          121.853          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:35:3     115.468          121.591          NaN                4700.5             Temperature is really low. Heating w/ lower element.
+13:35:8     115.818          120.804          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:35:13     115.556          120.366          NaN                4664.0             Temperature is really low. Heating w/ lower element.
+13:35:18     114.419          120.192          NaN                4682.0             Temperature is really low. Heating w/ lower element.
+13:35:23     115.381          119.842          NaN                4652.0             Temperature is really low. Heating w/ lower element.
+13:35:28     115.993          122.028          NaN                4658.0             Temperature is really low. Heating w/ lower element.
+13:35:33     115.556          119.404          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:35:38     116.693          120.192          NaN                4649.0             Temperature is really low. Heating w/ upper element.
+13:35:43     116.431          121.503          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:35:48     115.206          121.503          NaN                4685.0             Temperature is really low. Heating w/ lower element.
+13:35:53     114.944          119.929          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+13:35:58     115.381          120.541          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:36:3     114.419          120.891          NaN                4676.0             Temperature is really low. Heating w/ lower element.
+13:36:8     116.693          121.503          NaN                4670.0             Temperature is really low. Heating w/ lower element.
+13:36:13     117.655          121.941          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:36:18     117.568          121.503          NaN                4679.0             Temperature is really low. Heating w/ lower element.
+13:36:23     117.043          121.241          NaN                4646.0             Temperature is really low. Heating w/ lower element.
+13:36:28     118.18          122.203          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:36:33     115.556          121.416          NaN                4691.0             Temperature is really low. Heating w/ lower element.
+13:36:38     117.218          120.366          NaN                4667.0             Temperature is really low. Heating w/ lower element.
+13:36:43     116.431          120.629          NaN                4673.0             Temperature is really low. Heating w/ lower element.
+13:36:48     116.518          120.979          NaN                4655.0             Temperature is really low. Heating w/ lower element.
+13:36:53     116.343          117.218          NaN                4631.0             Temperature is really low. Heating w/ upper element.
+13:36:58     118.967          118.442          NaN                4604.0             Temperature is really low. Heating w/ upper element.
+13:37:3     118.267          120.979          NaN                4598.0             Temperature is really low. Heating w/ upper element.
+13:37:8     120.366          122.64          NaN                4715.5             Temperature is really low. Heating w/ lower element.
+13:37:13     116.78          119.754          NaN                18.0             Temperature acceptable. All off.
+13:37:18     116.256          119.667          NaN                21.0             Temperature acceptable. All off.
+13:37:23     115.731          119.842          NaN                21.0             Temperature acceptable. All off.
+13:37:28     115.906          122.903          NaN                21.0             Temperature acceptable. All off.
+13:37:33     115.906          120.454          NaN                21.0             Temperature acceptable. All off.
+13:37:38     116.081          121.853          NaN                24.0             Temperature acceptable. All off.
+13:37:43     117.043          122.815          NaN                21.0             Temperature acceptable. All off.
+13:37:48     117.655          123.165          NaN                21.0             Temperature acceptable. All off.
+13:37:53     116.168          120.804          NaN                21.0             Temperature acceptable. All off.
+13:37:58     116.081          119.842          NaN                21.0             Temperature acceptable. All off.
+13:38:3     116.431          123.515          NaN                21.0             Temperature acceptable. All off.
+13:38:8     116.168          123.69          NaN                24.0             Temperature acceptable. All off.
+13:38:13     115.294          122.553          NaN                21.0             Temperature acceptable. All off.
+13:38:18     115.731          121.066          NaN                21.0             Temperature acceptable. All off.
+13:38:23     117.043          121.766          NaN                21.0             Temperature acceptable. All off.
+13:38:28     117.218          122.815          NaN                21.0             Temperature acceptable. All off.
+13:38:33     116.518          120.192          NaN                21.0             Temperature acceptable. All off.
+13:38:38     116.693          120.454          NaN                21.0             Temperature acceptable. All off.
+13:38:43     116.78          122.378          NaN                21.0             Temperature acceptable. All off.
+13:38:48     116.168          123.078          NaN                21.0             Temperature acceptable. All off.
+13:38:53     115.906          119.054          NaN                21.0             Temperature acceptable. All off.
+13:38:58     115.643          120.979          NaN                21.0             Temperature acceptable. All off.
+13:39:3     116.168          119.842          NaN                21.0             Temperature acceptable. All off.
+13:39:8     116.256          122.203          NaN                24.0             Temperature acceptable. All off.
+13:39:13     115.643          120.804          NaN                21.0             Temperature acceptable. All off.
+13:39:18     116.78          122.99          NaN                18.0             Temperature acceptable. All off.
+13:39:23     115.381          118.705          NaN                21.0             Temperature acceptable. All off.
+13:39:28     116.955          122.903          NaN                21.0             Temperature acceptable. All off.
+13:39:33     115.818          121.066          NaN                21.0             Temperature acceptable. All off.
+13:39:38     116.431          122.728          NaN                21.0             Temperature acceptable. All off.
+13:39:43     116.78          120.541          NaN                21.0             Temperature acceptable. All off.
+13:39:48     116.78          119.929          NaN                18.0             Temperature acceptable. All off.
+13:39:53     116.693          121.241          NaN                21.0             Temperature acceptable. All off.
+13:39:58     116.343          121.678          NaN                21.0             Temperature acceptable. All off.
+13:40:3     116.343          119.142          NaN                21.0             Temperature acceptable. All off.
+13:40:8     118.267          120.541          NaN                21.0             Temperature acceptable. All off.
+13:40:13     116.431          122.815          NaN                21.0             Temperature acceptable. All off.
+13
