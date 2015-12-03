@@ -295,15 +295,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.cost = cost_info[1]
 
 		if self.cost_level == 'low':
-			self.deadbands(0, -18, -22)
 			print "Keep deadband in current location"
 		elif self.cost_level == 'medium':
 			# Shift low_limit 5F lower
 			self.deadbands(0, -18, -27)
 		elif self.cost_level == 'high':
-			# Shift low_limit 5F lower and deadband 10F lower
-			# and desired temp 5F lower
-			self.deadbands(-5, -23, -27)
+			# Shift low_limit and deadband 5F lower
+			self.deadbands(0, -23, -27)
 
 		# Log information & action
 		_log.info("Cost level is %s at $%s, setting deadband to %r - %r deg F."
@@ -331,13 +329,12 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			if up_temp > self.desired_temp and low_temp > self.desired_temp:
 				# Turn everything off and set to regular operation
 				self.fast = False
-				self.regular = False
+				self.regular = True
 				self.all_OFF()
-				reaction = ("Temperature acceptable. All off")
-				self.logger_guy(reaction)
-				self.mode = reaction
+				reaction = ("Temperature acceptable. All off.")
+                                self.logger_guy(reaction) 
 			# Check if either temp readings are below low_limit
-			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
+                                        self.mode = reaction			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.desired_temp and self.fast == True)):
 				# Fast is a variable to signal quick heating is needed
 				self.fast = True
@@ -362,7 +359,6 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				# Turn everything off
 				self.all_OFF()
 				self.fast = False
-				self.regular = False
 				# Log information and reaction
 				reaction = "Temperature acceptable. All off."
 				self.logger_guy(reaction)
@@ -374,7 +370,8 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 					self.low_limit) or (self.regular == True)):
 				self.fast = False
 				self.regular = True
-				if low_temp >= self.hi_deadband:
+				if (low_temp >= self.hi_deadband and up_temp >=
+						self.hi_deadband):
 					self.regular = False
 				# Turn HP on
 				self.HP_ON()
