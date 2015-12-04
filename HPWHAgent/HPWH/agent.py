@@ -62,30 +62,83 @@ under Contract DE-AC05-76RL01830
 Brian Ruskauff
 National Renewable Energy Labs (NREL)
 10/9/15
-Referenced from Kathleen Genger's agent.py code for dehumidifier control as well as ListenerAgent
+Referenced from Kathleen Genger's agent.py code for dehumidifier control as well as ListenerAgent. References from Deepthi Vaidhynathan's communication code also included.
 
 
-This code was made as a replacement for the controls implemented in a heat pump water heater (HPWH). 
+This code was made as a replacement for the controls implemented in a heat pump water heater (HPWH).
 
-INPUT 
-	- signal from UtilityAgent with [costlevel, cost]
-		- costlevel is 'high', 'medium', or 'low'
-		- cost is a float in dollars
-	- signals from HPWHUserAgent with:
-		- topic = 'user/temp'
-		- message = [old_temp, new_temp]
-		- topic = 'user/state'
-		- message = [old_state, new_state]
-		- topic = 'user/sim_temp'
-		- message = [up_temp, low_temp]
-	- signals from HPWHMeasureAgent with:
-		- topic = 'measure/temp'
-		- message = [up_temp, low_temp]
-OUTPUT
-	- when outputting status
-		- topic = 'control/status'
-		- message = [state, mode, desired_temp]
-	- logs the inputted cost level, cost, and heating response.
+FUNCTIONALITY
+-While the state of the HPWH is 0 it will not heat water or respond to control commands. Use the state as an emergency shuttoff.
+-While the water temperature is higher than the low deadband limit the tank will not heat.
+-If the upper or lower tank temperature drops below the low deadband limit but is above the low limit, the tank will heat with the heat pump until both temperatures are equal to the hi deadband limit. 
+-If the tank temperature drops below the low limit, the tank will heat with the upper element until the upper tank temperature is equal to the hi deadband limit. It will then heat with the lower element until the lower tank temperature is equal to the hi deadband limit. While heating with the lower element, if the upper tank temperature drops below the hi deadband limit, the tank will heat with the upper element to reach the hi deadband limit once again, and then switch back to the lower element. Once both tank temperatures are equal to the hi deadband limit the tank will stop heating.
+
+INPUT - Status Request Signals from Controlling Agent
+	Request the state of the HPWH
+		- topic = 'control/request/state'
+		- message does not matter
+	Request the mode of the HPWH
+		- topic = 'control/request/mode'
+		- message does not matter
+	Request the Temperature Setpoint of the HPWH
+		- topic = 'control/request/temp_desired'
+		- message does not matter
+	Request the Upper and Lower Tank Temperatures of the HPWH
+		- topic = 'control/request/temp_tank'
+		- message does not matter
+	Request the deadband information of the HPWH
+		- topic = 'control/request/deadbands'
+		- message does not matter
+**For info regarding the response of the HPWH, view the OUTPUT comments**
+
+INPUT - Control Signals from Controlling Agent
+	Control the State of the HPWH
+		- topic = 'control/input/state'
+		- message = [state]
+	Control the Mode of the HPWH
+		- topic = 'control/input/mode'
+		- message = [mode]
+	Control the Desired Temperature of the HPWH
+		- topic = 'control/input/temp_desired'
+		- message = [temp_desired]
+	Control the Deadbands of the HPWH
+		- topic - 'control/input/deadbands'
+		- message = [dbl1, dbl2, dbl3]
+**For specific message information, view the OUTPUT comments. Messages are the same**
+
+OUTPUT - Status Signals from the HPWH
+	Publish the state of the HPWH
+		- topic = 'HPWH/state'
+		- message = [state]
+			- integer
+			- state is 0 (off) or 1 (on)
+			- while off HPWH will not respond to signals and will not power any
+				heating elements
+	Publish the mode of the HPWH
+		- topic = 'HPWH/mode'
+		- message = [mode]
+			- string
+			- state is "HP" (Heat Pump), "UE" (Upper Element),
+				"LE" (Lower Element), or "SB" (standby)
+	Publish the Temperature Setpoint of the HPWH
+		- topic = 'HPWH/temp_desired'
+		- message = temp_desired
+			- double
+			- Fahrenheit
+			- can also be thought of as the set-point temperature
+	Publish the Upper and Lower Tank Temperatures of the HPWH
+		- topic = 'HPWH/temp_tank'
+		- message = [temp_upper, temp_lower]
+			- double
+			- Fahrenheit
+	Publish the deadband information of the HPWH
+		- topic = 'HPWH/deadbands'
+		- message does not matter
+			- double
+			- Fahrenheit
+			- hi_deadband limit = temp_desired + dbl1
+			- low_deadband limit = temp_desired + dbl2
+			- low_limit = temp_desired + dbl3
 '''
 #_____________________________________________________________________________#
 
@@ -186,13 +239,13 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Initialize default temp
 		self.desired_temp = 120
 		# Initialize variables for deadband
-		self.int1, self.int2, self.int3 = 0, -18, -22
+		self.dbl1, self.dbl2, self.dbl3 = 0, -18, -22
 		# High deadband limit is 0F above desired temp
-		self.hi_deadband = self.desired_temp + self.int1
+		self.hi_deadband = self.desired_temp + self.dbl1
 		# Low deadband limit is 18F below desired temp
-		self.low_deadband = self.desired_temp + self.int2
+		self.low_deadband = self.desired_temp + self.dbl2
 		# Lowest limit before elements turn on is 22F below desired temp
-		self.low_limit = self.desired_temp + self.int3
+		self.low_limit = self.desired_temp + self.dbl3
 		'''_________________________________________________________________'''
 
 
@@ -279,23 +332,23 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	'''Handle Requests from Control Agent___________________________________'''
 	# Request for State Information
 	@matching.match_start('control/request/state')
-	def give_state(self):
+	def give_state(self, topic, headers, message, match):
 		self.publish_json('HPWH/state', {}, (self.state))
 	# Request for Mode Information
 	@matching.match_start('control/request/mode')
-	def give_mode(self):
+	def give_mode(self, topic, headers, message, match):
 		self.publish_json('HPWH/mode', {}, (self.mode))
 	# Request for Temperature SetPoint Information
 	@matching.match_start('control/request/temp_desired')
-	def give_temp_desired(self):
+	def give_temp_desired(self, topic, headers, message, match):
 		self.publish_json('HPWH/temp_desired', {}, (self.temp_desired))
 	# Request for Temperature Information
 	@matching.match_start('control/request/temp_tank')
-	def give_temp(self):
+	def give_temp(self, topic, headers, message, match):
 		self.publish_json('HPWH/temp_tank', {}, (self.up_temp, self.low_temp))
 	# Request for Deadband Information
 	@matching.match_start('control/request/deadbands')
-	def give_deadbands(self):
+	def give_deadbands(self, topic, headers, message, match):
 		self.publish_json('HPWH/deadbands', {}, (self.hi_deadband,
 				self.low_deadband, self.low_limit))
 	'''_____________________________________________________________________'''
@@ -320,16 +373,16 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		temp_info = jsonapi.loads(message[0])
 		self.desired_temp = temp_info[0]
 		# Redefine Deadbands
-		self.deadbands(self.int1, self.int2, self.int3)
+		self.deadbands(self.dbl1, self.dbl2, self.dbl3)
 	# Check for Control Input - Deadbands
 	@matching.match_start('control/input/deadbands')
 	def define_deadbands(self, topic, headers, message, match):
-		# Control Agent publishes message = [int1, int2, int3]
+		# Control Agent publishes message = [dbl1, dbl2, dbl3]
 		deadband_info = jsonapi. loads(message[0])
-		(self.int1, self.int2, self.int3 = deadband_info[0], deadband_info[1],
+		(self.dbl1, self.dbl2, self.dbl3 = deadband_info[0], deadband_info[1],
 				deadband_info[2])
 		# Redefine Deadbands
-		self.deadbands(self.int1, self,int2, self.int3)
+		self.deadbands(self.dbl1, self,dbl2, self.dbl3)
 	'''_____________________________________________________________________'''
 
 	'''Periodically Update Tank Temperatures________________________________'''
@@ -364,19 +417,15 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		low_temp = self.low_temp
 		if self.state == 0:
 			self.all_OFF()
-			reaction = "HPWH is off. Turn on for water heating."
-			self.logger_guy(reaction)
-			self.mode = reaction
+			self.mode = "SB"
 		elif self.state == 1:
 			# Check if elements are above deadband
 			if up_temp > self.desired_temp and low_temp > self.desired_temp:
 				# Turn everything off and set to regular operation
-				self.fast = 1
+				self.fast = 0
 				self.regular = 0
 				self.all_OFF()
-				reaction = ("Temperature acceptable. All off")
-				self.logger_guy(reaction)
-				self.mode = reaction
+				self.mode = "SB"
 			# Check if either temp readings are below low_limit
 			elif ((up_temp < self.low_limit or low_temp < self.low_limit) or
 					(low_temp < self.desired_temp and self.fast == 1)):
@@ -386,28 +435,19 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 				# If upper temp is too cold turn on the upper heating element
 				if up_temp < self.hi_deadband:
 					self.UpElement_ON()
-					reaction = ("Temperature is really low."
-							" Heating w/ upper element.")
-					self.logger_guy(reaction)
-					self.mode = reaction
+					self.mode = "UE"
 				# If only lower temp is too cold turn on lower heating element
 				elif low_temp < self.hi_deadband:
 					self.LowElement_ON()
-					reaction = ("Temperature is really low."
-							" Heating w/ lower element.")
-					self.logger_guy(reaction)
-					self.mode = reaction
+					self.mode = "LE"
 			# Check if both temp readings are in deadband
 			elif (up_temp >= self.low_deadband and low_temp >= self.low_deadband
 					and self.regular == 0):
-				# Turn everything off
+				# Turn everything off and set to regular operation
 				self.all_OFF()
 				self.fast = 0
 				self.regular = 0
-				# Log information and reaction
-				reaction = "Temperature acceptable. All off."
-				self.logger_guy(reaction)
-				self.mode = reaction
+				self.mode = "SB"
 			# Check if either temp readings are below deadband but above
 			# low_limit
 			elif ((up_temp < self.low_deadband and up_temp >= self.low_limit) or
@@ -419,9 +459,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 					self.regular = 0
 				# Turn HP on
 				self.HP_ON()
-				reaction = "Temperature is low. Heating w/ heat pump."
-				self.logger_guy(reaction)
-				self.mode = reaction
+				self.mode = "HP"
 	'''_____________________________________________________________________'''
 #_____________________________________________________________________________#
 
