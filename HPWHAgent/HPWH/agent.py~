@@ -146,10 +146,16 @@ OUTPUT - Status Signals from the HPWH
 
 #____________________________________Setup____________________________________#
 
-# Import Python dependencies
-import logging, sys, time, settings, datetime
+# Extra modules required for comminication w/ VOLTTRON bus
+from __future__ import absolute_import
+from volttron.platform.vip.agent import Agent, Core, PubSub, compat
+from volttron.platform.messaging import headers as headers_mod
+import json
+from . import settings
 
-# Not sure I actually need this
+# Import Python dependencies
+import logging, sys, time, settings, datetime, radio, zmq
+
 from zmq.utils import jsonapi
 
 # Import VOLTTRON dependencies
@@ -227,25 +233,24 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 
 		'''Variables for Control Logic______________________________________'''
 		# Initialize flags
-		self.state = 0
+		self.state = 1
 		self.fast = 0
 		self.regular = 0
-		self.mode = "HPWH is off. Turn on for water heating."
-		self.cost_level = "low"
-		self.cost = 0
+		self.mode = "SB"
 		# Initialize upper & lower sensor temps (set to same as desired_temp)
 		self.up_temp = 120
 		self.low_temp = 120
 		# Initialize default temp
 		self.desired_temp = 120
 		# Initialize variables for deadband
-		self.dbl1, self.dbl2, self.dbl3 = 0, -18, -22
-		# High deadband limit is 0F above desired temp
+		self.dbl1, self.dbl2, self.dbl3 = 0, -18, -28
+		self.deadbands()
+		'''# High deadband limit is 0F above desired temp
 		self.hi_deadband = self.desired_temp + self.dbl1
 		# Low deadband limit is 18F below desired temp
 		self.low_deadband = self.desired_temp + self.dbl2
 		# Lowest limit before elements turn on is 22F below desired temp
-		self.low_limit = self.desired_temp + self.dbl3
+		self.low_limit = self.desired_temp + self.dbl3'''
 		'''_________________________________________________________________'''
 
 
@@ -265,6 +270,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		# Publish message from config file, usually a setup msg
 		_log.info(self.config['message'])
 		super(HPWHControlAgent, self).setup()
+        self._agent_id = self.config['agentid']
 
 
 	'''Operational Modules__________________________________________________'''
@@ -276,10 +282,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		except ValueError:
 			return False
 	# Define Deadbands
-	def deadbands(self, hi, low, loww):
-		self.hi_deadband = self.desired_temp + hi
-		self.low_deadband = self.desired_temp + low
-		self.low_limit = self.desired_temp + loww
+	def deadbands(self):
+		self.hi_deadband = self.desired_temp + self.dbl1
+		self.low_deadband = self.desired_temp + self.dbl2
+		self.low_limit = self.desired_temp + self.dbl3
 	# Turn everything off
 	def all_OFF(self):
 		# Make sure heating elements are off
@@ -326,6 +332,28 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.fans_OFF()
 		# Turn the lower heating element on
 		digitalWrite(self.low_element, HIGH)
+	def publish_status(status):
+		now = datetime.now().isoformat(' ') + 'Z'
+		headers = {
+			'AgentID': self._agent_id,
+			headers_mod.CONTENT_TYPE: headers_mod.CONTENT_TYPE.PLAIN_TEXT,
+			headers_mod.DATE: now,
+		}
+		channels=""
+		packet = {}
+		## receive the ZMQ message 
+		packet = socket.recv()
+		print packet 
+		channels, message = packet.split('~');
+		# string should be splittable into topic and msg, but seems it is receiving them seperately
+		#print "RECV: " + message;
+		## Conevrt to voltttron message format with topics and message 
+		messages = json.loads(message)
+		topics  = messages['topic']
+		messages = messages['message']
+		## publish on the volttron bus 
+		self.vip.pubsub.publish(
+			'pubsub',topics , headers, messages)
 	'''_____________________________________________________________________'''
 
 
@@ -333,24 +361,23 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	# Request for State Information
 	@matching.match_start('control/request/state')
 	def give_state(self, topic, headers, message, match):
-		self.publish_json('HPWH/state', {}, (self.state))
+		self.publish_status('state')
 	# Request for Mode Information
 	@matching.match_start('control/request/mode')
 	def give_mode(self, topic, headers, message, match):
-		self.publish_json('HPWH/mode', {}, (self.mode))
+		self.publish_status('mode')
 	# Request for Temperature SetPoint Information
 	@matching.match_start('control/request/temp_desired')
 	def give_temp_desired(self, topic, headers, message, match):
-		self.publish_json('HPWH/temp_desired', {}, (self.temp_desired))
+		self.publish_status('temp_desired')
 	# Request for Temperature Information
 	@matching.match_start('control/request/temp_tank')
 	def give_temp(self, topic, headers, message, match):
-		self.publish_json('HPWH/temp_tank', {}, (self.up_temp, self.low_temp))
+		self.publish_status('temp_tank')
 	# Request for Deadband Information
 	@matching.match_start('control/request/deadbands')
 	def give_deadbands(self, topic, headers, message, match):
-		self.publish_json('HPWH/deadbands', {}, (self.hi_deadband,
-				self.low_deadband, self.low_limit))
+		self.publish_status('deadbands')
 	'''_____________________________________________________________________'''
 
 
@@ -366,6 +393,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 	def define_mode(self, topic, headers, message, match):
 		# Control Agent publishes message = [mode]
 		self.mode = jsonapi. loads(message[0])
+		self.override = True
 	# Check for Control Input - Temperature
 	@matching.match_start('control/input/temp_desired')
 	def define_temp(self, topic, headers, message, match):
@@ -382,7 +410,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		(self.dbl1, self.dbl2, self.dbl3 = deadband_info[0], deadband_info[1],
 				deadband_info[2])
 		# Redefine Deadbands
-		self.deadbands(self.dbl1, self,dbl2, self.dbl3)
+		self.deadbands()
 	'''_____________________________________________________________________'''
 
 	'''Periodically Update Tank Temperatures________________________________'''
@@ -418,6 +446,20 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		if self.state == 0:
 			self.all_OFF()
 			self.mode = "SB"
+		elif override:
+			# Do not allow tank temperature to exceed 135 F
+			if up_temp > 135 or low_temp > 135:
+				self.all_OFF()
+			elif self.mode == "SB":
+				self.all_OFF()
+			elif self.mode == "HP":
+				self.HP_ON()
+			elif self.mode == "UE":
+				self.UpElement_ON()
+			elif self.mode == "LE":
+				self.LowElement_ON()
+			else:
+				override = False
 		elif self.state == 1:
 			# Check if elements are above deadband
 			if up_temp > self.desired_temp and low_temp > self.desired_temp:
