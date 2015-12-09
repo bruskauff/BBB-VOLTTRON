@@ -171,6 +171,18 @@ import Adafruit_MAX31855.MAX31855 as MAX31855
 # Enable information and debug logging
 utils.setup_logging()
 _log = logging.getLogger(__name__)
+
+## the host is the ip address of the machine that would sent the control commands
+host = "192.168.127.3"
+## port number would be decided by the sending machine 
+port = "3002"
+channel = ""
+
+## setting up a ZMQ connection 
+context = zmq.Context()
+context = zmq.Context()
+socket = context.socket(zmq.PUB)
+socket.bind("tcp://*:%s" % port)
 #_____________________________________________________________________________#
 
 
@@ -332,6 +344,7 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 		self.fans_OFF()
 		# Turn the lower heating element on
 		digitalWrite(self.low_element, HIGH)
+	# Publish requested information to overrulling VOLTTRON instance
 	def publish_status(topic, message):
 		now = datetime.now().isoformat(' ') + 'Z'
 		headers = {
@@ -339,21 +352,10 @@ class HPWHControlAgent(PublishMixin, BaseAgent):
 			headers_mod.CONTENT_TYPE: headers_mod.CONTENT_TYPE.PLAIN_TEXT,
 			headers_mod.DATE: now,
 		}
-		channels=""
-		packet = {}
-		## receive the ZMQ message 
-		packet = socket.recv()
-		print packet 
-		channels, message = packet.split('~');
-		# string should be splittable into topic and msg, but seems it is receiving them seperately
-		#print "RECV: " + message;
-		## Conevrt to voltttron message format with topics and message 
-		messages = json.loads(message)
-		topics  = messages['topic']
-		messages = messages['message']
-		## publish on the volttron bus 
-		self.vip.pubsub.publish(
-			'pubsub',topics, headers, messages)
+		# Publish on the volttron bus
+		self.publish_json(topic, headers, message)
+		# Send Messages to socket
+		socket.send("%s %s" % (channel, message))
 	'''_____________________________________________________________________'''
 
 
