@@ -75,7 +75,7 @@ This code was made as a replacement for the controls implemented in a heat pump 
 National Renewable Energy Laboratory
 -------------------------------------
 NREL is a national laboratory of the U.S. Department of Energy, Office of Energy Efficiency and Renewable Energy, operated by the Alliance for Sustainable Energy, LLC.
-NREL-authored documents are sponsored by the U.S. Department of Energy under Contract DE-AC36-08GO28308.
+
 
 Water-Heater pub Agent:
 **(This agent resides in the water-heater platform Volttron-v2.0)**
